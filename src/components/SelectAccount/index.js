@@ -93,11 +93,11 @@ const AccountOption = React.memo(
       <Box grow horizontal alignItems="center" flow={2} style={{ opacity: disabled ? 0.2 : 1 }}>
         {!isValue && account.type === 'TokenAccount' ? tokenTick : null}
         <CryptoCurrencyIcon currency={currency} size={16} />
-        <Ellipsis ff="Open Sans|SemiBold" color="dark" fontSize={4}>
+        <Ellipsis ff="Open Sans|SemiBold" color="text.primary" fontSize={4}>
           {name}
         </Ellipsis>
         <Box>
-          <FormattedVal color="grey" val={account.balance} unit={unit} showCode disableRounding />
+          <FormattedVal color="text.secondary" val={account.balance} unit={unit} showCode disableRounding />
         </Box>
       </Box>
     )

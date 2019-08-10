@@ -38,6 +38,7 @@ import React, { Component } from 'react'
 import * as d3 from 'd3'
 import noop from 'lodash/noop'
 import last from 'lodash/last'
+import { withTheme } from 'styled-components';
 
 import refreshNodes from './refreshNodes'
 import refreshDraw from './refreshDraw'
@@ -59,6 +60,7 @@ export type Props = {
   renderTickY: (t: number) => string | number,
   mapValue: (*) => number,
   onlyUpdateIfLastPointChanges?: boolean,
+  theme: any
 }
 
 class Chart extends Component<Props> {
@@ -214,4 +216,4 @@ class Chart extends Component<Props> {
   }
 }
 
-export default Chart
+export default withTheme(Chart)

@@ -119,7 +119,7 @@ export class OperationsList extends PureComponent<Props, State> {
     return (
       <Box flow={4}>
         {title && (
-          <Text color="dark" ff="Museo Sans" fontSize={6} data-e2e="dashboard_OperationList">
+          <Text color="text.primary" ff="Museo Sans" fontSize={6} data-e2e="dashboard_OperationList">
             {title}
           </Text>
         )}

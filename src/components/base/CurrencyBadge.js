@@ -69,7 +69,7 @@ export function CurrencyCircleIcon({
           <IconCheck color="white" size={16} />
         </div>
       )}
-      {showSpinner && <Spinner color="grey" size={14} />}
+      {showSpinner && <Spinner color="text.secondary" size={14} />}
     </CryptoIconWrapper>
   )
 }
@@ -79,10 +79,10 @@ function CurrencyBadge({ currency, ...props }: { currency: CryptoCurrency | Toke
     <Box horizontal flow={3} {...props}>
       <CurrencyCircleIcon size={40} currency={currency} />
       <Box>
-        <Box ff="Museo Sans|ExtraBold" color="dark" fontSize={2} style={{ letterSpacing: 2 }}>
+        <Box ff="Museo Sans|ExtraBold" color="text.primary" fontSize={2} style={{ letterSpacing: 2 }}>
           {currency.ticker}
         </Box>
-        <Box ff="Open Sans" color="dark" fontSize={5} data-e2e="currencyBadge">
+        <Box ff="Open Sans" color="text.primary" fontSize={5} data-e2e="currencyBadge">
           {currency.name}
         </Box>
       </Box>

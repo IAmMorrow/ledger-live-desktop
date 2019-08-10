@@ -17,6 +17,7 @@ type Props = {
 const TokenIconWrapper = styled.div`
   border-radius: 4px;
 `
+
 const TokenIcon = styled.div`
   font-size: ${p => p.size / 2}px;
   font-family: 'Open Sans';

@@ -173,7 +173,7 @@ class GenuineCheck extends PureComponent<Props, State> {
         return null
       }
       return (
-        <Box fontSize={3} color="dark" align="center" cursor="text" ff="Open Sans|SemiBold">
+        <Box fontSize={3} color="text.primary" align="center" cursor="text" ff="Open Sans|SemiBold">
           <Box mt={4} mb={2}>
             <Trans
               i18nKey="genuinecheck.deviceInBootloader"

@@ -93,7 +93,7 @@ class PasswordModal extends PureComponent<Props, State> {
             <Fragment>
               <Box
                 ff="Museo Sans|Regular"
-                color="dark"
+                color="text.primary"
                 textAlign="center"
                 mb={2}
                 mt={3}

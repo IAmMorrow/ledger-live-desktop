@@ -97,7 +97,7 @@ class TopBar extends PureComponent<Props> {
     const { hasPassword, hasAccounts, t } = this.props
 
     return (
-      <Container bg="lightGrey" color="graphite">
+      <Container bg="background.secondary" color="graphite">
         <Inner>
           <Box grow horizontal justifyContent="space-between">
             <Breadcrumb />
@@ -139,7 +139,7 @@ class TopBar extends PureComponent<Props> {
 
 export const SeparatorBar = styled.div`
   height: 1px;
-  border-bottom: 1px solid ${p => p.theme.colors.fog};
+  border-bottom: 1px solid ${p => p.theme.colors.separator};
 `
 
 export default compose(

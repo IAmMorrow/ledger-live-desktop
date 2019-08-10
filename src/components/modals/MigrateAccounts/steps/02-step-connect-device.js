@@ -23,7 +23,7 @@ const StepConnectDevice = ({ t, currency, device, setAppOpened }: StepProps) => 
         <Box
           ff="Museo Sans|Regular"
           fontSize={6}
-          color="dark"
+          color="text.primary"
           textAlign="center"
           style={{ width: 370 }}
         >

@@ -82,7 +82,7 @@ export default class AccountRow extends PureComponent<Props> {
         onClick={isDisabled ? null : this.onToggleAccount}
       >
         <CryptoCurrencyIcon currency={account.currency} size={16} />
-        <Box shrink grow ff="Open Sans|SemiBold" color="dark" fontSize={4}>
+        <Box shrink grow ff="Open Sans|SemiBold" color="text.primary" fontSize={4}>
           {onEditName ? (
             <Input
               style={this.overflowStyles}
@@ -108,7 +108,7 @@ export default class AccountRow extends PureComponent<Props> {
             style={{ textAlign: 'right', width: 'auto' }}
             showCode
             fontSize={4}
-            color="grey"
+            color="text.secondary"
           />
         ) : null}
         {!isDisabled && !isReadonly ? (

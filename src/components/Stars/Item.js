@@ -87,7 +87,7 @@ const Item = ({
                 alwaysShowSign={false}
                 animateTicker={false}
                 ellipsis
-                color="grey"
+                color="text.secondary"
                 unit={account.unit || account.token.units[0]}
                 showCode
                 val={account.balance}

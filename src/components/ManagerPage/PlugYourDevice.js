@@ -21,7 +21,7 @@ function PlugYourDevice(props: Props) {
     <Card py={8} align="center">
       <Box align="center" style={{ width: 365 }}>
         <Box mb={5}>hey</Box>
-        <Box textAlign="center" mb={1} ff="Museo Sans|Regular" color="dark" fontSize={6}>
+        <Box textAlign="center" mb={1} ff="Museo Sans|Regular" color="text.primary" fontSize={6}>
           {t('manager.device.title')}
         </Box>
         <Box textAlign="center" mb={5} ff="Open Sans|Regular" color="smoke" fontSize={4}>

@@ -50,7 +50,7 @@ class DisclaimerModal extends PureComponent<Props, State> {
               <Text ff="Open Sans|Regular" fontSize={4} color="graphite" align="center">
                 <Trans i18nKey="manager.firmware.disclaimerTitle">
                   You are about to install
-                  <Text ff="Open Sans|SemiBold" color="dark">
+                  <Text ff="Open Sans|SemiBold" color="text.primary">
                     {`firmware version ${
                       firmware && firmware.osu ? getCleanVersion(firmware.osu.name) : ''
                     }`}

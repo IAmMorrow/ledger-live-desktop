@@ -256,7 +256,7 @@ export class StepAmountFooter extends PureComponent<
               <FormattedVal
                 disableRounding
                 style={{ width: 'auto' }}
-                color="dark"
+                color="text.primary"
                 val={totalSpent}
                 unit={accountUnit}
                 showCode
@@ -271,7 +271,7 @@ export class StepAmountFooter extends PureComponent<
                   currency={currency}
                   value={totalSpent}
                   disableRounding
-                  color="grey"
+                  color="text.secondary"
                   fontSize={3}
                   showCode
                   alwaysShowSign={false}

@@ -42,7 +42,7 @@ class SelectPINrestoreNanoX extends PureComponent<Props, *> {
           <Box style={{ display: 'block' }}>
             <Trans i18nKey="onboarding.selectPIN.restore.instructions.nanoX.step3">
               {'Press the left button to cancel'}
-              <Text ff="Open Sans|SemiBold" color="dark">
+              <Text ff="Open Sans|SemiBold" color="text.primary">
                 {setUpAsNewDevice}
               </Text>
             </Trans>
@@ -56,7 +56,7 @@ class SelectPINrestoreNanoX extends PureComponent<Props, *> {
           <Box style={{ display: 'block' }}>
             <Trans i18nKey="onboarding.selectPIN.restore.instructions.nanoX.step4">
               {'Press the left button to cancel'}
-              <Text ff="Open Sans|SemiBold" color="dark">
+              <Text ff="Open Sans|SemiBold" color="text.primary">
                 {restoreConfiguration}
               </Text>
             </Trans>

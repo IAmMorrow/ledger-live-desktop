@@ -36,7 +36,7 @@ class SelectPINnano extends PureComponent<Props, *> {
           <Box style={{ display: 'block' }}>
             <Trans i18nKey="onboarding.selectPIN.initialize.instructions.nano.step2">
               {'Press the right button to select'}
-              <Text ff="Open Sans|SemiBold" color="dark">
+              <Text ff="Open Sans|SemiBold" color="text.primary">
                 {configureAsNewDevice}
               </Text>
             </Trans>

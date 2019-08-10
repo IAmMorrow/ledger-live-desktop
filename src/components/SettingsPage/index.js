@@ -108,7 +108,7 @@ class SettingsPage extends PureComponent<Props, State> {
 
     return (
       <Box pb={4} selectable>
-        <Box ff="Museo Sans|Regular" color="dark" fontSize={7} mb={5} data-e2e="settings_title">
+        <Box ff="Museo Sans|Regular" color="text.primary" fontSize={7} mb={5} data-e2e="settings_title">
           {t('settings.title')}
         </Box>
         <Pills mb={4} items={items} activeKey={tab.key} onChange={this.handleChangeTab} />

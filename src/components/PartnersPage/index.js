@@ -18,7 +18,7 @@ class PartnersPage extends PureComponent<Props> {
     return (
       <Box pb={6} selectable>
         <TrackPage category="Exchange" />
-        <Box ff="Museo Sans|Regular" fontSize={7} color="dark">
+        <Box ff="Museo Sans|Regular" fontSize={7} color="text.primary">
           {t('partners.title')}
         </Box>
         <Box ff="Museo Sans|Light" fontSize={5} mb={5}>

@@ -116,7 +116,7 @@ export default class Finish extends Component<StepProps, *> {
               {t('onboarding.finish.openAppButton')}
             </Button>
           </Box>
-          <Box horizontal mt={3} flow={5} color="grey">
+          <Box horizontal mt={3} flow={5} color="text.secondary">
             {socialMedia.map(socMed => (
               <SocialMediaBox key={socMed.key} socMed={socMed} />
             ))}

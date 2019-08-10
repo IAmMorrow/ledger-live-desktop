@@ -90,7 +90,7 @@ class TokensList extends PureComponent<Props> {
     return (
       <Box mb={50}>
         <Wrapper>
-          <Text color="dark" mb={2} ff="Museo Sans" fontSize={6}>
+          <Text color="text.primary" mb={2} ff="Museo Sans" fontSize={6}>
             {t('tokensList.title')}
           </Text>
           {!isEmpty && <ReceiveButton onClick={this.onReceiveClick} />}

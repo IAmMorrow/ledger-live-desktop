@@ -21,7 +21,7 @@ class HeadText extends PureComponent<{
         <Box style={{ textTransform: 'uppercase' }} fontSize={10} color="graphite">
           {title}
         </Box>
-        <Ellipsis fontSize={13} color="dark">
+        <Ellipsis fontSize={13} color="text.primary">
           {name}
         </Ellipsis>
       </Box>
@@ -71,7 +71,7 @@ class Header extends PureComponent<{
             alwaysShowSign={false}
             animateTicker={false}
             ellipsis
-            color="dark"
+            color="text.primary"
             unit={unit}
             showCode
             val={account.balance}

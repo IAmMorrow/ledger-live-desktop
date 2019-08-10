@@ -30,7 +30,7 @@ const SeeAllButton = styled.div`
   color: ${p => p.theme.colors.wallet};
   align-items: center;
   justify-content: center;
-  border-top: 1px solid ${p => p.theme.colors.lightFog};
+  border-top: 1px solid ${p => p.theme.colors.separator};
   height: 40px;
   cursor: pointer;
 
@@ -81,7 +81,7 @@ class AssetDistribution extends PureComponent<Props, State> {
 
     return (
       <>
-        <Text ff="Museo Sans|Regular" fontSize={6} color="dark">
+        <Text ff="Museo Sans|Regular" fontSize={6} color="text.primary">
           <Trans
             i18nKey="distribution.header"
             values={{ count: 0 }}
