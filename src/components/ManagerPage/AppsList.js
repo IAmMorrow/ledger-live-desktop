@@ -94,7 +94,7 @@ const ICONS_FALLBACK = {
 }
 
 const CATALOG_INFO_ICON = (
-  <Box color="grey">
+  <Box color="text.secondary">
     <IconInfoCircle size={12} />
   </Box>
 )
@@ -271,16 +271,16 @@ class AppsList extends PureComponent<Props, State> {
     return ['busy', 'idle'].includes(status) ? (
       <Box grow align="center" justify="center">
         {isInstalling ? (
-          <Box color="grey" grow align="center" mb={5}>
+          <Box color="text.secondary" grow align="center" mb={5}>
             <Update size={30} />
           </Box>
         ) : (
-          <Box color="grey" grow align="center" mb={5}>
+          <Box color="text.secondary" grow align="center" mb={5}>
             <Trash size={30} />
           </Box>
         )}
         {app ? (
-          <Text ff="Museo Sans|Regular" fontSize={6} color="dark">
+          <Text ff="Museo Sans|Regular" fontSize={6} color="text.primary">
             {mode !== 'home' ? t(`manager.apps.${mode}`, { app: app.name || '' }) : null}
           </Text>
         ) : null}
@@ -301,7 +301,7 @@ class AppsList extends PureComponent<Props, State> {
             <ExclamationCircleThin size={44} />
           </Box>
           <Box
-            color="dark"
+            color="text.primary"
             mt={4}
             fontSize={6}
             ff="Museo Sans|Regular"
@@ -331,7 +331,7 @@ class AppsList extends PureComponent<Props, State> {
           <AppIcon src={manager.getIconUrl(app ? app.icon : '')} />
         </IconWrapper>
         <Box
-          color="dark"
+          color="text.primary"
           mt={4}
           fontSize={6}
           ff="Museo Sans|Regular"
@@ -503,7 +503,7 @@ class AppsList extends PureComponent<Props, State> {
 
     return (
       <Box>
-        <Box mb={4} color="dark" ff="Museo Sans" fontSize={5} flow={2} horizontal align="center">
+        <Box mb={4} color="text.primary" ff="Museo Sans" fontSize={5} flow={2} horizontal align="center">
           <span>{t('manager.apps.all')}</span>
           <Tooltip render={this.renderTooltip}>{CATALOG_INFO_ICON}</Tooltip>
         </Box>

@@ -30,7 +30,7 @@ function getRenderTickX(selectedTimeRange) {
 
 export default function refreshDraw({ ctx, props }: { ctx: CTX, props: Props }) {
   const { NODES, WIDTH, HEIGHT, MARGINS, COLORS, INVALIDATED, DATA, x, y } = ctx
-  const { hideAxis, isInteractive, tickXScale, renderTickY, mapValue } = props
+  const { hideAxis, isInteractive, tickXScale, renderTickY, mapValue, theme } = props
 
   const transition = '1s'
 
@@ -102,8 +102,8 @@ export default function refreshDraw({ ctx, props }: { ctx: CTX, props: Props }) 
         .tickPadding(nearZero ? 0 : 10)
         .tickFormat(val => (renderTickX ? renderTickX(val) : val)),
     )
-    stylizeAxis(NODES.axisLeft)
-    stylizeAxis(NODES.axisBot, !nearZero)
+    stylizeAxis(theme, NODES.axisLeft)
+    stylizeAxis(theme, NODES.axisBot, !nearZero)
   }
 
   // Draw ticks
@@ -119,7 +119,7 @@ export default function refreshDraw({ ctx, props }: { ctx: CTX, props: Props }) 
 
     NODES.yTicks
       .selectAll('.tick line')
-      .attr('stroke', 'rgba(0, 0, 0, 0.1)')
+      .attr('stroke', theme.colors.separator)
       .attr('stroke-dasharray', '5, 5')
 
     if (nearZero) {
@@ -135,12 +135,12 @@ export default function refreshDraw({ ctx, props }: { ctx: CTX, props: Props }) 
   NODES.line.data([DATA]).attr('d', valueline)
 }
 
-function stylizeAxis(axis, showAxisLine) {
+function stylizeAxis(theme, axis, showAxisLine) {
   axis.selectAll('.tick line').attr('stroke', 'none')
-  axis.selectAll('path').attr('stroke', showAxisLine ? 'rgba(0, 0, 0, 0.1)' : 'none')
+  axis.selectAll('path').attr('stroke', showAxisLine ? theme.colors.separator : 'none')
   axis
     .selectAll('text')
-    .attr('fill', themeColors.grey)
+    .attr('fill', theme.colors.text.secondary)
     .style('font-size', '12px')
     .style('font-family', 'Open Sans')
 }

@@ -10,8 +10,7 @@ const Container = styled(Box).attrs({
   py: 3,
   align: 'center',
 })`
-  background: white;
-  border: 1px solid #d8d8d8;
+  border: 1px solid ${p => p.theme.colors.separator};
   border-radius: 4px;
   width: 150px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.03);
@@ -29,7 +28,7 @@ const Tooltip = ({ item, renderTooltip }: { item: Item, renderTooltip: Item => *
         marginBottom: -5,
       }}
     >
-      <Container style={{ textAlign: 'center' }}>{renderTooltip(item)}</Container>
+      <Container bg="background.secondary" style={{ textAlign: 'center' }}>{renderTooltip(item)}</Container>
     </div>
   </div>
 )

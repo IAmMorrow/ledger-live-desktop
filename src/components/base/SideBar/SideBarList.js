@@ -35,7 +35,7 @@ class SideBarList extends Component<Props> {
             {children}
           </ListWrapper>
         ) : emptyState ? (
-          <Box px={4} ff="Open Sans|Regular" selectable fontSize={3} color="grey">
+          <Box px={4} ff="Open Sans|Regular" selectable fontSize={3} color="text.secondary">
             {emptyState}
           </Box>
         ) : null}
@@ -47,7 +47,7 @@ class SideBarList extends Component<Props> {
 const SideBarListTitle = styled(Box).attrs({
   horizontal: true,
   align: 'center',
-  color: 'dark',
+  color: 'text.primary',
   ff: 'Museo Sans|ExtraBold',
   fontSize: 1,
   px: 4,

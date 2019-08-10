@@ -42,9 +42,9 @@ class AccountBalanceSummary extends PureComponent<Props> {
     if (displayCountervalue) data.reverse()
     return (
       <Fragment>
-        <FormattedVal fontSize={5} color="dark" showCode {...data[0]} />
+        <FormattedVal fontSize={5} color="text.primary" showCode {...data[0]} />
         <FormattedVal fontSize={4} color="warmGrey" showCode {...data[1]} />
-        <Box ff="Open Sans|Regular" color="grey" fontSize={3} mt={2}>
+        <Box ff="Open Sans|Regular" color="text.secondary" fontSize={3} mt={2}>
           {moment(d.date).format('LL')}
         </Box>
       </Fragment>

@@ -87,7 +87,7 @@ class Row extends PureComponent<Props, State> {
       <Wrapper>
         <Asset>
           {icon}
-          <Ellipsis ff="Open Sans|SemiBold" color="dark" fontSize={3}>
+          <Ellipsis ff="Open Sans|SemiBold" color="text.primary" fontSize={3}>
             {currency.name}
           </Ellipsis>
         </Asset>
@@ -95,7 +95,7 @@ class Row extends PureComponent<Props, State> {
           {distribution ? (
             <Price from={currency} color="graphite" fontSize={3} />
           ) : (
-            <Text ff="Rubik" color="dark" fontSize={3}>
+            <Text ff="Rubik" color="text.primary" fontSize={3}>
               {'-'}
             </Text>
           )}
@@ -103,7 +103,7 @@ class Row extends PureComponent<Props, State> {
         <Distribution>
           {!!distribution && (
             <Fragment>
-              <Text ff="Rubik" color="dark" fontSize={3}>
+              <Text ff="Rubik" color="text.primary" fontSize={3}>
                 {`${percentage}%`}
               </Text>
               <Bar progress={percentage} progressColor={color} />
@@ -128,13 +128,13 @@ class Row extends PureComponent<Props, State> {
                 currency={currency}
                 value={amount}
                 disableRounding
-                color="dark"
+                color="text.primary"
                 fontSize={3}
                 showCode
                 alwaysShowSign={false}
               />
             ) : (
-              <Text ff="Rubik" color="dark" fontSize={3}>
+              <Text ff="Rubik" color="text.primary" fontSize={3}>
                 {'-'}
               </Text>
             )}

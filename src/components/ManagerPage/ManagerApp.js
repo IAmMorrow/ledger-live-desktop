@@ -15,7 +15,7 @@ import Button from 'components/base/Button'
 export const Container = styled(Box).attrs({
   horizontal: true,
   p: 4,
-  bg: 'white',
+  bg: 'background.primary',
   boxShadow: p => (p.noShadow ? -1 : 0),
   borderRadius: 4,
   flow: 2,
@@ -33,7 +33,7 @@ const AppIcon = styled.img`
 const AppName = styled(Box).attrs({
   ff: 'Museo Sans|Regular',
   fontSize: 4,
-  color: 'dark',
+  color: 'text.primary',
 })`
   display: block;
   overflow: hidden;
@@ -57,7 +57,7 @@ function ManagerApp({ name, version, icon, onInstall, onUninstall, t }: Props) {
       <AppIcon src={iconUrl} />
       <Box flex="1" ml={3}>
         <AppName flex={1}>{name}</AppName>
-        <Text ff="Open Sans|Regular" fontSize={3} color="grey">
+        <Text ff="Open Sans|Regular" fontSize={3} color="text.secondary">
           {version}
         </Text>
       </Box>
@@ -82,7 +82,7 @@ function ManagerApp({ name, version, icon, onInstall, onUninstall, t }: Props) {
           appName: name,
           appVersion: version,
         }}
-        outlineColor="grey"
+        outlinecolor="text.secondary"
       >
         <Trash size={16} fill="grey" />
       </Button>

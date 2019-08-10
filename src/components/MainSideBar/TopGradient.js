@@ -9,7 +9,7 @@ const TopGradientBox = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(#ffffff 40%, rgba(255, 255, 255, 0));
+  background: linear-gradient(${p => p.theme.colors.background.primary} 40%, rgba(255, 255, 255, 0));
   z-index: 2;
   pointer-events: none;
 `

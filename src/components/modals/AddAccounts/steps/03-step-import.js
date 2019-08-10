@@ -236,14 +236,14 @@ class StepImport extends PureComponent<StepProps> {
       creatable: alreadyEmptyAccount ? (
         <Trans i18nKey="addAccounts.createNewAccount.noOperationOnLastAccount" parent="div">
           {' '}
-          <Text ff="Open Sans|SemiBold" color="dark">
+          <Text ff="Open Sans|SemiBold" color="text.primary">
             {alreadyEmptyAccount.name}
           </Text>{' '}
         </Trans>
       ) : (
         <Trans i18nKey="addAccounts.createNewAccount.noAccountToCreate" parent="div">
           {' '}
-          <Text ff="Open Sans|SemiBold" color="dark">
+          <Text ff="Open Sans|SemiBold" color="text.primary">
             {currencyName}
           </Text>{' '}
         </Trans>
@@ -275,8 +275,8 @@ class StepImport extends PureComponent<StepProps> {
 
           {scanStatus === 'scanning' ? (
             <LoadingRow>
-              <Spinner color="grey" size={16} />
-              <Box ml={2} ff="Open Sans|Regular" color="grey" fontSize={4}>
+              <Spinner color="text.secondary" size={16} />
+              <Box ml={2} ff="Open Sans|Regular" color="text.secondary" fontSize={4}>
                 {t('common.sync.syncing')}
               </Box>
             </LoadingRow>

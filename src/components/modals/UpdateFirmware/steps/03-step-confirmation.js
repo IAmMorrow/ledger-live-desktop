@@ -35,7 +35,7 @@ function StepConfirmation({ t, error }: StepProps) {
           <ExclamationCircleThin size={44} />
         </Box>
         <Box
-          color="dark"
+          color="text.primary"
           mt={4}
           fontSize={5}
           ff="Museo Sans|Regular"

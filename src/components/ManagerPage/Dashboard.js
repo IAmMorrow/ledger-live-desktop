@@ -26,7 +26,7 @@ const Dashboard = ({ device, deviceInfo, t, handleHelpRequest }: Props) => (
   <Box flow={4} pb={8} selectable>
     <TrackPage category="Manager" name="Dashboard" />
     <Box>
-      <Text ff="Museo Sans|Regular" fontSize={7} color="dark">
+      <Text ff="Museo Sans|Regular" fontSize={7} color="text.primary">
         {t('manager.title')}
       </Text>
       <Box horizontal>

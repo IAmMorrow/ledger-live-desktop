@@ -62,7 +62,7 @@ class Spoiler extends PureComponent<Props, State> {
           onClick={this.toggle}
           horizontal
           flow={1}
-          color="dark"
+          color="text.primary"
           cursor="pointer"
           align="center"
           {...p}

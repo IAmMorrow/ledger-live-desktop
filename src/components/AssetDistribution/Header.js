@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   padding: 16px 20px;
-  border-bottom: 1px solid ${p => p.theme.colors.lightGrey};
+  border-bottom: 1px solid ${p => p.theme.colors.separator};
   > * {
     width: 20%;
     display: flex;
@@ -28,19 +28,19 @@ const Wrapper = styled.div`
 
 export default () => (
   <Wrapper>
-    <Text ff="Open Sans|SemiBold" color="grey" fontSize={3}>
+    <Text ff="Open Sans|SemiBold" color="text.secondary" fontSize={3}>
       <Trans i18nKey={'distribution.asset'} />
     </Text>
-    <Text ff="Open Sans|SemiBold" color="grey" fontSize={3}>
+    <Text ff="Open Sans|SemiBold" color="text.secondary" fontSize={3}>
       <Trans i18nKey={'distribution.price'} />
     </Text>
-    <Text ff="Open Sans|SemiBold" color="grey" fontSize={3}>
+    <Text ff="Open Sans|SemiBold" color="text.secondary" fontSize={3}>
       <Trans i18nKey={'distribution.distribution'} />
     </Text>
-    <Text ff="Open Sans|SemiBold" color="grey" style={{ justifyContent: 'flex-end' }} fontSize={3}>
+    <Text ff="Open Sans|SemiBold" color="text.secondary" style={{ justifyContent: 'flex-end' }} fontSize={3}>
       <Trans i18nKey={'distribution.amount'} />
     </Text>
-    <Text ff="Open Sans|SemiBold" color="grey" style={{ justifyContent: 'flex-end' }} fontSize={3}>
+    <Text ff="Open Sans|SemiBold" color="text.secondary" style={{ justifyContent: 'flex-end' }} fontSize={3}>
       <Trans i18nKey={'distribution.value'} />
     </Text>
   </Wrapper>

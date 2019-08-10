@@ -124,7 +124,7 @@ class StepCurrency extends PureComponent<Props> {
           <Box
             ff="Museo Sans|Regular"
             fontSize={6}
-            color="dark"
+            color="text.primary"
             mb={10}
             textAlign="center"
             style={{ width: 370 }}

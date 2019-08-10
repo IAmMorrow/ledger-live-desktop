@@ -62,7 +62,7 @@ export const IconContainer = ({
 }) => (
   <Box
     relative
-    color="dark"
+    color="text.primary"
     style={{
       width: 70,
       opacity: isTransparent ? 0.5 : 1,

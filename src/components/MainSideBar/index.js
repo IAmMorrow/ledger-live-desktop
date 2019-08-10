@@ -80,12 +80,12 @@ const Tag = styled(Link)`
   padding: 2px 8px;
   min-height: 22px;
   border-radius: 4px;
-  color: ${p => p.theme.colors.smoke};
-  background-color: ${p => p.theme.colors.lightFog};
+  color: ${p => p.theme.colors.text.secondary};
+  background-color: ${p => p.theme.colors.background.secondary};
   text-decoration: none;
 
   &:hover {
-    background-color: ${p => darken(p.theme.colors.lightFog, 0.05)};
+    background-color: ${p => darken(p.theme.colors.background.secondary, 0.05)};
   }
 `
 
@@ -123,7 +123,7 @@ class MainSideBar extends PureComponent<Props> {
     const { pathname } = location
 
     return (
-      <Box relative bg="white" style={{ width: MAIN_SIDEBAR_WIDTH }}>
+      <Box relative bg='background.primary' style={{ width: MAIN_SIDEBAR_WIDTH }}>
         <TopGradient />
         <Space of={70} />
         <SideBarList title={t('sidebar.menu')}>

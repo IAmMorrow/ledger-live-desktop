@@ -44,7 +44,7 @@ const FlashMCUNanos = React.memo(({ deviceModelId }: Props) => (
         <Bullet>{'2. '}</Bullet>
         <Trans i18nKey="manager.modal.mcuSecond">
           {'Press the left button and hold it while you reconnect the USB cable until the '}
-          <Text ff="Open Sans|SemiBold" color="dark">
+          <Text ff="Open Sans|SemiBold" color="text.primary">
             {bootloader}
           </Text>
           {' screen appears'}

@@ -79,7 +79,7 @@ const FlashStep = ({
       <Box mx={7} align="center">
         <ProgressCircle size={64} progress={progress} />
       </Box>
-      <Box mx={7} mt={3} mb={2} ff="Museo Sans|Regular" color="dark" textAlign="center">
+      <Box mx={7} mt={3} mb={2} ff="Museo Sans|Regular" color="text.primary" textAlign="center">
         {t(`manager.modal.steps.flash`)}
       </Box>
       <Box mx={7} mt={2} mb={2}>
@@ -97,7 +97,7 @@ const ErrorStep = ({ error }: { error: Error }) => (
         <ExclamationCircleThin size={44} />
       </Box>
       <Box
-        color="dark"
+        color="text.primary"
         mt={4}
         fontSize={6}
         ff="Museo Sans|Regular"
@@ -195,7 +195,7 @@ class RepairModal extends PureComponent<Props, *> {
               )}
 
               {!isLoading && !error ? (
-                <Box py={2} px={5} color="dark" fontSize={4}>
+                <Box py={2} px={5} color="text.primary" fontSize={4}>
                   {repairChoices.map(choice => (
                     <Choice
                       onSelect={this.onSelectOption}

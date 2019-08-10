@@ -43,8 +43,8 @@ const Container = styled(Box).attrs({
 `
 
 const WrapperClock = styled(Box).attrs({
-  bg: 'white',
-  color: 'grey',
+  bg: 'background.primary',
+  color: 'text.secondary',
 })`
   border-radius: 50%;
   position: absolute;

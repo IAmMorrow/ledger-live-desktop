@@ -13,7 +13,7 @@ class SummaryDesc extends PureComponent<{
     const { totalAccounts, t } = this.props
     return (
       <Text
-        color="grey"
+        color="text.secondary"
         fontSize={5}
         ff="Museo Sans|Light"
         data-e2e="dashboard_accountsSummaryDesc"

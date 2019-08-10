@@ -18,7 +18,7 @@ function Installing({ progress, installing }: Props) {
         <ProgressCircle size={64} progress={progress} />
       </Box>
       <Box mx={7} mt={4} mb={2}>
-        <Text ff="Museo Sans|Regular" align="center" color="dark" fontSize={6}>
+        <Text ff="Museo Sans|Regular" align="center" color="text.primary" fontSize={6}>
           {installing ? <Trans i18nKey={`manager.modal.steps.${installing}`} /> : null}
         </Text>
       </Box>

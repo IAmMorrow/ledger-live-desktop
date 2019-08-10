@@ -220,7 +220,7 @@ const OperationDetails = connect(
             <Box mt={1} selectable>
               {hasFailed ? null : (
                 <CounterValue
-                  color="grey"
+                  color="text.secondary"
                   fontSize={5}
                   date={date}
                   currency={currency}
@@ -331,11 +331,11 @@ const OperationDetails = connect(
                     <OpDetailsData>
                       <FormattedVal unit={mainAccount.unit} showCode val={fee} color="smoke" />
                       <Box horizontal>
-                        <Box mr={1} color="grey" style={{ lineHeight: 1.2 }}>
+                        <Box mr={1} color="text.secondary" style={{ lineHeight: 1.2 }}>
                           {'≈'}
                         </Box>
                         <CounterValue
-                          color="grey"
+                          color="text.secondary"
                           date={date}
                           fontSize={3}
                           currency={mainAccount.currency}

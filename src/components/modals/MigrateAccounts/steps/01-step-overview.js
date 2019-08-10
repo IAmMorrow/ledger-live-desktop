@@ -126,7 +126,7 @@ const StepOverview = ({ migratableAccounts, currency, totalMigratableAccounts }:
         />
       </Logo>
       <Title>
-        <Text ff="Museo Sans|Regular" fontSize={6} color="dark">
+        <Text ff="Museo Sans|Regular" fontSize={6} color="text.primary">
           <Trans
             i18nKey={
               !totalMigratableAccounts
@@ -168,7 +168,7 @@ const StepOverview = ({ migratableAccounts, currency, totalMigratableAccounts }:
                 const accounts = migratableAccounts[currencyId]
                 return (
                   <Currency key={currencyId}>
-                    <Text color="dark" ff="Open Sans|SemiBold" fontSize={4}>
+                    <Text color="text.primary" ff="Open Sans|SemiBold" fontSize={4}>
                       <Trans
                         i18nKey="migrateAccounts.overview.currency"
                         count={accounts.length}

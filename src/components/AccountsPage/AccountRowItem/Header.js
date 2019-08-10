@@ -53,11 +53,11 @@ class Header extends PureComponent<Props> {
         </Box>
         <Box grow>
           {!nested && account.type === 'Account' && (
-            <Box style={{ textTransform: 'uppercase' }} fontSize={9} color="grey">
+            <Box style={{ textTransform: 'uppercase' }} fontSize={9} color="text.secondary">
               {title}
             </Box>
           )}
-          <Ellipsis fontSize={12} color="dark">
+          <Ellipsis fontSize={12} color="text.primary">
             {name}
           </Ellipsis>
         </Box>

@@ -39,7 +39,7 @@ class Placeholder extends PureComponent<{
           <Box
             ff="Open Sans"
             fontSize={3}
-            color="grey"
+            color="text.secondary"
             pb={2}
             mt={3}
             textAlign="center"

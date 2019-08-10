@@ -36,7 +36,7 @@ class WriteSeedNano extends PureComponent<Props, *> {
           <Box style={{ display: 'block' }}>
             <Trans i18nKey="onboarding.writeSeed.initialize.nano.step1">
               {'Copy the word displayed below'}
-              <Text ff="Open Sans|SemiBold" color="dark">
+              <Text ff="Open Sans|SemiBold" color="text.primary">
                 {{ seedWord1 }}
               </Text>
               {'in position 1 on a blank Recovery sheet.'}

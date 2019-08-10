@@ -44,7 +44,7 @@ class WriteSeedRestore extends PureComponent<Props, *> {
           <Box style={{ display: 'block' }}>
             <Trans i18nKey="onboarding.writeSeed.restore.nano.step2">
               {'Select the first letters of'}
-              <Text ff="Open Sans|SemiBold" color="dark">
+              <Text ff="Open Sans|SemiBold" color="text.primary">
                 {{ seedWord1 }}
               </Text>
               {'by pressing the right or left button. Press both buttons to confirm each letter.'}
@@ -59,7 +59,7 @@ class WriteSeedRestore extends PureComponent<Props, *> {
           <Box style={{ display: 'block' }}>
             <Trans i18nKey="onboarding.writeSeed.restore.nano.step3">
               {'Select'}
-              <Text ff="Open Sans|SemiBold" color="dark">
+              <Text ff="Open Sans|SemiBold" color="text.primary">
                 {{ seedWord1 }}
               </Text>
               {'from the suggested words. Press both buttons to continue.'}

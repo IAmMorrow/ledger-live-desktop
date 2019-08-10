@@ -118,12 +118,12 @@ class FirmwareUpdate extends PureComponent<Props, State> {
     return (
       <Card p={4}>
         <Box horizontal align="center" flow={2}>
-          <Box color="dark">
+          <Box color="text.primary">
             <Icon type={deviceSpecs.id} />
           </Box>
           <Box>
             <Box horizontal align="center">
-              <Text ff="Open Sans|SemiBold" fontSize={4} color="dark">
+              <Text ff="Open Sans|SemiBold" fontSize={4} color="text.primary">
                 {deviceSpecs.productName}
               </Text>
               <Box color="wallet" ml={2}>

@@ -86,7 +86,7 @@ class Rates extends PureComponent<Props> {
         />
         <Body>
           <RateRowWrapper>
-            <Box ff="Open Sans|SemiBold" alignItems="center" horizontal color="dark" fontSize={4}>
+            <Box ff="Open Sans|SemiBold" alignItems="center" horizontal color="text.primary" fontSize={4}>
               <Trans i18nKey="settings.rates.rate" />
               <TooltipButtonWrapper>
                 <Tooltip render={RateTooltip}>
@@ -94,13 +94,13 @@ class Rates extends PureComponent<Props> {
                 </Tooltip>
               </TooltipButtonWrapper>
             </Box>
-            <Box ff="Open Sans|SemiBold" color="dark" fontSize={4}>
+            <Box ff="Open Sans|SemiBold" color="text.primary" fontSize={4}>
               <Trans i18nKey="settings.rates.rpice" />
             </Box>
-            <Box ff="Open Sans|SemiBold" color="dark" fontSize={4}>
+            <Box ff="Open Sans|SemiBold" color="text.primary" fontSize={4}>
               <Trans i18nKey={`settings.rates.last`} values={{ days }} />
             </Box>
-            <Box ff="Open Sans|SemiBold" color="dark" fontSize={4}>
+            <Box ff="Open Sans|SemiBold" color="text.primary" fontSize={4}>
               <Trans i18nKey="settings.rates.exchange" />
             </Box>
           </RateRowWrapper>

@@ -158,6 +158,38 @@ class GenuineCheck extends PureComponent<Props, State> {
 
   onDoneAutoRepair = () => this.setState({ autoRepair: false })
 
+  setRapairing = (status) => this.setState({ isRepairing: status })
+
+  renderRepair() {
+    const { onSuccess, device, ...props } = this.props
+    const { isBootloader, isRepairing } = this.state
+
+    const continueT = props.t('common.continue')
+
+    if (!isRepairing && device) {
+      if (!isBootloader) {
+        return null
+      }
+      return (
+        <Box fontSize={3} color="text.primary" align="center" cursor="text" ff="Open Sans|SemiBold">
+          <Box mt={4} mb={2}>
+            <Trans
+              i18nKey="genuinecheck.deviceInBootloader"
+              values={{
+                button: continueT,
+              }}
+            />
+          </Box>
+          <Button primary onClick={this.onStartAutoRepair} event="RepairBootloaderButton">
+            {continueT}
+          </Button>
+        </Box>
+      )
+    }
+
+    return <ConnectTroubleshooting onRepair={this.setRapairing} />
+  }
+
   render() {
     const { onSuccess, device, ...props } = this.props
     const { autoRepair, isBootloader } = this.state

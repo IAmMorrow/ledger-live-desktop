@@ -46,7 +46,7 @@ export function BalanceSincePercent(props: BalanceSinceProps) {
       <FormattedVal
         isPercent
         val={valueChange.percentage.times(100).integerValue()}
-        color="dark"
+        color="text.primary"
         animateTicker
         fontSize={7}
         withIcon
@@ -64,7 +64,7 @@ export function BalanceSinceDiff(props: Props) {
         <PlaceholderLine width={100} />
       ) : (
         <FormattedVal
-          color="dark"
+          color="text.primary"
           animateTicker
           unit={unit}
           fontSize={7}
@@ -87,7 +87,7 @@ export function BalanceTotal(props: BalanceTotalProps) {
       ) : (
         <FormattedVal
           animateTicker
-          color="dark"
+          color="text.primary"
           unit={unit}
           fontSize={8}
           disableRounding

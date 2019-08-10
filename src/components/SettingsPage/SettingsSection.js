@@ -59,7 +59,7 @@ export function SettingsSectionHeader({
     <SettingsSectionHeaderContainer tabIndex={-1}>
       <RoundIconContainer mr={3}>{icon}</RoundIconContainer>
       <Box grow flex={1} mr={3}>
-        <Box ff="Museo Sans|Regular" color="dark" data-e2e="settingsGeneral_title">
+        <Box ff="Museo Sans|Regular" color="text.primary" data-e2e="settingsGeneral_title">
           {title}
         </Box>
         <Box ff="Open Sans" fontSize={3} mt={1}>
@@ -102,11 +102,11 @@ export function SettingsSectionRow({
     <SettingsSectionRowContainer onClick={onClick} tabIndex={-1}>
       <Box grow shrink style={{ marginRight: '10%' }}>
         {title && (
-          <Box ff="Open Sans|SemiBold" color="dark" fontSize={4}>
+          <Box ff="Open Sans|SemiBold" color="text.primary" fontSize={4}>
             {title}
           </Box>
         )}
-        <Box ff="Open Sans" fontSize={3} color="grey" mt={1} mr={1} style={{ maxWidth: 520 }}>
+        <Box ff="Open Sans" fontSize={3} color="text.secondary" mt={1} mr={1} style={{ maxWidth: 520 }}>
           {desc}
         </Box>
       </Box>

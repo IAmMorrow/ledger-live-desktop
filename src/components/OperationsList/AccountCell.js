@@ -40,7 +40,7 @@ export default AccountCell
 const AccountNameEllipsis = styled(Box).attrs({
   ff: 'Open Sans|SemiBold',
   fontSize: 3,
-  color: 'dark',
+  color: 'text.primary',
   flexShrink: 1,
 })`
   flex: 1;
