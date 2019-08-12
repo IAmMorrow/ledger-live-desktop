@@ -45,7 +45,7 @@ export type Option = {
 
 const Row = styled.div`
   &:hover {
-    background: ${p => p.theme.colors.lightGraphite};
+    background: ${p => p.theme.colors.background.secondary};
   }
 `
 const rowHeight = 40 // Fixme We should pass this as a prop for dynamic rows?
@@ -56,8 +56,9 @@ class MenuList extends PureComponent<*> {
       children,
       maxHeight,
       getValue,
-      selectProps: { noOptionsMessage },
+      selectProps: { noOptionsMessage }
     } = this.props
+
     const [value] = getValue()
     const initialOffset = options.indexOf(value) * rowHeight
     const minHeight = Math.min(...[maxHeight, rowHeight * children.length])

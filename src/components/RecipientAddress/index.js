@@ -17,14 +17,14 @@ import { track } from 'analytics/segment'
 import IconQrCode from 'icons/QrCode'
 
 const Right = styled(Box).attrs({
-  bg: 'lightGrey',
+  bg: 'background.secondary',
   px: 3,
   align: 'center',
   justify: 'center',
 })`
   border-top-right-radius: ${radii[1]}px;
   border-bottom-right-radius: ${radii[1]}px;
-  border-left: 1px solid ${p => p.theme.colors.fog};
+  border-left: 1px solid ${p => p.theme.colors.background.secondary};
 `
 
 const WrapperQrCode = styled(Box)`

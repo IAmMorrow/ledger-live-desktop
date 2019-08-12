@@ -31,7 +31,7 @@ const StepNumber = styled(Box).attrs({
   justifyContent: 'center',
   color: p => (['active', 'valid', 'error'].includes(p.status) ? 'white' : 'fog'),
   bg: p =>
-    ['active', 'valid'].includes(p.status) ? 'wallet' : p.status === 'error' ? 'alertRed' : 'white',
+    ['active', 'valid'].includes(p.status) ? 'wallet' : p.status === 'error' ? 'alertRed' : 'background.primary',
   ff: 'Rubik|Regular',
 })`
   border-radius: 50%;
@@ -41,7 +41,7 @@ const StepNumber = styled(Box).attrs({
         ? colors.wallet
         : p.status === 'error'
         ? colors.alertRed
-        : colors.fog};
+        : colors.background.secondary};
   font-size: 10px;
   height: ${RADIUS}px;
   line-height: 10px;
