@@ -20,7 +20,7 @@ const MODAL_HEADER_STYLE = {
 }
 
 const ModalTitle = styled(Box).attrs({
-  color: 'dark',
+  color: 'text.primary',
   ff: 'Museo Sans|Regular',
   fontSize: 6,
   grow: true,

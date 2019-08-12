@@ -12,7 +12,7 @@ const Card = styled(Box).attrs({ bg: 'background.primary', p: 3, boxShadow: 0, b
   cursor: pointer;
   border: 1px solid transparent;
   :hover {
-    border-color: ${p => p.theme.colors.fog};
+    border-color: ${p => p.theme.colors.background.tertiary};
   }
 `
 

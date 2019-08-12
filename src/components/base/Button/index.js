@@ -29,8 +29,8 @@ const buttonStyles: { [_: string]: Style } = {
   },
   primary: {
     default: p => `
-      background: ${p.disabled ? `${p.theme.colors.lightFog} !important` : p.theme.colors.wallet};
-      color: ${p.disabled ? p.theme.colors.grey : p.theme.colors.white};
+      background: ${p.disabled ? `${p.theme.colors.background.secondary} !important` : p.theme.colors.wallet};
+      color: ${p.disabled ? p.theme.colors.grey : p.theme.colors.text.primary};
       box-shadow: ${
         p.isFocused
           ? `

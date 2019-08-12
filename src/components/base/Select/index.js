@@ -5,7 +5,7 @@ import ReactSelect, { components } from 'react-select'
 import AsyncReactSelect from 'react-select/lib/Async'
 import { translate } from 'react-i18next'
 import { FixedSizeList as List } from 'react-window'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 import debounce from 'lodash/debounce'
 
 import createStyles from './createStyles'
@@ -34,6 +34,7 @@ type Props = {
   width: number,
   minWidth: number,
   autoFocus: boolean,
+  theme: any,
 }
 
 export type Option = {
@@ -64,7 +65,6 @@ class MenuList extends PureComponent<*> {
     if (!children.length && noOptionsMessage) {
       return <components.NoOptionsMessage {...this.props} />
     }
-
     children.length &&
       children.map(key => {
         delete key.props.innerProps.onMouseMove // NB: Removes lag on hover, see https://github.com/JedWatson/react-select/issues/3128#issuecomment-433834170
@@ -142,6 +142,7 @@ class Select extends PureComponent<Props> {
       width,
       minWidth,
       small,
+      theme,
       ...props
     } = this.props
 
@@ -158,7 +159,7 @@ class Select extends PureComponent<Props> {
           MenuList,
           ...createRenderers({ renderOption, renderValue }),
         }}
-        styles={createStyles({ width, minWidth, small, isRight, isLeft })}
+        styles={createStyles({ width, minWidth, small, isRight, isLeft }, theme)}
         placeholder={placeholder}
         isDisabled={isDisabled}
         isLoading={isLoading}
@@ -176,4 +177,4 @@ class Select extends PureComponent<Props> {
   }
 }
 
-export default translate()(Select)
+export default translate()(withTheme(Select))
