@@ -99,8 +99,8 @@ export const colors = {
   // theme
   separator: 'rgba(255, 255, 255, 0.1)',
   background: {
-    primary: '#23303C',
-    secondary: '#3A4550'
+    primary: '#3A4550',
+    secondary: '#23303C'
   },
   text: {
     primary: '#ffffff',

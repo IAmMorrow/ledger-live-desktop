@@ -25,10 +25,10 @@ const ItemWrapper = styled.div`
   padding: 0px 15px;
   border-radius: 4px;
   border: 1px solid transparent;
-  background: ${p => (p.active ? p.theme.colors.lightGrey : 'white')};
+  background: ${p => (p.active ? p.theme.colors.background.secondary : p.theme.colors.background.primary)};
   margin-bottom: 10px;
   &:hover ${AccountName},&:active ${AccountName} {
-    color: ${p => p.theme.colors.dark};
+    color: ${p => p.theme.colors.text.primary};
   }
   ${p =>
     p.isDragging
@@ -80,7 +80,7 @@ const Item = ({
               <ParentCryptoCurrencyIcon inactive={!active} currency={getAccountCurrency(account)} />
             </ParentCryptoCurrencyIconWrapper>
             <Box vertical flex={1}>
-              <AccountName color="smoke">
+              <AccountName color="text.secondary">
                 {account.type === 'Account' ? account.name : account.token.name}
               </AccountName>
               <FormattedVal

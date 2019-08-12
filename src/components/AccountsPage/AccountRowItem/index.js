@@ -20,7 +20,7 @@ import Star from '../../Stars/Star'
 import AccountContextMenu from '../../ContextMenu/AccountContextMenu'
 
 const Row = styled(Box)`
-  background: #ffffff;
+  background: ${p => p.theme.colors.background.primary};
   border-radius: 4px;
   border: 1px solid transparent;
   box-shadow: 0 4px 8px 0 #00000007;
@@ -35,7 +35,7 @@ const Row = styled(Box)`
   padding: 16px 20px;
   position: relative;
   :hover {
-    border-color: ${p => p.theme.colors.lightFog};
+    border-color: ${p => p.theme.colors.background.secondary};
   }
 `
 
@@ -82,8 +82,8 @@ const TokenShowMoreIndicator = styled.div`
   color: ${p => p.theme.colors.wallet};
   align-items: center;
   justify-content: center;
-  border-top: 1px solid ${p => p.theme.colors.lightFog};
-  background: white;
+  border-top: 1px solid ${p => p.theme.colors.separator};
+  background: ${p => p.theme.colors.background.primary};
   border-radius: 0px 0px 4px 4px;
   height: 32px;
   text-align: center;

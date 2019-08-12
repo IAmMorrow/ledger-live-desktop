@@ -27,7 +27,7 @@ const ToggleButton = styled(Button)`
   height: 30px;
   width: 30px;
   padding: 7px;
-  background: ${p => (p.active ? p.theme.colors.pillActiveBackground : p.theme.colors.white)};
+  background: ${p => (p.active ? p.theme.colors.pillActiveBackground : p.theme.colors.background.secondary)};
   color: ${p => (p.active ? p.theme.colors.wallet : p.theme.colors.fog)};
 `
 
@@ -38,7 +38,7 @@ const SearchInput = styled.input`
   flex-grow: 1;
   font-family: 'Open Sans';
   cursor: text;
-  color: ${p => p.theme.colors.dark};
+  color: ${p => p.theme.colors.text.primary};
   &::placeholder {
     color: #999999;
   }
@@ -60,7 +60,7 @@ class Header extends PureComponent<Props, { focused: boolean }> {
 
     return (
       <GenericBox horizontal p={0} alignItems="center">
-        <Box pr={3} justify="center" color={focused || search ? '#142533' : '#999999'}>
+        <Box pr={3} justify="center" color={focused || search ? 'text.primary' : 'text.secondary'}>
           <SearchIcon size={16} />
         </Box>
         <SearchInput
