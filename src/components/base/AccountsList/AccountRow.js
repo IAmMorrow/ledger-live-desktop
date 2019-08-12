@@ -124,7 +124,7 @@ export default class AccountRow extends PureComponent<Props> {
 const AccountRowContainer = styled(Tabbable).attrs({
   horizontal: true,
   align: 'center',
-  bg: 'lightGrey',
+  bg: 'background.primary',
   px: 3,
   flow: 3,
 })`
@@ -135,10 +135,10 @@ const AccountRowContainer = styled(Tabbable).attrs({
   pointer-events: ${p => (p.isDisabled ? 'none' : 'auto')};
 
   &:hover {
-    background-color: ${p => darken(p.theme.colors.lightGrey, 0.015)};
+    background-color: ${p => darken(p.theme.colors.background.primary, 0.015)};
   }
 
   &:active {
-    background-color: ${p => darken(p.theme.colors.lightGrey, 0.03)};
+    background-color: ${p => darken(p.theme.colors.background.primary, 0.03)};
   }
 `

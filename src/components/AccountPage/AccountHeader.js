@@ -68,7 +68,7 @@ const Wrapper = styled(Box)`
 `
 
 const AccountName = styled(Text).attrs({
-  color: 'dark',
+  color: 'text.primary',
   ff: 'Museo Sans',
   fontSize: 7,
 })`
@@ -102,7 +102,7 @@ const AccountHeader: React$ComponentType<Props> = React.memo(
     return (
       <Box horizontal align="center" flow={2} grow>
         <Box>
-          <ParentCryptoCurrencyIcon currency={currency} borderColor="lightGrey" />
+          <ParentCryptoCurrencyIcon currency={currency} borderColor="background.secondary" />
         </Box>
         <Box grow>
           {contract && account.type === 'TokenAccount' ? (
