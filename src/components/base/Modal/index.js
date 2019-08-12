@@ -219,11 +219,11 @@ const CONTAINER_STYLE = {
 }
 
 const BODY_WRAPPER_STYLE = {
-  background: 'white',
+  background: colors.background.primary,
   width: 500,
   borderRadius: 3,
   boxShadow: 'box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2)',
-  color: colors.smoke,
+  color: colors.text.secondary,
   flexShrink: 1,
   display: 'flex',
   flexDirection: 'column',

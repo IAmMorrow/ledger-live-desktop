@@ -29,7 +29,7 @@ export const DeviceInteractionStepContainer = styled(Box).attrs({
   z-index: ${p => (p.isActive ? 1 : '')};
   max-width: 500px;
   min-height: 80px;
-  border: 1px solid ${p => p.theme.colors.fog};
+  border: 1px solid ${p => p.theme.colors.separator};
   border-color: ${p =>
     p.isError ? p.theme.colors.alertRed : p.isActive && !p.isFinished ? p.theme.colors.wallet : ''};
   border-top-color: ${p => (p.isFirst || p.isActive ? '' : 'transparent')};
@@ -74,7 +74,7 @@ export const IconContainer = ({
 )
 
 const SpinnerContainerWrapper = styled.div`
-  color: ${p => p.theme.colors.grey};
+  color: ${p => p.theme.colors.text.tertiary};
   position: absolute;
   top: 0;
   left: 0;

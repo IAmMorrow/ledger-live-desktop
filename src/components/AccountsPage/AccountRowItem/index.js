@@ -35,7 +35,7 @@ const Row = styled(Box)`
   padding: 16px 20px;
   position: relative;
   :hover {
-    border-color: ${p => p.theme.colors.background.secondary};
+    border-color: ${p => p.theme.colors.background.tertiary};
   }
 `
 
@@ -64,7 +64,7 @@ const TokenContentWrapper = styled.div`
 
 const TokenBarIndicator = styled.div`
   width: 15px;
-  border-left: 1px solid ${p => p.theme.colors.lightFog};
+  border-left: 1px solid ${p => p.theme.colors.background.secondary};
   z-index: 2;
   margin-left: 9px;
   padding-left: 5px;

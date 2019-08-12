@@ -15,7 +15,7 @@ export default ({
   small: boolean,
   isRight: boolean,
   isLeft: boolean,
-}) => ({
+}, theme: any) => ({
   control: (styles: Object, { isFocused }: Object) => ({
     ...styles,
     width,
@@ -24,8 +24,8 @@ export default ({
     height: small ? 34 : 40,
     minHeight: 'unset',
     borderRadius: isRight ? '0 4px 4px 0' : isLeft ? '4px 0 0 4px' : 4,
-    borderColor: colors.fog,
-    backgroundColor: 'white',
+    borderColor: theme.colors.background.secondary,
+    backgroundColor: theme.colors.background.primary,
 
     ...(isFocused
       ? {
@@ -51,12 +51,12 @@ export default ({
     ...styles,
     ...ff('Open Sans|Regular'),
     fontSize: small ? 12 : 13,
-    color: colors.dark,
+    color: colors.text.secondary,
     padding: '10px 15px 10px 15px',
     ...(isFocused
       ? {
-          background: colors.lightGrey,
-          color: colors.dark,
+          background: theme.colors.background.primary,
+          color: theme.colors.text.primary,
         }
       : {}),
     ...(isSelected
@@ -73,7 +73,7 @@ export default ({
   }),
   menuList: (styles: Object) => ({
     ...styles,
-    background: 'white',
+    background: theme.colors.background.primary,
     borderRadius: 3,
   }),
   menuPortal: (styles: Object) => ({ ...styles, zIndex: 101 }),

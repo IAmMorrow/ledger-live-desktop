@@ -8,7 +8,7 @@ const palette = {
   default: {
     primary: themeColors.wallet,
     primaryHover: lighten(themeColors.wallet, 0.1),
-    secondary: themeColors.sliderGrey,
+    secondary: themeColors.separator,
     buttonInner: themeColors.white,
   },
   error: {

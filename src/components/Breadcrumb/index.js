@@ -19,7 +19,7 @@ const Wrapper = styled(Box).attrs({
 `
 
 const Bar = styled.div`
-  background: ${p => p.theme.colors.fog};
+  background: ${p => p.theme.colors.background.secondary};
   flex-grow: 1;
   height: 1px;
   left: ${p => p.start}%;
@@ -47,7 +47,7 @@ const Bar = styled.div`
   }
 
   &:before {
-    background: ${p => p.theme.colors.fog};
+    background: ${p => p.theme.colors.background.secondary};
     left: ${p => (p.disabled ? `${p.disabled[0]}%` : 0)};
     right: ${p => (p.disabled ? `${p.disabled[1]}%` : 'auto')};
     z-index: 2;
