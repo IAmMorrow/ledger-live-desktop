@@ -55,25 +55,25 @@ export default ({
     padding: '10px 15px 10px 15px',
     ...(isFocused
       ? {
-          background: theme.colors.background.primary,
+          background: theme.colors.background.secondary,
           color: theme.colors.text.primary,
         }
       : {}),
     ...(isSelected
       ? {
-          background: 'unset !important',
+        background: theme.colors.background.secondary,
           ...ff('Open Sans|SemiBold'),
         }
       : {}),
   }),
   menu: (styles: Object) => ({
     ...styles,
-    border: `1px solid ${colors.fog}`,
+    border: `1px solid ${theme.colors.background.secondary}`,
     boxShadow: 'rgba(0, 0, 0, 0.05) 0 2px 2px',
+    background: theme.colors.background.primary,
   }),
   menuList: (styles: Object) => ({
     ...styles,
-    background: theme.colors.background.primary,
     borderRadius: 3,
   }),
   menuPortal: (styles: Object) => ({ ...styles, zIndex: 101 }),

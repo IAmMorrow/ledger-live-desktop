@@ -20,8 +20,8 @@ const CameraWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background: #f9f9f9;
-  color: ${p => p.theme.colors.grey};
+  background: ${p => p.theme.colors.background.secondary};
+  color: ${p => p.theme.colors.background.primary};
   overflow: hidden;
   border: 1px solid ${p => p.theme.colors.fog};
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.03);
