@@ -117,10 +117,6 @@ injectGlobal`
     color ${colors.fog} !important;
   }
 
-  .select__option:active {
-    background: ${colors.lightGrey} !important;
-  }
-
   ::selection {
     background: ${rgba(colors.wallet, 0.1)};
   }
