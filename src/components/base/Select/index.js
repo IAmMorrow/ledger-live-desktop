@@ -47,6 +47,9 @@ const Row = styled.div`
   &:hover {
     background: ${p => p.theme.colors.background.secondary};
   }
+  &:active {
+    background: ${p => p.theme.colors.background.secondary};
+  }
 `
 const rowHeight = 40 // Fixme We should pass this as a prop for dynamic rows?
 class MenuList extends PureComponent<*> {

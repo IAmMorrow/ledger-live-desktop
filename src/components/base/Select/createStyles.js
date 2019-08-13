@@ -1,6 +1,6 @@
 // @flow
 
-import { ff } from 'styles/helpers'
+import { ff, darken } from 'styles/helpers'
 
 export default ({
   width,
@@ -52,6 +52,10 @@ export default ({
     fontSize: small ? 12 : 13,
     color: theme.colors.text.secondary,
     padding: '10px 15px 10px 15px',
+    ':active': {
+      ...styles[':active'],
+      backgroundColor: darken(theme.colors.background.secondary, 0.1)
+    },
     ...(isFocused
       ? {
           background: theme.colors.background.secondary,
@@ -60,7 +64,7 @@ export default ({
       : {}),
     ...(isSelected
       ? {
-        background: theme.colors.background.secondary,
+        background: 'unset !important',
           ...ff('Open Sans|SemiBold'),
         }
       : {}),
