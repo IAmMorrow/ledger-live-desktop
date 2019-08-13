@@ -96,19 +96,6 @@ export const colors = {
   marketDown_eastern: '#6490f1',
   marketDown_western: '#ea2e49',
 
-  // theme
-  separator: 'rgba(255, 255, 255, 0.1)',
-  background: {
-    secondary: '#3A4550',
-    primary: '#23303C',
-    tertiary: '#767676'
-  },
-  text: {
-    primary: '#ffffff',
-    secondary: '#afafaf',
-    error: '#ea2e49',
-    success: '#66be54'
-  }
 }
 
 export default {

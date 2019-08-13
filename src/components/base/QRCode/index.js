@@ -1,12 +1,14 @@
 // @flow
 
 import React, { PureComponent } from 'react'
+import { withTheme } from 'styled-components'
 import qrcode from 'qrcode'
 
 type Props = {
   data: string,
   errorCorrectionLevel: string,
   size: number,
+  theme: any,
 }
 
 class QRCode extends PureComponent<Props> {
@@ -26,7 +28,7 @@ class QRCode extends PureComponent<Props> {
   canvas: * = React.createRef()
 
   drawQRCode() {
-    const { data, size, errorCorrectionLevel } = this.props
+    const { data, size, errorCorrectionLevel, theme } = this.props
     const { current } = this.canvas
     if (!current) return
     qrcode.toCanvas(
@@ -36,6 +38,9 @@ class QRCode extends PureComponent<Props> {
         width: current.width,
         margin: 0,
         errorCorrectionLevel,
+        color: {
+          light: theme.colors.background.secondary
+        }
       },
       () => {
         // fix again the CSS because lib changes it –_–
@@ -59,4 +64,4 @@ class QRCode extends PureComponent<Props> {
   }
 }
 
-export default QRCode
+export default withTheme(QRCode)

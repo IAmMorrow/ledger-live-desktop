@@ -1,7 +1,6 @@
 // @flow
 
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
 import { ConnectedRouter } from 'react-router-redux'
 import { Switch, Route } from 'react-router'
 import { Provider } from 'react-redux'
@@ -11,6 +10,7 @@ import theme from 'styles/theme'
 
 import i18n from 'renderer/i18n/electron'
 
+import LiveThemeProvider from './LiveThemeProvider'
 import ThrowBlock from 'components/ThrowBlock'
 import Default from 'components/layout/Default'
 import CounterValues from 'helpers/countervalues'
@@ -31,7 +31,7 @@ const App = ({
     <BridgeSyncProvider>
       <CounterValues.PollingProvider>
         <I18nextProvider i18n={i18n} initialLanguage={language}>
-          <ThemeProvider theme={theme}>
+          <LiveThemeProvider theme={theme}>
             <ThrowBlock>
               <UpdaterProvider>
                 <ConnectedRouter history={history}>
@@ -43,7 +43,7 @@ const App = ({
                 </ConnectedRouter>
               </UpdaterProvider>
             </ThrowBlock>
-          </ThemeProvider>
+          </LiveThemeProvider>
         </I18nextProvider>
       </CounterValues.PollingProvider>
     </BridgeSyncProvider>

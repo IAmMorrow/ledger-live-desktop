@@ -1,6 +1,7 @@
 // @flow
 
 import React, { PureComponent, Fragment } from 'react'
+import { withTheme } from "styled-components"
 import Animated from 'animated/lib/targets/react-dom'
 import { findDOMNode } from 'react-dom'
 
@@ -19,6 +20,7 @@ type Props = {
   renderProps?: RenderProps,
   noScroll?: boolean,
   refocusWhenChange?: any,
+  theme: any,
 }
 
 type State = {
@@ -54,11 +56,11 @@ class ModalBody extends PureComponent<Props, State> {
   }
 
   render() {
-    const { onBack, onClose, title, render, renderFooter, renderProps, noScroll } = this.props
+    const { onBack, onClose, title, render, renderFooter, renderProps, noScroll, theme } = this.props
     const { animGradient } = this.state
 
     const gradientStyle = {
-      ...GRADIENT_STYLE,
+      ...GRADIENT_STYLE(theme),
       opacity: animGradient,
     }
 
@@ -87,14 +89,14 @@ class ModalBody extends PureComponent<Props, State> {
   }
 }
 
-const GRADIENT_STYLE = {
-  background: 'linear-gradient(rgba(255, 255, 255, 0), #ffffff)',
+const GRADIENT_STYLE = theme => ({
+  background: `linear-gradient(rgba(255, 255, 255, 0), ${theme.colors.background.primary})`,
   height: 40,
   position: 'absolute',
   bottom: 0,
   left: 0,
   right: 20,
-}
+})
 
 const GRADIENT_WRAPPER_STYLE = {
   height: 0,
@@ -102,4 +104,4 @@ const GRADIENT_WRAPPER_STYLE = {
   pointerEvents: 'none',
 }
 
-export default ModalBody
+export default withTheme(ModalBody)

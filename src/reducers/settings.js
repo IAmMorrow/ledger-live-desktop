@@ -41,6 +41,7 @@ export type SettingsState = {
   starredAccountIds: string[],
   counterValue: string,
   language: ?string,
+  theme: ?string,
   region: ?string,
   orderAccounts: string,
   countervalueFirst: boolean,
@@ -76,6 +77,7 @@ const INITIAL_STATE: SettingsState = {
   starredAccountIds: [],
   counterValue: 'USD',
   language: null,
+  theme: null,
   region: null,
   orderAccounts: 'balance|desc',
   countervalueFirst: false,
@@ -182,6 +184,8 @@ export const countervalueFirstSelector = createSelector(
 export const developerModeSelector = (state: State): boolean => state.settings.developerMode
 
 export const lastUsedVersionSelector = (state: State): string => state.settings.lastUsedVersion
+
+export const themeSelector = (state: State): string => state.settings.theme
 
 export const langAndRegionSelector = (
   state: State,

@@ -14,7 +14,7 @@ export const SettingsSectionHeaderContainer = styled(Box).attrs({
   horizontal: true,
   align: 'center',
 })`
-  border-bottom: 1px solid ${p => p.theme.colors.lightFog};
+  border-bottom: 1px solid ${p => p.theme.colors.separator};
   line-height: normal;
 `
 
@@ -32,7 +32,7 @@ const RoundIconContainer = styled(Box).attrs({
 export const SettingsSectionBody = styled(Box)`
   > * + * {
     &:after {
-      background: ${p => p.theme.colors.lightFog};
+      background: ${p => p.theme.colors.separator};
       content: '';
       display: block;
       height: 1px;
