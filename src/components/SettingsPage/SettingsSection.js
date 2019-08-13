@@ -106,7 +106,14 @@ export function SettingsSectionRow({
             {title}
           </Box>
         )}
-        <Box ff="Open Sans" fontSize={3} color="text.secondary" mt={1} mr={1} style={{ maxWidth: 520 }}>
+        <Box
+          ff="Open Sans"
+          fontSize={3}
+          color="text.secondary"
+          mt={1}
+          mr={1}
+          style={{ maxWidth: 520 }}
+        >
           {desc}
         </Box>
       </Box>

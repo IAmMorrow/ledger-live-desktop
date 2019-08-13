@@ -6,14 +6,14 @@ import type { T } from 'types/common'
 import { connect } from 'react-redux'
 import map from 'lodash/map'
 import { setTheme } from 'actions/settings'
-import { themeSelector } from "reducers/settings";
+import { themeSelector } from 'reducers/settings'
 import Track from 'analytics/Track'
 import Select from 'components/base/Select'
 
 type Props = {
   t: T,
   setTheme: (?string) => void,
-  theme: string
+  theme: string,
 }
 
 const themeLabels = {
@@ -23,7 +23,6 @@ const themeLabels = {
 }
 
 const ThemeSelect = ({ setTheme, theme, t }: Props) => {
-
   const system = { value: null, label: t(`theme.system`) }
 
   const options = [system].concat(
@@ -37,14 +36,10 @@ const ThemeSelect = ({ setTheme, theme, t }: Props) => {
     setTheme(themeKey)
   }
 
-  const currentTheme = options.find(option => option.value === theme);
+  const currentTheme = options.find(option => option.value === theme)
   return (
     <>
-      <Track
-        onUpdate
-        event="ThemeSelect"
-        currentTheme={theme}
-      />
+      <Track onUpdate event="ThemeSelect" currentTheme={theme} />
       <Select
         small
         minWidth={260}

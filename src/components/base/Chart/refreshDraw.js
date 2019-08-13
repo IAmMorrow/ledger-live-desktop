@@ -3,8 +3,6 @@
 import * as d3 from 'd3'
 import moment from 'moment'
 
-import { colors as themeColors } from 'styles/theme'
-
 import type { Props } from '.'
 import type { CTX } from './types'
 

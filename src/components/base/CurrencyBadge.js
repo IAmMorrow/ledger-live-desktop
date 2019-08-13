@@ -79,7 +79,12 @@ function CurrencyBadge({ currency, ...props }: { currency: CryptoCurrency | Toke
     <Box horizontal flow={3} {...props}>
       <CurrencyCircleIcon size={40} currency={currency} />
       <Box>
-        <Box ff="Museo Sans|ExtraBold" color="text.primary" fontSize={2} style={{ letterSpacing: 2 }}>
+        <Box
+          ff="Museo Sans|ExtraBold"
+          color="text.primary"
+          fontSize={2}
+          style={{ letterSpacing: 2 }}
+        >
           {currency.ticker}
         </Box>
         <Box ff="Open Sans" color="text.primary" fontSize={5} data-e2e="currencyBadge">

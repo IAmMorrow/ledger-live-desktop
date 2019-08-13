@@ -73,14 +73,18 @@ export const Address = styled(Text).attrs({})`
 export const GradientHover = styled(Box).attrs({
   align: 'center',
   color: 'wallet',
-  bg: 'background.primary'
+  bg: 'background.primary',
 })`
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   padding-left: 20px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), ${p => p.theme.colors.background.primary} 20%);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    ${p => p.theme.colors.background.primary} 20%
+  );
 `
 
 const OpDetailsData = styled(Box).attrs({

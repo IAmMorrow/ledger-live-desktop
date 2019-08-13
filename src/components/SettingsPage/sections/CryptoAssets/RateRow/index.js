@@ -73,7 +73,13 @@ class RateRow extends PureComponent<Props> {
     const { from, to, exchange, timeRange } = this.props
     return (
       <RateRowWrapper>
-        <Box ff="Museo Sans|Regular" horizontal alignItems="center" color="text.primary" fontSize={4}>
+        <Box
+          ff="Museo Sans|Regular"
+          horizontal
+          alignItems="center"
+          color="text.primary"
+          fontSize={4}
+        >
           <RateTypeBar currencyType={to.type} />
           <Trans i18nKey="settings.rates.fromTo" values={{ from: from.ticker, to: to.ticker }} />
         </Box>

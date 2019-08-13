@@ -123,7 +123,7 @@ class MainSideBar extends PureComponent<Props> {
     const { pathname } = location
 
     return (
-      <Box relative bg='background.primary' style={{ width: MAIN_SIDEBAR_WIDTH }}>
+      <Box relative bg="background.primary" style={{ width: MAIN_SIDEBAR_WIDTH }}>
         <TopGradient />
         <Space of={70} />
         <SideBarList title={t('sidebar.menu')}>

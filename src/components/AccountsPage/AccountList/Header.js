@@ -27,7 +27,8 @@ const ToggleButton = styled(Button)`
   height: 30px;
   width: 30px;
   padding: 7px;
-  background: ${p => (p.active ? p.theme.colors.pillActiveBackground : p.theme.colors.background.secondary)};
+  background: ${p =>
+    p.active ? p.theme.colors.pillActiveBackground : p.theme.colors.background.secondary};
   color: ${p => (p.active ? p.theme.colors.wallet : p.theme.colors.fog)};
 `
 
