@@ -2,19 +2,22 @@
 
 import { ff, darken } from 'styles/helpers'
 
-export default ({
-  width,
-  minWidth,
-  small,
-  isRight,
-  isLeft,
-}: {
-  width: number,
-  minWidth: number,
-  small: boolean,
-  isRight: boolean,
-  isLeft: boolean,
-}, theme: any) => ({
+export default (
+  {
+    width,
+    minWidth,
+    small,
+    isRight,
+    isLeft,
+  }: {
+    width: number,
+    minWidth: number,
+    small: boolean,
+    isRight: boolean,
+    isLeft: boolean,
+  },
+  theme: any,
+) => ({
   control: (styles: Object, { isFocused }: Object) => ({
     ...styles,
     width,
@@ -54,7 +57,7 @@ export default ({
     padding: '10px 15px 10px 15px',
     ':active': {
       ...styles[':active'],
-      backgroundColor: darken(theme.colors.background.secondary, 0.1)
+      backgroundColor: darken(theme.colors.background.secondary, 0.1),
     },
     ...(isFocused
       ? {
@@ -64,7 +67,7 @@ export default ({
       : {}),
     ...(isSelected
       ? {
-        background: 'unset !important',
+          background: 'unset !important',
           ...ff('Open Sans|SemiBold'),
         }
       : {}),

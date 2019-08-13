@@ -16,7 +16,7 @@ import IconDisplay from 'icons/Display'
 import TrackPage from 'analytics/TrackPage'
 import MarketIndicatorRadio from '../MarketIndicatorRadio'
 import LanguageSelect from '../LanguageSelect'
-import ThemeSelect from "../ThemeSelect";
+import ThemeSelect from '../ThemeSelect'
 import CounterValueSelect from '../CounterValueSelect'
 import RegionSelect from '../RegionSelect'
 import PasswordButton from '../PasswordButton'

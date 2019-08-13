@@ -503,7 +503,15 @@ class AppsList extends PureComponent<Props, State> {
 
     return (
       <Box>
-        <Box mb={4} color="text.primary" ff="Museo Sans" fontSize={5} flow={2} horizontal align="center">
+        <Box
+          mb={4}
+          color="text.primary"
+          ff="Museo Sans"
+          fontSize={5}
+          flow={2}
+          horizontal
+          align="center"
+        >
           <span>{t('manager.apps.all')}</span>
           <Tooltip render={this.renderTooltip}>{CATALOG_INFO_ICON}</Tooltip>
         </Box>

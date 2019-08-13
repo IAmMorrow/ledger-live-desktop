@@ -10,13 +10,13 @@ import theme from 'styles/theme'
 
 import i18n from 'renderer/i18n/electron'
 
-import LiveThemeProvider from './LiveThemeProvider'
 import ThrowBlock from 'components/ThrowBlock'
 import Default from 'components/layout/Default'
 import CounterValues from 'helpers/countervalues'
 import { BridgeSyncProvider } from 'bridge/BridgeSyncContext'
 import { UpdaterProvider } from 'components/Updater/UpdaterContext'
 import ContextMenuWrapper from './ContextMenu/ContextMenuWrapper'
+import LiveThemeProvider from './LiveThemeProvider'
 
 const App = ({
   store,

@@ -1,7 +1,7 @@
 // @flow
 
 import React, { PureComponent, Fragment } from 'react'
-import { withTheme } from "styled-components"
+import { withTheme } from 'styled-components'
 import Animated from 'animated/lib/targets/react-dom'
 import { findDOMNode } from 'react-dom'
 
@@ -56,7 +56,16 @@ class ModalBody extends PureComponent<Props, State> {
   }
 
   render() {
-    const { onBack, onClose, title, render, renderFooter, renderProps, noScroll, theme } = this.props
+    const {
+      onBack,
+      onClose,
+      title,
+      render,
+      renderFooter,
+      renderProps,
+      noScroll,
+      theme,
+    } = this.props
     const { animGradient } = this.state
 
     const gradientStyle = {

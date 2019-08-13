@@ -4,7 +4,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 
 import React, { PureComponent, Fragment } from 'react'
-import { withTheme } from "styled-components"
+import { withTheme } from 'styled-components'
 import { createPortal } from 'react-dom'
 import { connect } from 'react-redux'
 import noop from 'lodash/noop'

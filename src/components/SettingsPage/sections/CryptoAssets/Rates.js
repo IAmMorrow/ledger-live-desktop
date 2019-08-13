@@ -86,7 +86,13 @@ class Rates extends PureComponent<Props> {
         />
         <Body>
           <RateRowWrapper>
-            <Box ff="Open Sans|SemiBold" alignItems="center" horizontal color="text.primary" fontSize={4}>
+            <Box
+              ff="Open Sans|SemiBold"
+              alignItems="center"
+              horizontal
+              color="text.primary"
+              fontSize={4}
+            >
               <Trans i18nKey="settings.rates.rate" />
               <TooltipButtonWrapper>
                 <Tooltip render={RateTooltip}>

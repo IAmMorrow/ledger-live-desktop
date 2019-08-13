@@ -39,8 +39,8 @@ class QRCode extends PureComponent<Props> {
         margin: 0,
         errorCorrectionLevel,
         color: {
-          light: theme.colors.background.secondary
-        }
+          light: theme.colors.background.secondary,
+        },
       },
       () => {
         // fix again the CSS because lib changes it –_–

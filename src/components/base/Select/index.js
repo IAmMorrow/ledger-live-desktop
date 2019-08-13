@@ -59,7 +59,7 @@ class MenuList extends PureComponent<*> {
       children,
       maxHeight,
       getValue,
-      selectProps: { noOptionsMessage }
+      selectProps: { noOptionsMessage },
     } = this.props
 
     const [value] = getValue()

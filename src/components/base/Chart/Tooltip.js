@@ -9,7 +9,7 @@ const Container = styled(Box).attrs({
   px: 4,
   py: 3,
   align: 'center',
-  bg: 'background.secondary'
+  bg: 'background.secondary',
 })`
   border: 1px solid ${p => p.theme.colors.separator};
   border-radius: 4px;
