@@ -104,7 +104,7 @@ export function StepConfirmAddressFooter({ t, transitionTo, onRetry }: StepProps
 const Container = styled(Box).attrs({
   alignItems: 'center',
   fontSize: 4,
-  color: 'dark',
+  color: 'text.primary',
   px: 5,
   mb: 2,
 })``
@@ -116,7 +116,7 @@ const Title = styled(Box).attrs({
 })``
 
 const Text = styled(Box).attrs({
-  color: 'smoke',
+  color: 'text.secondary',
 })`
   text-align: center;
 `

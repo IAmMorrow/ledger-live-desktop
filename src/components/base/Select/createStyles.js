@@ -1,6 +1,5 @@
 // @flow
 
-import { colors } from 'styles/theme'
 import { ff } from 'styles/helpers'
 
 export default ({
@@ -29,7 +28,7 @@ export default ({
 
     ...(isFocused
       ? {
-          borderColor: colors.wallet,
+          borderColor: theme.colors.wallet,
           boxShadow: 'rgba(0, 0, 0, 0.05) 0 2px 2px',
         }
       : {}),
@@ -37,7 +36,7 @@ export default ({
   valueContainer: (styles: Object) => ({
     ...styles,
     paddingLeft: 15,
-    color: colors.graphite,
+    color: theme.colors.graphite,
   }),
   indicatorSeparator: (styles: Object) => ({
     ...styles,
@@ -51,7 +50,7 @@ export default ({
     ...styles,
     ...ff('Open Sans|Regular'),
     fontSize: small ? 12 : 13,
-    color: colors.text.secondary,
+    color: theme.colors.text.secondary,
     padding: '10px 15px 10px 15px',
     ...(isFocused
       ? {

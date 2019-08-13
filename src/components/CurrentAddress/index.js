@@ -26,7 +26,7 @@ import IconShield from 'icons/Shield'
 const Container = styled(Box).attrs({
   borderRadius: 1,
   alignItems: 'center',
-  bg: p => (p.isAddressVerified === false ? rgba(p.theme.colors.alertRed, 0.02) : 'lightGrey'),
+  bg: p => (p.isAddressVerified === false ? rgba(p.theme.colors.alertRed, 0.02) : 'background.secondary'),
   p: 6,
   pb: 4,
 })`
@@ -35,9 +35,9 @@ const Container = styled(Box).attrs({
 `
 
 const Address = styled(Box).attrs({
-  bg: 'white',
+  bg: 'background.primary',
   borderRadius: 1,
-  color: 'dark',
+  color: 'text.primary',
   ff: 'Open Sans|SemiBold',
   fontSize: 4,
   mt: 2,
@@ -54,7 +54,7 @@ const Address = styled(Box).attrs({
 
 const CopyFeedback = styled(Box).attrs({
   sticky: true,
-  bg: 'white',
+  bg: 'background.primary',
   align: 'center',
   justify: 'center',
 })``
@@ -68,7 +68,7 @@ const Label = styled(Box).attrs({
   horizontal: true,
 })`
   strong {
-    color: ${p => p.theme.colors.dark};
+    color: ${p => p.theme.colors.text.primary};
     font-weight: 600;
   }
 `
@@ -84,7 +84,7 @@ const Footer = styled(Box).attrs({
 `
 
 const FooterButtonWrapper = styled(Box).attrs({
-  color: 'grey',
+  color: 'text.secondary',
   alignItems: 'center',
   justifyContent: 'center',
   borderRadius: 1,
@@ -95,7 +95,7 @@ const FooterButtonWrapper = styled(Box).attrs({
 
   &:hover {
     background-color: ${p => rgba(p.theme.colors.wallet, 0.1)};
-    color: ${p => p.theme.colors.dark};
+    color: ${p => p.theme.colors.text.primary};
 
     svg {
       color: ${p => p.theme.colors.wallet};
@@ -206,13 +206,13 @@ class CurrentAddress extends PureComponent<Props, { copyFeedback: boolean }> {
           {address}
         </Address>
         <Box horizontal flow={2} mt={2} alignItems="center" style={{ maxWidth: 320 }}>
-          <Box color={isAddressVerified === false ? 'alertRed' : 'wallet'}>
+          <Box color={isAddressVerified === false ? 'text.error' : 'wallet'}>
             <IconShield height={32} width={28} />
           </Box>
           <Box
             shrink
             fontSize={12}
-            color={isAddressVerified === false ? 'alertRed' : 'dark'}
+            color={isAddressVerified === false ? 'text.error' : 'text.primary'}
             ff="Open Sans"
           >
             {isAddressVerified === null

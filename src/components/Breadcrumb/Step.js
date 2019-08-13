@@ -38,10 +38,10 @@ const StepNumber = styled(Box).attrs({
   border: 1px solid
     ${p =>
       ['active', 'valid'].includes(p.status)
-        ? colors.wallet
+        ? p.theme.colors.wallet
         : p.status === 'error'
-        ? colors.alertRed
-        : colors.background.secondary};
+        ? p.theme.colors.alertRed
+        : p.theme.colors.background.secondary};
   font-size: 10px;
   height: ${RADIUS}px;
   line-height: 10px;

@@ -56,7 +56,7 @@ const OpDetailsSection = styled(Box).attrs({
 const OpDetailsTitle = styled(Box).attrs({
   ff: 'Museo Sans|ExtraBold',
   fontSize: 2,
-  color: 'black',
+  color: 'text.primary',
   textTransform: 'uppercase',
   mb: 1,
 })`
@@ -73,19 +73,19 @@ export const Address = styled(Text).attrs({})`
 export const GradientHover = styled(Box).attrs({
   align: 'center',
   color: 'wallet',
+  bg: 'background.primary'
 })`
-  background: white;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   padding-left: 20px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff 20%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), ${p => p.theme.colors.background.primary} 20%);
 `
 
 const OpDetailsData = styled(Box).attrs({
   ff: 'Open Sans',
-  color: 'smoke',
+  color: 'text.secondary',
   fontSize: 4,
   relative: true,
 })`
@@ -113,7 +113,7 @@ const NoMarginWrapper = styled.div`
 `
 
 const B = styled(Bar).attrs({
-  color: 'lightGrey',
+  color: 'separator',
   size: 1,
 })``
 
