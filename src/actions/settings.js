@@ -79,3 +79,8 @@ export const dragDropStarAction = (payload: {
   type: 'SETTINGS_DRAG_DROP_STAR',
   payload,
 })
+
+export const replaceStarAccountId = (payload: { oldId: string, newId: string }) => ({
+  type: 'SETTINGS_REPLACE_STAR_ID',
+  payload,
+})
