@@ -27,6 +27,7 @@ type Props = {
   mode: *,
   setAccountsViewMode: (*) => void,
   setSelectedTimeRange: PortfolioRange => void,
+  getScrollContainerRef: any,
 }
 
 const accountsOrFlattenAccountsSelector = createSelector(
@@ -70,7 +71,7 @@ class AccountsPage extends PureComponent<Props> {
       : this.props.push(`/account/${account.id}`)
 
   render() {
-    const { accounts, mode, setAccountsViewMode, setSelectedTimeRange, range } = this.props
+    const { accounts, mode, setAccountsViewMode, setSelectedTimeRange, range, getScrollContainerRef } = this.props
     if (accounts.length === 0) {
       return (
         <Fragment>
@@ -97,6 +98,7 @@ class AccountsPage extends PureComponent<Props> {
           accounts={accounts}
           range={range}
           mode={mode}
+          getScrollContainerRef={getScrollContainerRef}
         />
       </Box>
     )

@@ -63,7 +63,7 @@ class Default extends Component<Props> {
   componentDidMount() {
     window.addEventListener('keydown', this.kbShortcut)
   }
-
+  
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {
       const canScroll =
@@ -79,6 +79,10 @@ class Default extends Component<Props> {
 
   componentWillUnmount() {
     window.removeEventListener('keydown', this.kbShortcut) // Prevents adding multiple listeners when hot reloading
+  }
+
+  getScrollContainerRef() {
+    return this._scrollContainer
   }
 
   kbShortcut = event => {
@@ -127,7 +131,7 @@ class Default extends Component<Props> {
                   <Switch>
                     <Route path="/" exact component={DashboardPage} />
                     <Route path="/settings" component={SettingsPage} />
-                    <Route path="/accounts" component={AccountsPage} />
+                    <Route path="/accounts" render={routeProps => <AccountsPage getScrollContainerRef={() => this.getScrollContainerRef()} {...routeProps} />} />
                     <Route path="/manager" component={ManagerPage} />
                     <Route path="/partners" component={PartnersPage} />
                     <Route path="/account/:parentId/:id" component={AccountPage} />

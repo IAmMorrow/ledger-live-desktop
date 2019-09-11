@@ -18,6 +18,7 @@ type Props = {
   onRangeChange: PortfolioRange => void,
   onAccountClick: (Account | TokenAccount, ?Account) => void,
   range: PortfolioRange,
+  getScrollContainerRef: any,
 }
 
 type State = {
@@ -70,7 +71,7 @@ class AccountList extends Component<Props, State> {
     })
 
   render() {
-    const { accounts, range, onAccountClick, onModeChange, onRangeChange, mode } = this.props
+    const { accounts, range, onAccountClick, onModeChange, onRangeChange, mode, getScrollContainerRef } = this.props
     const { search } = this.state
     const Body = BodyByMode[mode]
 
@@ -111,6 +112,7 @@ class AccountList extends Component<Props, State> {
           showNewAccount={!search}
           onAccountClick={onAccountClick}
           lookupParentAccount={this.lookupParentAccount}
+          getScrollContainerRef={getScrollContainerRef}
         />
         <StickyBackToTop scrollUpOnMount />
       </div>
