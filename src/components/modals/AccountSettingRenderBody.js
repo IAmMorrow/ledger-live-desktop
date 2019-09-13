@@ -344,7 +344,7 @@ export const Container = styled(Box).attrs({
   mb: 3,
   pb: 4,
 })`
-  border-bottom: 1px solid ${p => p.theme.colors.palette.background.default};
+  border-bottom: 1px solid ${p => p.theme.colors.palette.divider};
 `
 
 export const OptionRowDesc = styled(Box).attrs({

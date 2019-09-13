@@ -34,6 +34,9 @@ const ThemeSelect = ({ setTheme, theme, t }: Props) => {
 
   const handleChangeTheme = ({ value: themeKey }: *) => {
     setTheme(themeKey)
+    const LocalStorage = require('node-localstorage').LocalStorage
+    const localStorage = new LocalStorage('./theme')
+    localStorage.setItem('theme', themeKey)
   }
 
   const currentTheme = options.find(option => option.value === theme)

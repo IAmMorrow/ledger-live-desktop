@@ -98,7 +98,7 @@ class ContextMenuWrapper extends PureComponent<Props, State> {
     return (
       <ContextMenuItemContainer key={index} onClick={callback}>
         {Icon && (
-          <Box pr={2} color={colors.palette.text.shade60}>
+          <Box pr={2} color='palette.text.shade60'>
             <Icon size={16} />
           </Box>
         )}
