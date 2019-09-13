@@ -32,7 +32,7 @@ const RoundIconContainer = styled(Box).attrs({
 export const SettingsSectionBody = styled(Box)`
   > * + * {
     &:after {
-      background: ${p => p.theme.colors.palette.text.shade40};
+      background: ${p => p.theme.colors.palette.divider};
       content: '';
       display: block;
       height: 1px;
@@ -110,7 +110,14 @@ export function SettingsSectionRow({
             {title}
           </Box>
         )}
-        <Box ff="Open Sans" fontSize={3} color="palette.text.shade60" mt={1} mr={1} style={{ maxWidth: 520 }}>
+        <Box
+          ff="Open Sans"
+          fontSize={3}
+          color="palette.text.shade60"
+          mt={1}
+          mr={1}
+          style={{ maxWidth: 520 }}
+        >
           {desc}
         </Box>
       </Box>

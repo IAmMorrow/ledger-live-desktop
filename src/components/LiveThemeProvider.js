@@ -18,11 +18,10 @@ const LiveThemeProvider = ({ children, themeConfig }: Props) => {
     ...theme,
     colors: {
       ...colors,
-      palette: themePalette
-    }
+      palette: themePalette,
+    },
   }
 
-  console.log(liveTheme)
   return <ThemeProvider theme={liveTheme}>{children}</ThemeProvider>
 }
 

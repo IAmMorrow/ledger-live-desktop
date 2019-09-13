@@ -90,7 +90,7 @@ const Container = styled(Box).attrs({
   align: 'center',
   py: '8px',
   px: 3,
-  bg: p => colors[p.status] || 'wallet',
+  bg: p => colors[p.status] || 'palette.primary.main',
   color: 'palette.background.paper',
   mt: -32,
   mb: 20,
@@ -105,7 +105,7 @@ const RightContainer = styled.div`
 `
 
 export const FakeLink = styled.span`
-  color: ${p => p.theme.colors.palette.background.paper};
+  color: ${p => p.theme.colors.palette.primary.contrastText};
   text-decoration: underline;
   cursor: pointer;
 `

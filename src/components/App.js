@@ -9,6 +9,7 @@ import { I18nextProvider } from 'react-i18next'
 import theme from 'styles/theme'
 
 import i18n from 'renderer/i18n/electron'
+import { GlobalStyle } from 'styles/global'
 
 import ThrowBlock from 'components/ThrowBlock'
 import Default from 'components/layout/Default'
@@ -33,6 +34,7 @@ const App = ({
         <I18nextProvider i18n={i18n} initialLanguage={language}>
           <LiveThemeProvider theme={theme}>
             <ThrowBlock>
+              <GlobalStyle />
               <UpdaterProvider>
                 <ConnectedRouter history={history}>
                   <Switch>

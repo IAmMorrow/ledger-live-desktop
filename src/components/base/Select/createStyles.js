@@ -2,19 +2,22 @@
 
 import { ff } from 'styles/helpers'
 
-export default (theme: any, {
-  width,
-  minWidth,
-  small,
-  isRight,
-  isLeft,
-}: {
-  width: number,
-  minWidth: number,
-  small: boolean,
-  isRight: boolean,
-  isLeft: boolean,
-}) => ({
+export default (
+  theme: any,
+  {
+    width,
+    minWidth,
+    small,
+    isRight,
+    isLeft,
+  }: {
+    width: number,
+    minWidth: number,
+    small: boolean,
+    isRight: boolean,
+    isLeft: boolean,
+  },
+) => ({
   control: (styles: Object, { isFocused }: Object) => ({
     ...styles,
     width,
@@ -74,7 +77,6 @@ export default (theme: any, {
     border: `1px solid ${theme.colors.palette.divider}`,
     boxShadow: 'rgba(0, 0, 0, 0.05) 0 2px 2px',
     background: theme.colors.palette.background.paper,
-
   }),
   menuList: (styles: Object) => ({
     ...styles,

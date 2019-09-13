@@ -195,7 +195,9 @@ class GenuineCheck extends PureComponent<StepProps, State> {
             />
           </GenuineCheckCardWrapper>
           <GenuineCheckCardWrapper mt={3} isDisabled={!genuine.pinStepPass}>
-            <IconOptionRow color={!genuine.pinStepPass ? 'palette.text.shade60' : 'wallet'}>{'2.'}</IconOptionRow>
+            <IconOptionRow color={!genuine.pinStepPass ? 'palette.text.shade60' : 'wallet'}>
+              {'2.'}
+            </IconOptionRow>
             <CardTitle>{t('onboarding.genuineCheck.step2.title')}</CardTitle>
             {genuine.pinStepPass && (
               <RadioGroup

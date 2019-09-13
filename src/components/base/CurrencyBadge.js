@@ -23,7 +23,8 @@ const CryptoIconWrapper = styled(Box).attrs({
   position: relative;
 
   & > :nth-child(2) {
-    background: ${p => (p.showCheckmark ? p.theme.colors.positiveGreen : 'palette.background.paper')};
+    background: ${p =>
+      p.showCheckmark ? p.theme.colors.positiveGreen : 'palette.background.paper'};
     border-radius: 100%;
     padding: 2px;
     position: absolute;
@@ -79,7 +80,12 @@ function CurrencyBadge({ currency, ...props }: { currency: CryptoCurrency | Toke
     <Box horizontal flow={3} {...props}>
       <CurrencyCircleIcon size={40} currency={currency} />
       <Box>
-        <Box ff="Museo Sans|ExtraBold" color="palette.text.shade100" fontSize={2} style={{ letterSpacing: 2 }}>
+        <Box
+          ff="Museo Sans|ExtraBold"
+          color="palette.text.shade100"
+          fontSize={2}
+          style={{ letterSpacing: 2 }}
+        >
           {currency.ticker}
         </Box>
         <Box ff="Open Sans" color="palette.text.shade100" fontSize={5} data-e2e="currencyBadge">

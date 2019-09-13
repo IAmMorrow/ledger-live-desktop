@@ -30,7 +30,12 @@ const Title = styled(Box).attrs({
 })``
 
 const Address = styled(Box).attrs({
-  bg: p => (p.notValid ? 'transparent' : p.withQRCode ? 'palette.background.paper' : 'palette.background.default'),
+  bg: p =>
+    p.notValid
+      ? 'transparent'
+      : p.withQRCode
+      ? 'palette.background.paper'
+      : 'palette.background.default',
   borderRadius: 1,
   color: 'palette.text.shade100',
   ff: 'Open Sans|SemiBold',

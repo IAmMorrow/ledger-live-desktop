@@ -119,12 +119,7 @@ class BannerItem extends PureComponent<{
   render() {
     const { item, t } = this.props
     return (
-      <Box
-        relative
-        key={item.id}
-        bg={item.warning ? 'orange' : 'alertRed'}
-        style={styles.banner}
-      >
+      <Box relative key={item.id} bg={item.warning ? 'orange' : 'alertRed'} style={styles.banner}>
         <CloseIcon onClick={this.dismiss} />
         <Box horizontal flow={2}>
           <IconTriangleWarning height={16} width={16} color="palette.background.paper" />

@@ -263,8 +263,8 @@ export default class QRCodeCameraPickerCanvas extends PureComponent<
       </CameraWrapper>
     ) : (
       <CameraWrapper width={width} height={height}>
-        <Camera innerRef={this._onMainRef} dpr={dpr} width={dpr * width} height={dpr * height} />
-        <Overlay innerRef={this._onSecondRef} dpr={dpr} width={dpr * width} height={dpr * height} />
+        <Camera ref={this._onMainRef} dpr={dpr} width={dpr * width} height={dpr * height} />
+        <Overlay ref={this._onSecondRef} dpr={dpr} width={dpr * width} height={dpr * height} />
       </CameraWrapper>
     )
   }

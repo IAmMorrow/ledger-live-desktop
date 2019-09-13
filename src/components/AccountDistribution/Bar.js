@@ -8,7 +8,6 @@ type Props = {
   progress: string,
   progressColor: string,
   backgroundColor?: string,
-  theme: any,
 }
 
 const Wrapper = styled.div`

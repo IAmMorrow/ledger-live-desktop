@@ -36,7 +36,8 @@ const Item = styled(DropDownItem)`
   width: 230px;
   cursor: pointer;
   palette.background.paper-space: pre-wrap;
-  background-color: ${p => !p.disableHover && p.isHighlighted && p.theme.colors.palette.background.default};
+  background-color: ${p =>
+    !p.disableHover && p.isHighlighted && p.theme.colors.palette.background.default};
 `
 
 type StateProps = {|

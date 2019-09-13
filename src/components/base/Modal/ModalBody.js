@@ -20,7 +20,7 @@ type Props = {
   renderProps?: RenderProps,
   noScroll?: boolean,
   refocusWhenChange?: any,
-  theme: any
+  theme: any,
 }
 
 type State = {
@@ -56,7 +56,16 @@ class ModalBody extends PureComponent<Props, State> {
   }
 
   render() {
-    const { onBack, onClose, title, render, renderFooter, renderProps, noScroll, theme } = this.props
+    const {
+      onBack,
+      onClose,
+      title,
+      render,
+      renderFooter,
+      renderProps,
+      noScroll,
+      theme,
+    } = this.props
     const { animGradient } = this.state
 
     const gradientStyle = {

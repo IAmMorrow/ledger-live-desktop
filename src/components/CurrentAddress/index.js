@@ -26,7 +26,10 @@ import IconShield from 'icons/Shield'
 const Container = styled(Box).attrs({
   borderRadius: 1,
   alignItems: 'center',
-  bg: p => (p.isAddressVerified === false ? rgba(p.theme.colors.alertRed, 0.02) : 'palette.background.default'),
+  bg: p =>
+    p.isAddressVerified === false
+      ? rgba(p.theme.colors.alertRed, 0.02)
+      : 'palette.background.default',
   p: 6,
   pb: 4,
 })`

@@ -87,7 +87,11 @@ export const GradientHover = styled(Box).attrs({
   right: 0;
   bottom: 0;
   padding-left: 20px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), ${p => p.theme.colors.palette.background.paper} 20%);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    ${p => p.theme.colors.palette.background.paper} 20%
+  );
 `
 
 const OpDetailsData = styled(Box).attrs({
@@ -397,7 +401,12 @@ const OperationDetails = connect(
                 {fee ? (
                   <Fragment>
                     <OpDetailsData>
-                      <FormattedVal unit={mainAccount.unit} showCode val={fee} color="palette.text.shade80" />
+                      <FormattedVal
+                        unit={mainAccount.unit}
+                        showCode
+                        val={fee}
+                        color="palette.text.shade80"
+                      />
                       <Box horizontal>
                         <CounterValue
                           color="palette.text.shade60"

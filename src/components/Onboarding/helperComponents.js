@@ -140,13 +140,17 @@ export const GenuineCheckCardWrapper = styled(Box).attrs({
 })`
   width: 580px;
   transition: all ease-in-out 0.2s;
-  color: ${p => (p.isDisabled ? p.theme.colors.palette.text.shade60 : p.theme.colors.palette.text.shade100)};
+  color: ${p =>
+    p.isDisabled ? p.theme.colors.palette.text.shade60 : p.theme.colors.palette.text.shade100};
   border: ${p =>
     `1px ${p.isDisabled ? 'dashed' : 'solid'} ${
       p.isError ? p.theme.colors.alertRed : p.theme.colors.palette.divider
     }`};
   pointer-events: ${p => (p.isDisabled ? 'none' : 'auto')};
-  background-color: ${p => (p.isDisabled ? p.theme.colors.palette.background.default : p.theme.colors.palette.background.paper)};
+  background-color: ${p =>
+    p.isDisabled
+      ? p.theme.colors.palette.background.default
+      : p.theme.colors.palette.background.paper};
   opacity: ${p => (p.isDisabled ? 0.7 : 1)};
   &:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05);

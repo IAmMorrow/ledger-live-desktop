@@ -15,7 +15,7 @@ type Props = {
   withTooltip?: boolean,
   bigger?: boolean,
   inactive?: boolean,
-  theme: any
+  theme: any,
 }
 
 const Wrapper = styled.div`

@@ -131,7 +131,7 @@ class Default extends Component<Props> {
               >
                 <HSMStatusBanner />
                 <TopBar />
-                <Main innerRef={n => (this._scrollContainer = n)} tabIndex={-1}>
+                <Main ref={n => (this._scrollContainer = n)} tabIndex={-1}>
                   <Switch>
                     <Route path="/" exact component={DashboardPage} />
                     <Route path="/settings" component={SettingsPage} />

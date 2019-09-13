@@ -2,11 +2,11 @@
 
 /* eslint-disable no-unused-expressions */
 
-import { injectGlobal } from 'styled-components'
+import { injectGlobal, createGlobalStyle } from 'styled-components'
 import omitBy from 'lodash/omitBy'
 
 import { fontFace, rgba } from 'styles/helpers'
-import { radii, colors } from 'styles/theme'
+import { radii } from 'styles/theme'
 import reset from './reset'
 
 const { STORYBOOK_ENV, NODE_ENV } = process.env
@@ -90,7 +90,7 @@ function transformFonts(allFonts) {
     .join('\n')
 }
 
-injectGlobal`
+export const GlobalStyle = createGlobalStyle`
   ${transformFonts(fonts)};
   ${reset};
 

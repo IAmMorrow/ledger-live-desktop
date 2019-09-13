@@ -15,7 +15,11 @@ const RADIUS = 18
 const Wrapper = styled(Box).attrs({
   alignItems: 'center',
   color: p =>
-    ['active', 'valid'].includes(p.status) ? 'wallet' : p.status === 'error' ? 'alertRed' : 'palette.text.shade60',
+    ['active', 'valid'].includes(p.status)
+      ? 'wallet'
+      : p.status === 'error'
+      ? 'alertRed'
+      : 'palette.text.shade60',
   grow: true,
   justifyContent: 'center',
   relative: true,
@@ -29,9 +33,16 @@ const Wrapper = styled(Box).attrs({
 const StepNumber = styled(Box).attrs({
   alignItems: 'center',
   justifyContent: 'center',
-  color: p => (['active', 'valid', 'error'].includes(p.status) ? 'palette.background.paper' : 'palette.divider'),
+  color: p =>
+    ['active', 'valid', 'error'].includes(p.status)
+      ? 'palette.background.paper'
+      : 'palette.divider',
   bg: p =>
-    ['active', 'valid'].includes(p.status) ? 'wallet' : p.status === 'error' ? 'alertRed' : 'palette.background.paper',
+    ['active', 'valid'].includes(p.status)
+      ? 'wallet'
+      : p.status === 'error'
+      ? 'alertRed'
+      : 'palette.background.paper',
   ff: 'Rubik|Regular',
 })`
   border-radius: 50%;

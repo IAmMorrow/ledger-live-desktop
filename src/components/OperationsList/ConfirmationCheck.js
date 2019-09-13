@@ -21,7 +21,9 @@ const border = p =>
     ? `1px solid ${p.theme.colors.alertRed}`
     : p.isConfirmed
     ? 0
-    : `1px solid ${p.type === 'IN' ? p.marketColor : rgba(p.theme.colors.palette.text.shade60, 0.2)}`
+    : `1px solid ${
+        p.type === 'IN' ? p.marketColor : rgba(p.theme.colors.palette.text.shade60, 0.2)
+      }`
 
 const Container = styled(Box).attrs({
   bg: p =>
@@ -31,7 +33,11 @@ const Container = styled(Box).attrs({
       ? rgba(p.type === 'IN' ? p.marketColor : p.theme.colors.palette.text.shade60, 0.2)
       : 'none',
   color: p =>
-    p.hasFailed ? p.theme.colors.alertRed : p.type === 'IN' ? p.marketColor : p.theme.colors.palette.text.shade60,
+    p.hasFailed
+      ? p.theme.colors.alertRed
+      : p.type === 'IN'
+      ? p.marketColor
+      : p.theme.colors.palette.text.shade60,
   align: 'center',
   justify: 'center',
 })`

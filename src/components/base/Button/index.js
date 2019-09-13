@@ -29,8 +29,16 @@ const buttonStyles: { [_: string]: Style } = {
   },
   primary: {
     default: p => `
-      background: ${p.disabled ? `${p.theme.colors.palette.text.shade40} !important` : p.theme.colors.palette.primary.main};
-      color: ${p.disabled ? p.theme.colors.palette.text.shade60 : p.theme.colors.palette.primary.contrastText};
+      background: ${
+        p.disabled
+          ? `${p.theme.colors.palette.text.shade40} !important`
+          : p.theme.colors.palette.primary.main
+      };
+      color: ${
+        p.disabled
+          ? p.theme.colors.palette.text.shade60
+          : p.theme.colors.palette.primary.contrastText
+      };
       box-shadow: ${
         p.isFocused
           ? `
@@ -49,8 +57,14 @@ const buttonStyles: { [_: string]: Style } = {
   },
   danger: {
     default: p => `
-      background: ${p.disabled ? `${p.theme.colors.palette.text.shade40} !important` : p.theme.colors.alertRed};
-      color: ${p.disabled ? p.theme.colors.palette.text.shade60 : p.theme.colors.palette.primary.contrastText};
+      background: ${
+        p.disabled ? `${p.theme.colors.palette.text.shade40} !important` : p.theme.colors.alertRed
+      };
+      color: ${
+        p.disabled
+          ? p.theme.colors.palette.text.shade60
+          : p.theme.colors.palette.primary.contrastText
+      };
       box-shadow: ${
         p.isFocused
           ? `
@@ -100,11 +114,15 @@ const buttonStyles: { [_: string]: Style } = {
       return `
         background: ${rgba(c, 0.15)};
         color: ${darken(
-          p.outlineColor ? p.theme.colors[p.outlineColor] || p.outlineColor : p.theme.colors.palette.primary.main,
+          p.outlineColor
+            ? p.theme.colors[p.outlineColor] || p.outlineColor
+            : p.theme.colors.palette.primary.main,
           0.1,
         )};
         border-color: ${darken(
-          p.outlineColor ? p.theme.colors[p.outlineColor] || p.outlineColor : p.theme.colors.palette.primary.main,
+          p.outlineColor
+            ? p.theme.colors[p.outlineColor] || p.outlineColor
+            : p.theme.colors.palette.primary.main,
           0.1,
         )};
       `

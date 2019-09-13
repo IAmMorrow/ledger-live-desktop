@@ -64,7 +64,11 @@ class ProgressCircle extends PureComponent<Props> {
     return (
       <Container size={size}>
         <TextContainer>
-          <Text ff="Rubik|Regular" color={progress === 0 ? 'palette.text.shade80' : 'wallet'} fontSize={5}>
+          <Text
+            ff="Rubik|Regular"
+            color={progress === 0 ? 'palette.text.shade80' : 'wallet'}
+            fontSize={5}
+          >
             {`${Math.round(progress * 100)}%`}
           </Text>
         </TextContainer>

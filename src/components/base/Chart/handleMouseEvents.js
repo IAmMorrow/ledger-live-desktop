@@ -24,7 +24,7 @@ export default function handleMouseEvents({
   onTooltipUpdate: Function,
   renderTooltip?: Function,
   mapValue: (*) => number,
-  theme: any
+  theme: any,
 }) {
   const { MARGINS, HEIGHT, WIDTH, NODES, DATA, x, y } = ctx
 

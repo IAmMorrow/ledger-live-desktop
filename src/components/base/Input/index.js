@@ -12,7 +12,10 @@ import TranslatedError from 'components/TranslatedError'
 const Container = styled(Box).attrs({
   horizontal: true,
 })`
-  background: ${p => (p.disabled ? p.theme.colors.palette.background.default : p.theme.colors.palette.background.paper)};
+  background: ${p =>
+    p.disabled
+      ? p.theme.colors.palette.background.default
+      : p.theme.colors.palette.background.paper};
   border-radius: ${p => p.theme.radii[1]}px;
   border-width: 1px;
   border-style: solid;
@@ -221,7 +224,7 @@ class Input extends PureComponent<Props, State> {
             {...props}
             small={small}
             disabled={disabled}
-            innerRef={n => (this._input = n)}
+            ref={n => (this._input = n)}
             onFocus={this.handleFocus}
             onBlur={this.handleBlur}
             onChange={this.handleChange}

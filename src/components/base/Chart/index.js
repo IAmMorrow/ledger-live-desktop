@@ -60,7 +60,7 @@ export type Props = {
   renderTickY: (t: number) => string | number,
   mapValue: (*) => number,
   onlyUpdateIfLastPointChanges?: boolean,
-  theme: any
+  theme: any,
 }
 
 class Chart extends Component<Props> {
@@ -139,7 +139,16 @@ class Chart extends Component<Props> {
 
     this.refreshChart = prevProps => {
       const { _node: node, props } = this
-      const { data: raw, color, height, hideAxis, isInteractive, mapValue, renderTooltip, theme } = props
+      const {
+        data: raw,
+        color,
+        height,
+        hideAxis,
+        isInteractive,
+        mapValue,
+        renderTooltip,
+        theme,
+      } = props
 
       ctx.DATA = enrichData(raw)
 

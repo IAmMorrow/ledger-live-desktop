@@ -29,7 +29,8 @@ const ItemWrapper = styled.div`
   padding: 10px 15px;
   border-radius: 4px;
   border: 1px solid transparent;
-  background: ${p => (p.active ? p.theme.colors.palette.background.default : 'palette.background.paper')};
+  background: ${p =>
+    p.active ? p.theme.colors.palette.background.default : 'palette.background.paper'};
   margin-bottom: 10px;
   &:hover ${AccountName},&:active ${AccountName} {
     color: ${p => p.theme.colors.palette.text.shade100};
@@ -79,7 +80,7 @@ const Item = ({
           {...provided.dragHandleProps}
           isDragging={snapshot.isDragging}
           collapsed={collapsed}
-          innerRef={provided.innerRef}
+          ref={provided.innerRef}
           active={active}
           onClick={onAccountClick}
         >
@@ -90,22 +91,22 @@ const Item = ({
             >
               <ParentCryptoCurrencyIcon inactive={!active} currency={getAccountCurrency(account)} />
             </ParentCryptoCurrencyIconWrapper>
-              <Box vertical flex={1}>
-                <Hide visible={snapshot.isDragging || !collapsed}>
-                  <AccountName color="palette.text.shade80">
-                    {account.type === 'Account' ? account.name : account.token.name}
-                  </AccountName>
-                  <FormattedVal
-                    alwaysShowSign={false}
-                    animateTicker={false}
-                    ellipsis
-                    color="palette.text.shade60"
-                    unit={account.unit || account.token.units[0]}
-                    showCode
-                    val={account.balance}
-                  />
-                </Hide>
-              </Box>
+            <Box vertical flex={1}>
+              <Hide visible={snapshot.isDragging || !collapsed}>
+                <AccountName color="palette.text.shade80">
+                  {account.type === 'Account' ? account.name : account.token.name}
+                </AccountName>
+                <FormattedVal
+                  alwaysShowSign={false}
+                  animateTicker={false}
+                  ellipsis
+                  color="palette.text.shade60"
+                  unit={account.unit || account.token.units[0]}
+                  showCode
+                  val={account.balance}
+                />
+              </Hide>
+            </Box>
           </Box>
         </ItemWrapper>
       )}

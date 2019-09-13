@@ -8,7 +8,12 @@ import AccountCardHeader from './Header'
 import AccountCardBody from './Body'
 import AccountContextMenu from '../../ContextMenu/AccountContextMenu'
 
-const Card = styled(Box).attrs({ bg: 'palette.background.paper', p: 3, boxShadow: 0, borderRadius: 1 })`
+const Card = styled(Box).attrs({
+  bg: 'palette.background.paper',
+  p: 3,
+  boxShadow: 0,
+  borderRadius: 1,
+})`
   cursor: pointer;
   border: 1px solid transparent;
   :hover {

@@ -39,7 +39,8 @@ const Item = styled.div`
   flex-direction: row;
   padding: 12px;
   min-width: 200px;
-  color: ${p => (p.isActive ? p.theme.colors.palette.text.shade100 : p.theme.colors.palette.text.shade80)};
+  color: ${p =>
+    p.isActive ? p.theme.colors.palette.text.shade100 : p.theme.colors.palette.text.shade80};
   > :first-child {
     margin-right: 10px;
   }

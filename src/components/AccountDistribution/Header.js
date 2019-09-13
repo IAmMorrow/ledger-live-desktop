@@ -38,10 +38,20 @@ export default () => (
     <Text ff="Open Sans|SemiBold" color="palette.text.shade60" fontSize={3}>
       <Trans i18nKey={'accountDistribution.distribution'} />
     </Text>
-    <Text ff="Open Sans|SemiBold" color="palette.text.shade60" style={{ justifyContent: 'flex-end' }} fontSize={3}>
+    <Text
+      ff="Open Sans|SemiBold"
+      color="palette.text.shade60"
+      style={{ justifyContent: 'flex-end' }}
+      fontSize={3}
+    >
       <Trans i18nKey={'accountDistribution.amount'} />
     </Text>
-    <Text ff="Open Sans|SemiBold" color="palette.text.shade60" style={{ justifyContent: 'flex-end' }} fontSize={3}>
+    <Text
+      ff="Open Sans|SemiBold"
+      color="palette.text.shade60"
+      style={{ justifyContent: 'flex-end' }}
+      fontSize={3}
+    >
       <Trans i18nKey={'accountDistribution.value'} />
     </Text>
     <Text />

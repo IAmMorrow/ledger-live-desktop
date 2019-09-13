@@ -97,7 +97,13 @@ const AccountOption = React.memo(
           {name}
         </Ellipsis>
         <Box>
-          <FormattedVal color="palette.text.shade60" val={account.balance} unit={unit} showCode disableRounding />
+          <FormattedVal
+            color="palette.text.shade60"
+            val={account.balance}
+            unit={unit}
+            showCode
+            disableRounding
+          />
         </Box>
       </Box>
     )

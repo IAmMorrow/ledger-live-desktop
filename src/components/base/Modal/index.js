@@ -12,7 +12,6 @@ import Easing from 'animated/lib/Easing'
 import { withTheme } from 'styled-components'
 
 import { closeModal, isModalOpened, getModalData } from 'reducers/modals'
-import { colors } from 'styles/theme'
 
 export { default as ModalBody } from './ModalBody'
 
@@ -230,7 +229,7 @@ const BODY_WRAPPER_STYLE = {
   flexDirection: 'column',
 }
 
-export default connect(
+export default withTheme(connect(
   mapStateToProps,
   mapDispatchToProps,
-)(withTheme(Modal))
+)(Modal))

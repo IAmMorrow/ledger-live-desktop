@@ -7,7 +7,9 @@ import { Tabbable } from 'components/base/Box'
 
 const Base = styled(Tabbable).attrs({ relative: true })`
   outline: none;
-  box-shadow: 0 0 0 1px ${p => (p.isChecked ? p.theme.colors.palette.background.default : p.theme.colors.palette.divider)};
+  box-shadow: 0 0 0 1px
+    ${p =>
+      p.isChecked ? p.theme.colors.palette.background.default : p.theme.colors.palette.divider};
   border-radius: 50%;
   height: 19px;
   width: 19px;
@@ -16,7 +18,8 @@ const Base = styled(Tabbable).attrs({ relative: true })`
 
   &:focus {
     box-shadow: 0 0 0 ${p => (p.isChecked ? 4 : 2)}px
-      ${p => (p.isChecked ? p.theme.colors.palette.background.default : p.theme.colors.palette.divider)};
+      ${p =>
+        p.isChecked ? p.theme.colors.palette.background.default : p.theme.colors.palette.divider};
   }
 
   &:before,

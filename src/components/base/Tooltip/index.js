@@ -16,35 +16,33 @@ const Template = styled.div`
   display: none;
 `
 
-export const TooltipContainer = withTheme(({
-  children,
-  innerRef,
-  style,
-  tooltipBg,
-  theme,
-}: {
-  children: React$Node,
-  innerRef?: Function,
-  style?: Object,
-  tooltipBg?: string,
-  theme: any,
-}) => (
-  <div
-    ref={innerRef}
-    style={{
-      background: colors[tooltipBg || theme.colors.palette.text.shade100],
-      borderRadius: 4,
-      color: theme.colors.palette.background.paper,
-      fontFamily: 'Open Sans',
-      fontWeight: 600,
-      fontSize: 10,
-      padding: '5px 10px 5px 10px',
-      ...style,
-    }}
-  >
-    {children}
-  </div>
-))
+export const TooltipContainer = React.forwardRef(({
+    children,
+    style,
+    tooltipBg,
+    theme,
+  }: {
+    children: React$Node,
+    style?: Object,
+    tooltipBg?: string,
+    theme: any,
+  }, ref: any) => (
+    <div
+      ref={ref}
+      style={{
+        background: theme.colors[tooltipBg] || theme.colors.palette.text.shade100,
+        borderRadius: 4,
+        color: theme.colors.palette.background.paper,
+        fontFamily: 'Open Sans',
+        fontWeight: 600,
+        fontSize: 10,
+        padding: '5px 10px 5px 10px',
+        ...style,
+      }}
+    >
+      {children}
+    </div>
+  ))
 
 TooltipContainer.defaultProps = {
   innerRef: undefined,
@@ -58,6 +56,7 @@ type Props = {
   render: Function,
   tooltipBg?: string,
   options?: { [string]: any },
+  theme: any,
 }
 
 export const replaceTippyArrow = (_tippy: any, tooltipBg?: string) => {
@@ -136,12 +135,12 @@ class Tooltip extends PureComponent<Props> {
   _template = undefined
 
   render() {
-    const { children, render, tooltipBg, ...props } = this.props
+    const { children, render, tooltipBg, theme, ...props } = this.props
 
     return (
-      <Container innerRef={n => (this._node = n)} {...props}>
+      <Container ref={n => (this._node = n)} {...props}>
         <Template>
-          <TooltipContainer tooltipBg={tooltipBg} innerRef={n => (this._template = n)}>
+          <TooltipContainer theme={theme} tooltipBg={tooltipBg} ref={n => (this._template = n)}>
             {render()}
           </TooltipContainer>
         </Template>
@@ -151,4 +150,4 @@ class Tooltip extends PureComponent<Props> {
   }
 }
 
-export default Tooltip
+export default withTheme(Tooltip)
