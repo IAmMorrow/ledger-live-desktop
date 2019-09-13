@@ -8,7 +8,7 @@ import Box from 'components/base/Box'
 import type { MemoryInfos } from 'types/common'
 
 const Container = styled(Box).attrs({
-  bg: 'lightgrey',
+  bg: 'palette.background.default',
   horizontal: true,
 })`
   border-radius: ${p => p.theme.radii[1]}px;
@@ -17,9 +17,9 @@ const Container = styled(Box).attrs({
 `
 
 const Step = styled(Box).attrs({
-  bg: p => p.theme.colors[p.c || 'grey'],
+  bg: p => p.theme.colors[p.c || 'palette.text.shade60'],
   px: 1,
-  color: 'white',
+  color: 'palette.background.paper',
 })`
   width: ${p => (p.last ? '' : `${p.percent}%`)};
   flex-grow: ${p => (p.last ? '1' : '')};

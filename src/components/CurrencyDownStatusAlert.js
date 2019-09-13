@@ -21,7 +21,7 @@ type Props = {
 const CurrencyDownBox = styled(Box).attrs({
   horizontal: true,
   align: 'center',
-  color: 'white',
+  color: 'palette.background.paper',
   borderRadius: 1,
   fontSize: 1,
   px: 4,

@@ -91,7 +91,7 @@ const Container = styled(Box).attrs({
   py: '8px',
   px: 3,
   bg: p => colors[p.status] || 'wallet',
-  color: 'white',
+  color: 'palette.background.paper',
   mt: -32,
   mb: 20,
   fontSize: 4,
@@ -105,13 +105,13 @@ const RightContainer = styled.div`
 `
 
 export const FakeLink = styled.span`
-  color: white;
+  color: ${p => p.theme.colors.palette.background.paper};
   text-decoration: underline;
   cursor: pointer;
 `
 
 const CloseContainer = styled(Box).attrs({
-  color: 'white',
+  color: 'palette.background.paper',
 })`
   z-index: 1;
   margin-left: 10px;

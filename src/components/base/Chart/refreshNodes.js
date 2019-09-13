@@ -89,7 +89,7 @@ export default function refreshNodes({ ctx, node, props }: { ctx: CTX, node: any
     NODES.wrapper
       .append('g')
       .append('circle')
-      .attr('fill', 'white')
+      .attr('fill', 'palette.background.paper')
       .attr('stroke', COLORS.focus)
       .attr('stroke-width', 2)
       .attr('r', 4),

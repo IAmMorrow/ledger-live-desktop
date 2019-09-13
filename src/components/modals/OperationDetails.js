@@ -55,13 +55,13 @@ const OpDetailsSection = styled(Box).attrs({
   alignItems: 'center',
   ff: 'Open Sans|SemiBold',
   fontSize: 4,
-  color: 'grey',
+  color: 'palette.text.shade60',
 })``
 
 const OpDetailsTitle = styled(Box).attrs({
   ff: 'Museo Sans|ExtraBold',
   fontSize: 2,
-  color: 'black',
+  color: 'palette.text.shade100',
   textTransform: 'uppercase',
   mb: 1,
 })`
@@ -81,18 +81,18 @@ export const GradientHover = styled(Box).attrs({
   align: 'center',
   color: 'wallet',
 })`
-  background: white;
+  background: ${p => p.theme.colors.palette.background.paper};
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   padding-left: 20px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff 20%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), ${p => p.theme.colors.palette.background.paper} 20%);
 `
 
 const OpDetailsData = styled(Box).attrs({
   ff: 'Open Sans',
-  color: 'smoke',
+  color: 'palette.text.shade80',
   fontSize: 4,
   relative: true,
 })`
@@ -124,7 +124,7 @@ const NoMarginWrapper = styled.div`
 `
 
 const B = styled(Bar).attrs({
-  color: 'lightGrey',
+  color: 'palette.background.default',
   size: 1,
 })``
 
@@ -280,7 +280,7 @@ const OperationDetails = connect(
             <Box selectable>
               {hasFailed ? null : (
                 <FormattedVal
-                  color={amount.isNegative() ? 'smoke' : undefined}
+                  color={amount.isNegative() ? 'palette.text.shade80' : undefined}
                   unit={unit}
                   alwaysShowSign
                   showCode
@@ -293,7 +293,7 @@ const OperationDetails = connect(
             <Box mt={1} selectable>
               {hasFailed ? null : (
                 <CounterValue
-                  color="grey"
+                  color="palette.text.shade60"
                   fontSize={5}
                   date={date}
                   currency={currency}
@@ -397,10 +397,10 @@ const OperationDetails = connect(
                 {fee ? (
                   <Fragment>
                     <OpDetailsData>
-                      <FormattedVal unit={mainAccount.unit} showCode val={fee} color="smoke" />
+                      <FormattedVal unit={mainAccount.unit} showCode val={fee} color="palette.text.shade80" />
                       <Box horizontal>
                         <CounterValue
-                          color="grey"
+                          color="palette.text.shade60"
                           date={date}
                           fontSize={3}
                           currency={mainAccount.currency}
@@ -408,7 +408,7 @@ const OperationDetails = connect(
                           alwaysShowSign={false}
                           subMagnitude={1}
                           prefix={
-                            <Box mr={1} color="grey" style={{ lineHeight: 1.2 }}>
+                            <Box mr={1} color="palette.text.shade60" style={{ lineHeight: 1.2 }}>
                               {'≈'}
                             </Box>
                           }
@@ -464,7 +464,7 @@ const OperationDetails = connect(
                     underline
                     fontSize={3}
                     ml={2}
-                    color="smoke"
+                    color="palette.text.shade80"
                     onClick={() => openURL(urls.multipleDestinationAddresses)}
                     iconFirst
                   >
@@ -525,7 +525,7 @@ export default translate()(OperationDetailsWrapper)
 const More = styled(Text).attrs({
   ff: p => (p.ff ? p.ff : 'Museo Sans|Bold'),
   fontSize: p => (p.fontSize ? p.fontSize : 2),
-  color: p => (p.color ? p.color : 'dark'),
+  color: p => (p.color ? p.color : 'palette.text.shade100'),
   tabIndex: 0,
 })`
   text-transform: ${p => (!p.textTransform ? 'auto' : 'uppercase')};

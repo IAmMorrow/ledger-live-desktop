@@ -22,7 +22,7 @@ type State = {
 const Title = styled(Text).attrs({
   ff: p => (p.ff ? p.ff : 'Museo Sans|Bold'),
   fontSize: p => (p.fontSize ? p.fontSize : 2),
-  color: p => (p.color ? p.color : 'dark'),
+  color: p => (p.color ? p.color : 'palette.text.shade100'),
   tabIndex: 0,
 })`
   text-transform: ${p => (!p.textTransform ? 'auto' : 'uppercase')};
@@ -62,7 +62,7 @@ class Spoiler extends PureComponent<Props, State> {
           onClick={this.toggle}
           horizontal
           flow={1}
-          color="dark"
+          color="palette.text.shade100"
           cursor="pointer"
           align="center"
           {...p}

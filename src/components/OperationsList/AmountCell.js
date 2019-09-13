@@ -35,10 +35,10 @@ class AmountCell extends PureComponent<Props> {
           showCode
           fontSize={4}
           alwaysShowSign
-          color={amount.isNegative() ? 'smoke' : undefined}
+          color={amount.isNegative() ? 'palette.text.shade80' : undefined}
         />
         <CounterValue
-          color="grey"
+          color="palette.text.shade60"
           fontSize={3}
           alwaysShowSign
           date={operation.date}

@@ -30,9 +30,9 @@ export const TooltipContainer = ({
   <div
     ref={innerRef}
     style={{
-      background: colors[tooltipBg || 'dark'],
+      background: colors[tooltipBg || 'palette.text.shade100'],
       borderRadius: 4,
-      color: 'white',
+      color: 'palette.background.paper',
       fontFamily: 'Open Sans',
       fontWeight: 600,
       fontSize: 10,

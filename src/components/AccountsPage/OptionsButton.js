@@ -26,7 +26,7 @@ import IconDownloadCloud from 'icons/DownloadCloud'
 import IconSend from 'icons/Send'
 
 const Separator = styled.div`
-  background-color: ${p => p.theme.colors.lightFog};
+  background-color: ${p => p.theme.colors.palette.text.shade40};
   height: 1px;
   margin-top: 8px;
   margin-bottom: 8px;
@@ -35,8 +35,8 @@ const Separator = styled.div`
 const Item = styled(DropDownItem)`
   width: 230px;
   cursor: pointer;
-  white-space: pre-wrap;
-  background-color: ${p => !p.disableHover && p.isHighlighted && p.theme.colors.lightGrey};
+  palette.background.paper-space: pre-wrap;
+  background-color: ${p => !p.disableHover && p.isHighlighted && p.theme.colors.palette.background.default};
 `
 
 type StateProps = {|

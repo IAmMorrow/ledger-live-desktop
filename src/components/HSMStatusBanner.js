@@ -29,7 +29,7 @@ const CloseIconContainer = styled.div`
 
 const CloseIcon = (props: *) => (
   <CloseIconContainer {...props}>
-    <IconCross size={16} color="white" />
+    <IconCross size={16} color="palette.background.paper" />
   </CloseIconContainer>
 )
 
@@ -110,7 +110,7 @@ class BannerItem extends PureComponent<{
       <Box relative key={item.id} style={styles.banner}>
         <CloseIcon onClick={this.dismiss} />
         <Box horizontal flow={2}>
-          <IconExclamationCircle size={16} color="white" />
+          <IconExclamationCircle size={16} color="palette.background.paper" />
           <Box shrink ff="Open Sans|SemiBold" style={styles.message}>
             {item.message}
           </Box>
@@ -124,7 +124,7 @@ class BannerItem extends PureComponent<{
 const UnderlinedLink = styled.span`
   border-bottom: 1px solid transparent;
   &:hover {
-    border-bottom-color: white;
+    border-bottom-color: ${p => p.theme.colors.palette.background.paper};
   }
 `
 
@@ -137,9 +137,9 @@ const BannerItemLink = ({ t, onClick }: { t: *, onClick: void => * }) => (
     align="center"
     cursor="pointer"
     onClick={onClick}
-    color="white"
+    color="palette.background.paper"
   >
-    <IconChevronRight size={16} color="white" />
+    <IconChevronRight size={16} color="palette.background.paper" />
     <UnderlinedLink>{t('common.learnMore')}</UnderlinedLink>
   </Box>
 )
@@ -158,7 +158,7 @@ const styles = {
     fontSize: 13,
     paddingTop: 17,
     padding: 15,
-    color: 'white',
+    color: 'palette.background.paper',
     fontWeight: 'bold',
     paddingRight: 30,
     width: 350,

@@ -95,16 +95,16 @@ injectGlobal`
   ${reset};
 
   .tippy-tooltip {
-    background-color: ${colors.dark};
+    background-color: ${colors.palette.text.shade100};
     border-radius: ${radii[1]}px;
   }
 
   .tippy-popper .tippy-roundarrow {
-    fill: ${colors.dark};
+    fill: ${colors.palette.text.shade100};
   }
 
   .select__control:hover, .select__control-is-focused {
-    border-color: ${colors.fog};
+    border-color: ${colors.palette.divider};
   }
 
   .select__single-value {
@@ -114,11 +114,7 @@ injectGlobal`
   }
 
   .select__placeholder {
-    color ${colors.fog} !important;
-  }
-
-  .select__option:active {
-    background: ${colors.lightGrey} !important;
+    color ${colors.palette.divider} !important;
   }
 
   ::selection {

@@ -71,13 +71,13 @@ class EmptyState extends PureComponent<Props, *> {
 export const Title = styled(Box).attrs({
   ff: 'Museo Sans|Regular',
   fontSize: 6,
-  color: p => p.theme.colors.dark,
+  color: p => p.theme.colors.palette.text.shade100,
 })``
 
 export const Description = styled(Box).attrs({
   ff: 'Open Sans|Regular',
   fontSize: 4,
-  color: p => p.theme.colors.graphite,
+  color: p => p.theme.colors.palette.text.shade80,
   textAlign: 'center',
 })``
 

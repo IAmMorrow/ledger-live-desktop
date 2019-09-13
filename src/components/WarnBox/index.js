@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import Box from 'components/base/Box'
 
 const Container = styled(Box).attrs({
-  color: 'graphite',
+  color: 'palette.text.shade80',
   borderRadius: 1,
   px: 4,
   py: 3,
@@ -16,7 +16,7 @@ const Container = styled(Box).attrs({
   flow: 4,
 })`
   border: solid 1px;
-  border-color: ${p => p.theme.colors.fog};
+  border-color: ${p => p.theme.colors.palette.divider};
   align-items: center;
 `
 

@@ -26,7 +26,7 @@ import IconShield from 'icons/Shield'
 const Container = styled(Box).attrs({
   borderRadius: 1,
   alignItems: 'center',
-  bg: p => (p.isAddressVerified === false ? rgba(p.theme.colors.alertRed, 0.02) : 'lightGrey'),
+  bg: p => (p.isAddressVerified === false ? rgba(p.theme.colors.alertRed, 0.02) : 'palette.background.default'),
   p: 6,
   pb: 4,
 })`
@@ -35,9 +35,9 @@ const Container = styled(Box).attrs({
 `
 
 const Address = styled(Box).attrs({
-  bg: 'white',
+  bg: 'palette.background.paper',
   borderRadius: 1,
-  color: 'dark',
+  color: 'palette.text.shade100',
   ff: 'Open Sans|SemiBold',
   fontSize: 4,
   mt: 2,
@@ -45,7 +45,7 @@ const Address = styled(Box).attrs({
   py: 3,
   relative: true,
 })`
-  border: ${p => `1px dashed ${p.theme.colors.fog}`};
+  border: ${p => `1px dashed ${p.theme.colors.palette.divider}`};
   cursor: text;
   user-select: text;
   text-align: center;
@@ -54,21 +54,21 @@ const Address = styled(Box).attrs({
 
 const CopyFeedback = styled(Box).attrs({
   sticky: true,
-  bg: 'white',
+  bg: 'palette.background.paper',
   align: 'center',
   justify: 'center',
 })``
 
 const Label = styled(Box).attrs({
   alignItems: 'center',
-  color: 'graphite',
+  color: 'palette.text.shade80',
   ff: 'Open Sans|SemiBold',
   fontSize: 4,
   flow: 1,
   horizontal: true,
 })`
   strong {
-    color: ${p => p.theme.colors.dark};
+    color: ${p => p.theme.colors.palette.text.shade100};
     font-weight: 600;
   }
 `
@@ -84,7 +84,7 @@ const Footer = styled(Box).attrs({
 `
 
 const FooterButtonWrapper = styled(Box).attrs({
-  color: 'grey',
+  color: 'palette.text.shade60',
   alignItems: 'center',
   justifyContent: 'center',
   borderRadius: 1,
@@ -95,7 +95,7 @@ const FooterButtonWrapper = styled(Box).attrs({
 
   &:hover {
     background-color: ${p => rgba(p.theme.colors.wallet, 0.1)};
-    color: ${p => p.theme.colors.dark};
+    color: ${p => p.theme.colors.palette.text.shade100};
 
     svg {
       color: ${p => p.theme.colors.wallet};
@@ -212,7 +212,7 @@ class CurrentAddress extends PureComponent<Props, { copyFeedback: boolean }> {
           <Box
             shrink
             fontSize={12}
-            color={isAddressVerified === false ? 'alertRed' : 'dark'}
+            color={isAddressVerified === false ? 'alertRed' : 'palette.text.shade100'}
             ff="Open Sans"
           >
             {isAddressVerified === null

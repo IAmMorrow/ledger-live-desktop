@@ -18,7 +18,7 @@ const CrossContainer = styled(Box).attrs({
   px: 3,
 })`
   &:hover {
-    color: ${p => p.theme.colors.dark};
+    color: ${p => p.theme.colors.palette.text.shade100};
   }
 `
 
@@ -58,7 +58,7 @@ class AppSearchBar extends PureComponent<Props, State> {
     const { children, list, searchKeys } = this.props
     const { query, focused } = this.state
 
-    const color = focused ? 'dark' : 'grey'
+    const color = focused ? 'palette.text.shade100' : 'palette.text.shade60'
 
     return (
       <Fragment>

@@ -13,12 +13,12 @@ const Trigger = styled(Box)`
 `
 
 const Drop = styled(Box).attrs({
-  bg: 'white',
+  bg: 'palette.background.paper',
   boxShadow: 0,
   borderRadius: 1,
   p: 2,
 })`
-  ${p => p.border && `border:1px solid ${p.theme.colors.lightFog}`};
+  ${p => p.border && `border:1px solid ${p.theme.colors.palette.text.divider}`};
   max-height: 400px;
   position: absolute;
   right: 0;
@@ -33,11 +33,11 @@ export const DropDownItem = styled(Box).attrs({
   ff: p => (p.isActive ? 'Open Sans|SemiBold' : 'Open Sans'),
   fontSize: 4,
   px: 3,
-  color: p => (p.isHighlighted || p.isActive ? 'dark' : 'smoke'),
-  bg: p => (p.isActive ? 'lightGrey' : ''),
+  color: p => (p.isHighlighted || p.isActive ? 'palette.text.shade100' : 'palette.text.shade80'),
+  bg: p => (p.isActive ? 'palette.background.default' : ''),
 })`
   height: 40px;
-  white-space: nowrap;
+  palette.background.paper-space: nowrap;
 `
 
 export const Wrapper = styled(Box)`

@@ -112,7 +112,7 @@ const DeviceContainer = styled(Box).attrs({
 })`
   width: 218px;
   height: 204px;
-  border: ${props => `1px solid ${props.theme.colors[props.isActive ? 'wallet' : 'fog']}`};
+  border: ${props => `1px solid ${props.theme.colors[props.isActive ? 'wallet' : 'palette.divider']}`};
   &:hover {
     cursor: default; // this here needs reset because it inherits from cursor: text from parent
     background: ${p => rgba(p.theme.colors.wallet, 0.04)};
@@ -149,7 +149,7 @@ export function DeviceSelected() {
 const SelectDeviceIconWrapper = styled(Box).attrs({
   alignItems: 'center',
   justifyContent: 'center',
-  color: 'white',
+  color: 'palette.background.paper',
   bg: 'wallet',
 })`
   border-radius: 50%;
@@ -166,7 +166,7 @@ const USBOnly = styled(Box).attrs({
 })`
   position: absolute;
   bottom: 20px;
-  background-color: ${p => p.theme.colors.lightFog};
+  background-color: ${p => p.theme.colors.palette.text.shade40};
   line-height: 16px;
   padding: 0 4px;
   text-transform: uppercase;

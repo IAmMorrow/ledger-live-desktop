@@ -22,7 +22,7 @@ import ModalBody from './ModalBody'
 const Container = styled(Box).attrs({
   alignItems: 'center',
   fontSize: 4,
-  color: 'dark',
+  color: 'palette.text.shade100',
 })``
 
 const ChoiceBox = styled.div`
@@ -31,7 +31,7 @@ const ChoiceBox = styled.div`
   border-radius: 4px;
   box-shadow: ${props => (props.selected ? '0 2px 4px 0 rgba(0, 0, 0, 0.08)' : null)};
   border: solid 1px
-    ${props => (props.selected ? props.theme.colors.wallet : props.theme.colors.fog)};
+    ${props => (props.selected ? props.theme.colors.wallet : props.theme.colors.palette.divider)};
   height: 48px;
   padding: 0 24px;
   margin-bottom: 8px;
@@ -55,7 +55,7 @@ const Choice = React.memo(({ selected, choice, onSelect }) => (
 const DisclaimerStep = ({ desc }: { desc?: string }) => (
   <Box>
     {desc ? (
-      <Box ff="Open Sans" color="smoke" fontSize={4} textAlign="center" mb={2}>
+      <Box ff="Open Sans" color="palette.text.shade80" fontSize={4} textAlign="center" mb={2}>
         {desc}
       </Box>
     ) : null}
@@ -80,11 +80,11 @@ const FlashStep = ({
       <Box mx={7} align="center">
         <ProgressCircle size={64} progress={progress} />
       </Box>
-      <Box mx={7} mt={3} mb={2} ff="Museo Sans|Regular" color="dark" textAlign="center">
+      <Box mx={7} mt={3} mb={2} ff="Museo Sans|Regular" color="palette.text.shade100" textAlign="center">
         {t(`manager.modal.steps.flash`)}
       </Box>
       <Box mx={7} mt={2} mb={2}>
-        <Text ff="Open Sans|Regular" align="center" color="graphite" fontSize={4}>
+        <Text ff="Open Sans|Regular" align="center" color="palette.text.shade80" fontSize={4}>
           {t('manager.modal.mcuPin')}
         </Text>
       </Box>
@@ -98,7 +98,7 @@ const ErrorStep = ({ error }: { error: Error }) => (
         <ExclamationCircleThin size={44} />
       </Box>
       <Box
-        color="dark"
+        color="palette.text.shade100"
         mt={4}
         fontSize={6}
         ff="Museo Sans|Regular"
@@ -108,7 +108,7 @@ const ErrorStep = ({ error }: { error: Error }) => (
         <TranslatedError error={error} field="title" />
       </Box>
       <Box
-        color="graphite"
+        color="palette.text.shade80"
         mt={3}
         fontSize={4}
         ff="Open Sans"
@@ -198,7 +198,7 @@ class RepairModal extends PureComponent<Props, *> {
               )}
 
               {!isLoading && !error ? (
-                <Box py={2} px={5} color="dark" fontSize={4}>
+                <Box py={2} px={5} color="palette.text.shade100" fontSize={4}>
                   {repairChoices.map(choice => (
                     <Choice
                       key={choice.id}

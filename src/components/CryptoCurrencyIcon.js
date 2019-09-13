@@ -36,7 +36,7 @@ export const TokenIcon = styled.div`
 class CryptoCurrencyIcon extends PureComponent<Props> {
   render() {
     const { currency, size, inactive } = this.props
-    const color = inactive ? colors.grey : getCurrencyColor(currency)
+    const color = inactive ? colors.palette.text.shade60 : getCurrencyColor(currency)
     if (currency.type === 'FiatCurrency') {
       return null
     }

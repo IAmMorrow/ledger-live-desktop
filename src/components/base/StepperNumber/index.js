@@ -15,7 +15,7 @@ const Container = styled(Box).attrs({
   justifyContent: 'center',
   fontSize: 4,
   ff: 'Rubik',
-  color: 'smoke',
+  color: 'palette.text.shade80',
 })`
   background-color: rgba(100, 144, 241, 0.1);
   border-radius: 12px;
@@ -26,7 +26,7 @@ const Container = styled(Box).attrs({
 
 const Btn = styled(Box).attrs({
   bg: p => (p.disabled ? 'rgba(100, 144, 241, 0.5)' : 'wallet'),
-  color: 'white',
+  color: 'palette.background.paper',
   alignItems: 'center',
   justifyContent: 'center',
 })`

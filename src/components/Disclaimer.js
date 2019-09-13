@@ -12,7 +12,7 @@ const DisclaimerBoxContainer = styled(Box).attrs({
   bg: '#f9f9f980',
 })`
   min-width: 620px;
-  border: 1px dashed ${p => p.theme.colors.fog};
+  border: 1px dashed ${p => p.theme.colors.palette.divider};
 `
 const DisclaimerBoxIconContainer = styled(Box).attrs({
   color: p => p.theme.colors.alertRed,
@@ -26,7 +26,7 @@ const DisclaimerText = styled(Box).attrs({
 })`
   padding-left: 15px;
   max-width: 100%;
-  color: ${p => p.theme.colors.smoke};
+  color: ${p => p.theme.colors.palette.text.shade80};
 `
 
 export default function DisclaimerBox({

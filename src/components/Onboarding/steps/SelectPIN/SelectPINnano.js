@@ -36,7 +36,7 @@ class SelectPINnano extends PureComponent<Props, *> {
           <Box style={{ display: 'block' }}>
             <Trans i18nKey="onboarding.selectPIN.initialize.instructions.nano.step2">
               {'Press the right button to select'}
-              <Text ff="Open Sans|SemiBold" color="dark">
+              <Text ff="Open Sans|SemiBold" color="palette.text.shade100">
                 {configureAsNewDevice}
               </Text>
             </Trans>
@@ -57,17 +57,17 @@ class SelectPINnano extends PureComponent<Props, *> {
     const disclaimerNotes = [
       {
         key: 'note1',
-        icon: <IconChevronRight size={12} style={{ color: colors.smoke }} />,
+        icon: <IconChevronRight size={12} style={{ color: colors.palette.text.shade80 }} />,
         desc: t('onboarding.selectPIN.disclaimer.note1'),
       },
       {
         key: 'note2',
-        icon: <IconChevronRight size={12} style={{ color: colors.smoke }} />,
+        icon: <IconChevronRight size={12} style={{ color: colors.palette.text.shade80 }} />,
         desc: t('onboarding.selectPIN.disclaimer.note2'),
       },
       {
         key: 'note3',
-        icon: <IconChevronRight size={12} style={{ color: colors.smoke }} />,
+        icon: <IconChevronRight size={12} style={{ color: colors.palette.text.shade80 }} />,
         desc: t('onboarding.selectPIN.disclaimer.note3'),
       },
     ]

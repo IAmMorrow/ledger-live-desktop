@@ -38,14 +38,14 @@ const Wrapper = styled.div`
     margin-top: ${p => (p.bigger ? '-15px' : '-13px')};
     margin-left: ${p => (p.bigger ? '10px' : '8px')};
 
-    border: 2px solid ${p => p.theme.colors.white};
+    border: 2px solid ${p => p.theme.colors.palette.background.paper};
   }
 `
 
 export default class CryptoCurrencyIconWithCount extends PureComponent<Props> {
   render() {
     const { currency, bigger, withTooltip, inactive, count } = this.props
-    const color = inactive ? colors.grey : getCurrencyColor(currency)
+    const color = inactive ? colors.palette.text.shade60 : getCurrencyColor(currency)
 
     const size = bigger ? 20 : 16
     const fontSize = size / 2 + (count < 10 ? 2 : count >= 100 ? -2 : 0)

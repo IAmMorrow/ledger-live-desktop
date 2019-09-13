@@ -15,7 +15,7 @@ const Title = styled(Box).attrs({
   ff: 'Museo Sans',
   fontSize: 5,
   mt: 2,
-  color: 'dark',
+  color: 'palette.text.shade100',
 })`
   text-align: center;
 `

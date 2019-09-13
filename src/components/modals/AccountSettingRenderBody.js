@@ -344,7 +344,7 @@ export const Container = styled(Box).attrs({
   mb: 3,
   pb: 4,
 })`
-  border-bottom: 1px solid ${p => p.theme.colors.lightGrey};
+  border-bottom: 1px solid ${p => p.theme.colors.palette.background.default};
 `
 
 export const OptionRowDesc = styled(Box).attrs({
@@ -352,12 +352,12 @@ export const OptionRowDesc = styled(Box).attrs({
   fontSize: 3,
   textAlign: 'left',
   lineHeight: 1.69,
-  color: 'grey',
+  color: 'palette.text.shade60',
   shrink: 1,
 })``
 export const OptionRowTitle = styled(Box).attrs({
   ff: 'Open Sans|SemiBold',
-  color: 'black',
+  color: 'palette.text.shade100',
   fontSize: 4,
   textAlign: 'left',
   lineHeight: 1.69,

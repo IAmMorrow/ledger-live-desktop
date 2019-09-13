@@ -33,7 +33,7 @@ const fillInAnimation = keyframes`
 `
 
 const Bar = styled(Box).attrs({
-  color: 'fog',
+  color: 'palette.divider',
   borderRadius: '2.5px',
 })`
   height: 5px;

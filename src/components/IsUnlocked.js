@@ -65,14 +65,14 @@ const defaultState = {
 export const PageTitle = styled(Box).attrs({
   ff: 'Museo Sans|Regular',
   fontSize: 7,
-  color: 'dark',
+  color: 'palette.text.shade100',
 })``
 
 export const LockScreenDesc = styled(Box).attrs({
   ff: 'Open Sans|Regular',
   fontSize: 4,
   textAlign: 'center',
-  color: 'smoke',
+  color: 'palette.text.shade80',
 })`
   margin: 10px auto 25px;
 `

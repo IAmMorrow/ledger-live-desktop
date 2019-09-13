@@ -131,12 +131,12 @@ const Tag = styled(Link)`
   padding: 2px 8px;
   min-height: 32px;
   border-radius: 4px;
-  color: ${p => p.theme.colors.dark};
-  background-color: ${p => p.theme.colors.lightGrey};
+  color: ${p => p.theme.colors.palette.text.shade100};
+  background-color: ${p => p.theme.colors.palette.background.default};
   text-decoration: none;
 
   &:hover {
-    background-color: ${p => darken(p.theme.colors.lightGrey, 0.05)};
+    background-color: ${p => darken(p.theme.colors.palette.background.default, 0.05)};
     border: solid 1px ${p => p.theme.colors.wallet};
   }
 `
@@ -157,9 +157,9 @@ const Collapser = styled(Box).attrs({
 
   cursor: pointer;
   border-radius: 50%;
-  background: ${p => p.theme.colors.white};
-  color: ${p => p.theme.colors.grey};
-  border-color: ${p => p.theme.colors.fog};
+  background: ${p => p.theme.colors.palette.background.paper};
+  color: ${p => p.theme.colors.palette.text.shade60};
+  border-color: ${p => p.theme.colors.palette.divider};
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
   border: 1px solid;
   transition: all 0.5s;
@@ -183,7 +183,7 @@ const Separator = styled(Box).attrs({
   mx: 4,
 })`
   height: 1px;
-  background: ${p => p.theme.colors.fog};
+  background: ${p => p.theme.colors.palette.divider};
 `
 
 const sideBarTransitionStyles = {
@@ -207,7 +207,7 @@ const sideBarTransitionSpeed = 500
 const SideBar = styled(Box).attrs({
   relative: true,
 })`
-  background-color: ${p => p.theme.colors.white};
+  background-color: ${p => p.theme.colors.palette.background.paper};
   transition: width ${sideBarTransitionSpeed}ms;
   will-change: width;
   transform: translate3d(0, 0, 10);

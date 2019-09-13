@@ -31,16 +31,16 @@ const ButtonSettings = styled(Tabbable).attrs({
 })`
   width: 34px;
   height: 34px;
-  border: 1px solid ${p => p.theme.colors.grey};
+  border: 1px solid ${p => p.theme.colors.palette.text.shade60};
   border-radius: 4px;
   &:hover {
-    color: ${p => (p.disabled ? '' : p.theme.colors.dark)};
-    background: ${p => (p.disabled ? '' : rgba(p.theme.colors.fog, 0.2))};
-    border-color: ${p => p.theme.colors.dark};
+    color: ${p => (p.disabled ? '' : p.theme.colors.palette.text.shade100)};
+    background: ${p => (p.disabled ? '' : rgba(p.theme.colors.palette.divider, 0.2))};
+    border-color: ${p => p.theme.colors.palette.text.shade100};
   }
 
   &:active {
-    background: ${p => (p.disabled ? '' : rgba(p.theme.colors.fog, 0.3))};
+    background: ${p => (p.disabled ? '' : rgba(p.theme.colors.palette.divider, 0.3))};
   }
 `
 

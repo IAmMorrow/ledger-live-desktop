@@ -45,11 +45,11 @@ const stepsImportMobile = [
       <Box style={{ display: 'block' }}>
         <Trans i18nKey="settings.export.modal.step1">
           {'Tap the'}
-          <Text ff="Open Sans|SemiBold" color="dark">
+          <Text ff="Open Sans|SemiBold" color="palette.text.shade100">
             <Plus>{'+'}</Plus>
           </Text>
           {'button in'}
-          <Text ff="Open Sans|SemiBold" color="dark">
+          <Text ff="Open Sans|SemiBold" color="palette.text.shade100">
             {'Accounts'}
           </Text>
         </Trans>
@@ -63,7 +63,7 @@ const stepsImportMobile = [
       <Box style={{ display: 'block' }}>
         <Trans i18nKey="settings.export.modal.step2">
           {'Tap'}
-          <Text ff="Open Sans|SemiBold" color="dark">
+          <Text ff="Open Sans|SemiBold" color="palette.text.shade100">
             {'Import desktop accounts'}
           </Text>
         </Trans>
@@ -77,7 +77,7 @@ const stepsImportMobile = [
       <Box style={{ display: 'block' }}>
         <Trans i18nKey="settings.export.modal.step3">
           {'Scan the'}
-          <Text ff="Open Sans|SemiBold" color="dark">
+          <Text ff="Open Sans|SemiBold" color="palette.text.shade100">
             {'LiveQR Code'}
           </Text>
           {'until the loader hits 100%'}
@@ -90,7 +90,7 @@ const stepsImportMobile = [
 const ExportInstructions = () => (
   <>
     <Box shrink style={{ width: 330, fontSize: 13, marginTop: 20 }}>
-      <Text ff="Open Sans|SemiBold" color="dark">
+      <Text ff="Open Sans|SemiBold" color="palette.text.shade100">
         <Trans i18nKey="settings.export.modal.listTitle" />
       </Text>
     </Box>

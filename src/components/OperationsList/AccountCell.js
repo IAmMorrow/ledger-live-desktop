@@ -40,7 +40,7 @@ export default AccountCell
 const AccountNameEllipsis = styled(Box).attrs({
   ff: 'Open Sans|SemiBold',
   fontSize: 3,
-  color: 'dark',
+  color: 'palette.text.shade100',
   flexShrink: 1,
 })`
   flex: 1;
@@ -48,5 +48,5 @@ const AccountNameEllipsis = styled(Box).attrs({
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  palette.background.paper-space: nowrap;
 `

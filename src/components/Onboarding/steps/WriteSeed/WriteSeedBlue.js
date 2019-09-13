@@ -41,11 +41,11 @@ class WriteSeedBlue extends PureComponent<Props, *> {
           <Box style={{ display: 'block' }}>
             <Trans i18nKey="onboarding.writeSeed.initialize.blue.step2">
               {'Tap'}
-              <Text ff="Open Sans|SemiBold" color="dark">
+              <Text ff="Open Sans|SemiBold" color="palette.text.shade100">
                 {{ seedNext }}
               </Text>
               {'to move to the next words. Repeat the process until the'}
-              <Text ff="Open Sans|SemiBold" color="dark">
+              <Text ff="Open Sans|SemiBold" color="palette.text.shade100">
                 {{ seedConfirmation }}
               </Text>
               {'screen appears.'}
@@ -62,22 +62,22 @@ class WriteSeedBlue extends PureComponent<Props, *> {
     const disclaimerNotes = [
       {
         key: 'note1',
-        icon: <IconChevronRight size={12} style={{ color: colors.smoke }} />,
+        icon: <IconChevronRight size={12} style={{ color: colors.palette.text.shade80 }} />,
         desc: t('onboarding.writeSeed.disclaimer.note1'),
       },
       {
         key: 'note2',
-        icon: <IconChevronRight size={12} style={{ color: colors.smoke }} />,
+        icon: <IconChevronRight size={12} style={{ color: colors.palette.text.shade80 }} />,
         desc: t('onboarding.writeSeed.disclaimer.note2'),
       },
       {
         key: 'note3',
-        icon: <IconChevronRight size={12} style={{ color: colors.smoke }} />,
+        icon: <IconChevronRight size={12} style={{ color: colors.palette.text.shade80 }} />,
         desc: t('onboarding.writeSeed.disclaimer.note3'),
       },
       {
         key: 'note4',
-        icon: <IconChevronRight size={12} style={{ color: colors.smoke }} />,
+        icon: <IconChevronRight size={12} style={{ color: colors.palette.text.shade80 }} />,
         desc: t('onboarding.writeSeed.disclaimer.note4'),
       },
     ]

@@ -86,17 +86,17 @@ class SetPassword extends PureComponent<Props, State> {
     const disclaimerNotes = [
       {
         key: 'note1',
-        icon: <IconChevronRight size={12} style={{ color: colors.smoke }} />,
+        icon: <IconChevronRight size={12} style={{ color: colors.palette.text.shade80 }} />,
         desc: t('onboarding.setPassword.disclaimer.note1'),
       },
       {
         key: 'note2',
-        icon: <IconChevronRight size={12} style={{ color: colors.smoke }} />,
+        icon: <IconChevronRight size={12} style={{ color: colors.palette.text.shade80 }} />,
         desc: t('onboarding.setPassword.disclaimer.note2'),
       },
       {
         key: 'note3',
-        icon: <IconChevronRight size={12} style={{ color: colors.smoke }} />,
+        icon: <IconChevronRight size={12} style={{ color: colors.palette.text.shade80 }} />,
         desc: t('onboarding.setPassword.disclaimer.note3'),
       },
     ]

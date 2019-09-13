@@ -24,7 +24,7 @@ import type { StepProps } from '../index'
 const Container = styled(Box).attrs({
   alignItems: 'center',
   grow: true,
-  color: 'dark',
+  color: 'palette.text.shade100',
 })`
   justify-content: ${p => (p.shouldSpace ? 'space-between' : 'center')};
   min-height: 220px;
@@ -50,7 +50,7 @@ const Text = styled(Box).attrs({
 const Disclaimer = styled(Box).attrs({
   horizontal: true,
   align: 'center',
-  color: 'white',
+  color: 'palette.background.paper',
   borderRadius: 1,
   p: 3,
   mb: 5,
@@ -72,7 +72,7 @@ export default function StepConfirmation({
     ? colors.positiveGreen
     : error
     ? colors.alertRed
-    : colors.grey
+    : colors.palette.text.shade60
 
   const broadcastError = error && signed
 
@@ -102,7 +102,7 @@ export default function StepConfirmation({
           <Trans i18nKey="send.steps.confirmation.pending.title" />
         )}
       </Title>
-      <Text style={{ userSelect: 'text' }} color="smoke">
+      <Text style={{ userSelect: 'text' }} color="palette.text.shade80">
         {optimisticOperation ? (
           multiline(t('send.steps.confirmation.success.text'))
         ) : error ? (

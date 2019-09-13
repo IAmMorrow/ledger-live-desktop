@@ -14,7 +14,7 @@ type Props = {
 const ErrorBannerBox = styled(Box).attrs({
   horizontal: true,
   align: 'flex-start',
-  color: 'white',
+  color: 'palette.background.paper',
   borderRadius: 1,
   fontSize: 1,
   px: 4,

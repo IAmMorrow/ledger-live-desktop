@@ -43,7 +43,7 @@ const TooltipWrapper = styled.div`
 
 const CryptoCurrencyIconTooltip = ({ name }: { name: string }) => (
   <TooltipWrapper>
-    <Text color={rgba(colors.white, 0.5)}>
+    <Text color={rgba(colors.palette.background.paper, 0.5)}>
       <Trans i18nKey={'tokensList.tooltip'} />
     </Text>
     <Text>{name}</Text>

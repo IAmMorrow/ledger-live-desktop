@@ -16,7 +16,7 @@ const TagWrapper = styled.div`
   min-height: 20px;
   align-self: center;
   border-radius: 4px;
-  color: ${p => p.color || p.theme.colors.white};
+  color: ${p => p.color || p.theme.colors.palette.background.paper};
   background-color: ${p => p.backgroundColor || p.theme.colors.wallet};
   text-decoration: none;
   text-transform: uppercase;

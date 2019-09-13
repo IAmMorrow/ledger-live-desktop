@@ -12,7 +12,7 @@ import Installing from '../Installing'
 const Container = styled(Box).attrs({
   alignItems: 'center',
   fontSize: 4,
-  color: 'dark',
+  color: 'palette.text.shade100',
 })``
 
 const Title = styled(Box).attrs({

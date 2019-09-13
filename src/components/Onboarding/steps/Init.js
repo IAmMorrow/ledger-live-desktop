@@ -112,7 +112,7 @@ export function OptionFlowCard({ card }: { card: CardType }) {
         <CardTitle>{title}</CardTitle>
       </Box>
       <Box justify="center" mx={1} my={4}>
-        <IconChevronRight style={{ color: colors.grey }} size={16} />
+        <IconChevronRight style={{ color: colors.palette.text.shade60 }} size={16} />
       </Box>
     </InitCardContainer>
   )
@@ -123,7 +123,7 @@ const InitCardContainer = styled(Box).attrs({
   horizontal: true,
   borderRadius: '4px',
 })`
-  border: 1px solid ${p => p.theme.colors.fog};
+  border: 1px solid ${p => p.theme.colors.palette.divider};
   width: 530px;
   height: 70px;
   transition: all ease-in-out 0.2s;

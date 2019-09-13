@@ -31,7 +31,7 @@ type FeeItem = {
 
 const InputRight = styled(Box).attrs({
   ff: 'Rubik',
-  color: 'graphite',
+  color: 'palette.text.shade80',
   fontSize: 4,
   justifyContent: 'center',
   pr: 3,

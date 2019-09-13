@@ -21,36 +21,36 @@ const buttonStyles: { [_: string]: Style } = {
       box-shadow: ${p.isFocused ? focusedShadowStyle : ''}
     `,
     active: p => `
-      background: ${rgba(p.theme.colors.fog, 0.3)};
+      background: ${rgba(p.theme.colors.palette.divider, 0.3)};
     `,
     hover: p => `
-      background: ${rgba(p.theme.colors.fog, 0.2)};
+      background: ${rgba(p.theme.colors.palette.divider, 0.2)};
     `,
   },
   primary: {
     default: p => `
-      background: ${p.disabled ? `${p.theme.colors.lightFog} !important` : p.theme.colors.wallet};
-      color: ${p.disabled ? p.theme.colors.grey : p.theme.colors.white};
+      background: ${p.disabled ? `${p.theme.colors.palette.text.shade40} !important` : p.theme.colors.palette.primary.main};
+      color: ${p.disabled ? p.theme.colors.palette.text.shade60 : p.theme.colors.palette.primary.contrastText};
       box-shadow: ${
         p.isFocused
           ? `
-          0 0 0 1px ${darken(p.theme.colors.wallet, 0.3)} inset,
-          0 0 0 1px ${rgba(p.theme.colors.wallet, 0.5)},
-          0 0 0 3px ${rgba(p.theme.colors.wallet, 0.3)};`
+          0 0 0 1px ${darken(p.theme.colors.palette.primary.main, 0.3)} inset,
+          0 0 0 1px ${rgba(p.theme.colors.palette.primary.main, 0.5)},
+          0 0 0 3px ${rgba(p.theme.colors.palette.primary.main, 0.3)};`
           : ''
       }
     `,
     hover: p => `
-       background: ${lighten(p.theme.colors.wallet, 0.05)};
+       background: ${lighten(p.theme.colors.palette.primary.main, 0.05)};
      `,
     active: p => `
-       background: ${darken(p.theme.colors.wallet, 0.1)};
+       background: ${darken(p.theme.colors.palette.primary.main, 0.1)};
      `,
   },
   danger: {
     default: p => `
-      background: ${p.disabled ? `${p.theme.colors.lightFog} !important` : p.theme.colors.alertRed};
-      color: ${p.disabled ? p.theme.colors.grey : p.theme.colors.white};
+      background: ${p.disabled ? `${p.theme.colors.palette.text.shade40} !important` : p.theme.colors.alertRed};
+      color: ${p.disabled ? p.theme.colors.palette.text.shade60 : p.theme.colors.palette.background.paper};
       box-shadow: ${
         p.isFocused
           ? `
@@ -72,7 +72,7 @@ const buttonStyles: { [_: string]: Style } = {
     default: p => {
       const c = p.outlineColor
         ? p.theme.colors[p.outlineColor] || p.outlineColor
-        : p.theme.colors.wallet
+        : p.theme.colors.palette.primary.main
       return `
         background: transparent;
         border: 1px solid ${c};
@@ -88,7 +88,7 @@ const buttonStyles: { [_: string]: Style } = {
     hover: p => {
       const c = p.outlineColor
         ? p.theme.colors[p.outlineColor] || p.outlineColor
-        : p.theme.colors.wallet
+        : p.theme.colors.palette.primary.main
       return `
         background: ${rgba(c, 0.1)};
       `
@@ -96,15 +96,15 @@ const buttonStyles: { [_: string]: Style } = {
     active: p => {
       const c = p.outlineColor
         ? p.theme.colors[p.outlineColor] || p.outlineColor
-        : p.theme.colors.wallet
+        : p.theme.colors.palette.primary.main
       return `
         background: ${rgba(c, 0.15)};
         color: ${darken(
-          p.outlineColor ? p.theme.colors[p.outlineColor] || p.outlineColor : p.theme.colors.wallet,
+          p.outlineColor ? p.theme.colors[p.outlineColor] || p.outlineColor : p.theme.colors.palette.primary.main,
           0.1,
         )};
         border-color: ${darken(
-          p.outlineColor ? p.theme.colors[p.outlineColor] || p.outlineColor : p.theme.colors.wallet,
+          p.outlineColor ? p.theme.colors[p.outlineColor] || p.outlineColor : p.theme.colors.palette.primary.main,
           0.1,
         )};
       `
@@ -113,13 +113,13 @@ const buttonStyles: { [_: string]: Style } = {
   outlineGrey: {
     default: p => `
       background: transparent;
-      border: 1px solid ${p.theme.colors.grey};
-      color: ${p.theme.colors.grey};
+      border: 1px solid ${p.theme.colors.palette.text.shade60};
+      color: ${p.theme.colors.palette.text.shade60};
       box-shadow: ${p.isFocused ? focusedShadowStyle : ''}
     `,
     active: p => `
-      color: ${darken(p.theme.colors.grey, 0.1)};
-      border-color: ${darken(p.theme.colors.grey, 0.1)};
+      color: ${darken(p.theme.colors.palette.text.shade60, 0.1)};
+      border-color: ${darken(p.theme.colors.palette.text.shade60, 0.1)};
     `,
   },
   icon: {
@@ -165,7 +165,7 @@ export const Base = styled.button.attrs({
   fontSize: p => p.fontSize || (!p.small ? 4 : 3),
   px: p => (!p.small ? 4 : 3),
   py: p => (!p.small ? 2 : 0),
-  color: 'grey',
+  color: 'palette.text.shade60',
   bg: 'transparent',
 })`
   ${space};

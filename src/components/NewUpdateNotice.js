@@ -13,7 +13,7 @@ const NewUpdateNoticeDismissButton = styled(Box)`
   top: 0;
   right: 0;
   padding: 8px;
-  color: white;
+  color: ${p => p.theme.colors.palette.background.paper};
   opacity: 0.5;
   &:hover {
     cursor: pointer;
@@ -65,7 +65,7 @@ class NewUpdateNotice extends PureComponent<{
         </NewUpdateNoticeDismissButton>
         <Text
           ff="Open Sans|SemiBold"
-          color="white"
+          color="palette.background.paper"
           fontSize="10px"
           style={{
             textTransform: 'uppercase',
@@ -74,7 +74,7 @@ class NewUpdateNotice extends PureComponent<{
         >
           {title}
         </Text>
-        <Text ff="Open Sans" color={rgba(colors.white, 0.8)} fontSize="10px">
+        <Text ff="Open Sans" color={rgba(colors.palette.background.paper, 0.8)} fontSize="10px">
           {description}
         </Text>
       </NewUpdateNoticeWrapper>

@@ -30,7 +30,7 @@ type State = {
 const Title = styled(Text).attrs({
   ff: 'Museo Sans',
   fontSize: 5,
-  color: 'dark',
+  color: 'palette.text.shade100',
 })``
 
 class ReleaseNotesBody extends PureComponent<Props, State> {

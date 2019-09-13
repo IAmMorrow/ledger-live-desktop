@@ -12,7 +12,7 @@ import TranslatedError from 'components/TranslatedError'
 const Container = styled(Box).attrs({
   horizontal: true,
 })`
-  background: ${p => (p.disabled ? p.theme.colors.lightGrey : p.theme.colors.white)};
+  background: ${p => (p.disabled ? p.theme.colors.palette.background.default : p.theme.colors.palette.background.paper)};
   border-radius: ${p => p.theme.radii[1]}px;
   border-width: 1px;
   border-style: solid;
@@ -23,7 +23,7 @@ const Container = styled(Box).attrs({
       ? p.theme.colors.warning
       : p.isFocus
       ? p.theme.colors.wallet
-      : p.theme.colors.fog};
+      : p.theme.colors.palette.divider};
   box-shadow: ${p => (p.isFocus ? `rgba(0, 0, 0, 0.05) 0 2px 2px` : 'none')};
   height: ${p => (p.small ? '34' : '40')}px;
   position: relative;
@@ -39,7 +39,7 @@ const ErrorDisplay = styled(Box)`
   bottom: -20px;
   left: 0px;
   font-size: 12px;
-  white-space: nowrap;
+  palette.background.paper-space: nowrap;
   color: ${p => p.theme.colors.pearl};
 `
 
@@ -48,7 +48,7 @@ const LoadingDisplay = styled(Box)`
   left: 0px;
   top: 0px;
   bottom: 0px;
-  background: white;
+  background: ${p => p.theme.colors.palette.background.paper};
   pointer-events: none;
   flex-direction: row;
   align-items: center;
@@ -68,7 +68,7 @@ const Base = styled.input.attrs({
   ${fontFamily};
   ${fontSize};
   border: 0;
-  color: ${p => p.theme.colors.graphite};
+  color: ${p => p.theme.colors.palette.text.shade80};
   height: 100%;
   outline: none;
   padding: 0;
@@ -77,7 +77,7 @@ const Base = styled.input.attrs({
   cursor: text;
 
   &::placeholder {
-    color: ${p => p.theme.colors.fog};
+    color: ${p => p.theme.colors.palette.divider};
   }
 `
 
@@ -90,10 +90,10 @@ export const Textarea = styled.textarea.attrs({
   ${fontFamily};
   ${fontSize};
   min-height: 80px;
-  color: ${p => p.theme.colors.dark};
-  background: ${p => p.theme.colors.white};
+  color: ${p => p.theme.colors.palette.text.shade100};
+  background: ${p => p.theme.colors.palette.background.paper};
   border-radius: ${p => p.theme.radii[1]}px;
-  border: 1px solid ${p => p.theme.colors.fog};
+  border: 1px solid ${p => p.theme.colors.palette.divider};
   box-shadow: none;
   &:focus {
     box-shadow: rgba(0, 0, 0, 0.05) 0 2px 2px;

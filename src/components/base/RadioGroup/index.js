@@ -26,8 +26,8 @@ const Container = styled(Box).attrs({
 `
 
 const Btn = styled(Box).attrs({
-  color: p => (p.isActive ? 'white' : 'grey'),
-  bg: p => (p.isActive ? 'wallet' : 'white'),
+  color: p => (p.isActive ? 'palette.background.paper' : 'palette.text.shade60'),
+  bg: p => (p.isActive ? 'wallet' : 'palette.background.paper'),
   alignItems: 'center',
   justifyContent: 'center',
   fontSize: 3,
@@ -35,7 +35,7 @@ const Btn = styled(Box).attrs({
   px: 3,
 })`
   cursor: pointer;
-  border: solid 1px ${p => (p.isActive ? p.theme.colors.wallet : p.theme.colors.fog)};
+  border: solid 1px ${p => (p.isActive ? p.theme.colors.wallet : p.theme.colors.palette.divider)};
   margin-left: ${p => (p.isActive ? -1 : 0)}px;
 `
 

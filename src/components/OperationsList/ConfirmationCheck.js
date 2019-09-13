@@ -21,17 +21,17 @@ const border = p =>
     ? `1px solid ${p.theme.colors.alertRed}`
     : p.isConfirmed
     ? 0
-    : `1px solid ${p.type === 'IN' ? p.marketColor : rgba(p.theme.colors.grey, 0.2)}`
+    : `1px solid ${p.type === 'IN' ? p.marketColor : rgba(p.theme.colors.palette.text.shade60, 0.2)}`
 
 const Container = styled(Box).attrs({
   bg: p =>
     p.hasFailed
       ? rgba(p.theme.colors.alertRed, 0.05)
       : p.isConfirmed
-      ? rgba(p.type === 'IN' ? p.marketColor : p.theme.colors.grey, 0.2)
+      ? rgba(p.type === 'IN' ? p.marketColor : p.theme.colors.palette.text.shade60, 0.2)
       : 'none',
   color: p =>
-    p.hasFailed ? p.theme.colors.alertRed : p.type === 'IN' ? p.marketColor : p.theme.colors.grey,
+    p.hasFailed ? p.theme.colors.alertRed : p.type === 'IN' ? p.marketColor : p.theme.colors.palette.text.shade60,
   align: 'center',
   justify: 'center',
 })`
@@ -43,8 +43,8 @@ const Container = styled(Box).attrs({
 `
 
 const WrapperClock = styled(Box).attrs({
-  bg: 'white',
-  color: 'grey',
+  bg: 'palette.background.paper',
+  color: 'palette.text.shade60',
 })`
   border-radius: 50%;
   position: absolute;

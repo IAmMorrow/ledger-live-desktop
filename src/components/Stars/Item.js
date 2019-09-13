@@ -15,7 +15,7 @@ import Box from '../base/Box/Box'
 
 const AccountName = styled(Text)`
   text-overflow: ellipsis;
-  white-space: nowrap;
+  palette.background.paper-space: nowrap;
   overflow: hidden;
 `
 const ParentCryptoCurrencyIconWrapper = styled.div`
@@ -29,16 +29,16 @@ const ItemWrapper = styled.div`
   padding: 10px 15px;
   border-radius: 4px;
   border: 1px solid transparent;
-  background: ${p => (p.active ? p.theme.colors.lightGrey : 'white')};
+  background: ${p => (p.active ? p.theme.colors.palette.background.default : 'palette.background.paper')};
   margin-bottom: 10px;
   &:hover ${AccountName},&:active ${AccountName} {
-    color: ${p => p.theme.colors.dark};
+    color: ${p => p.theme.colors.palette.text.shade100};
   }
   ${p =>
     p.isDragging
       ? `
     z-index: 1;
-    border-color: ${p.active ? p.theme.colors.lightFog : p.theme.colors.sliderGrey};
+    border-color: ${p.active ? p.theme.colors.palette.divider : p.theme.colors.sliderGrey};
     box-shadow: 0 12px 17px 0 rgba(0, 0, 0, 0.1);
     width: ${p.collapsed ? '200px' : ''} !important;
         `
@@ -92,14 +92,14 @@ const Item = ({
             </ParentCryptoCurrencyIconWrapper>
               <Box vertical flex={1}>
                 <Hide visible={snapshot.isDragging || !collapsed}>
-                  <AccountName color="smoke">
+                  <AccountName color="palette.text.shade80">
                     {account.type === 'Account' ? account.name : account.token.name}
                   </AccountName>
                   <FormattedVal
                     alwaysShowSign={false}
                     animateTicker={false}
                     ellipsis
-                    color="grey"
+                    color="palette.text.shade60"
                     unit={account.unit || account.token.units[0]}
                     showCode
                     val={account.balance}

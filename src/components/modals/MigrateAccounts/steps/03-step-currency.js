@@ -47,7 +47,7 @@ const Title = styled(Box).attrs({
   ff: 'Museo Sans',
   fontSize: 5,
   mt: 2,
-  color: 'black',
+  color: 'palette.text.shade100',
 })`
   text-align: center;
 `
@@ -56,7 +56,7 @@ const Desc = styled(Box).attrs({
   ff: 'Open Sans',
   fontSize: 4,
   mt: 2,
-  color: 'graphite',
+  color: 'palette.text.shade80',
 })`
   text-align: center;
 `
@@ -168,7 +168,7 @@ class StepCurrency extends PureComponent<Props> {
           <Box
             ff="Museo Sans|Regular"
             fontSize={6}
-            color="dark"
+            color="palette.text.shade100"
             mb={10}
             textAlign="center"
             style={{ width: 370 }}
@@ -179,7 +179,7 @@ class StepCurrency extends PureComponent<Props> {
               values={{ currencyName }}
             />
           </Box>
-          <Text color="graphite" ff="Open Sans|Regular" fontSize={4}>
+          <Text color="palette.text.shade80" ff="Open Sans|Regular" fontSize={4}>
             <Trans
               i18nKey={`migrateAccounts.progress.${scanStatus}.description`}
               values={{ currencyName }}

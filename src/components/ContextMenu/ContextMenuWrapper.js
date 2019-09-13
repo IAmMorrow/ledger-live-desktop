@@ -48,8 +48,8 @@ const ContextMenuContainer = styled(Box)`
   width: 170px;
   border-radius: 4px;
   box-shadow: 0 4px 8px 0 #00000007;
-  border: 1px solid ${p => p.theme.colors.lightFog};
-  background-color: white;
+  border: 1px solid ${p => p.theme.colors.palette.divider};
+  background-color: ${p => p.theme.colors.palette.background.paper};
   padding: 10px;
 `
 
@@ -61,13 +61,13 @@ const ContextMenuItemContainer = styled(Box).attrs({
   flex-direction: row;
   align-items: left;
   border-radius: 4px;
-  color: ${p => p.theme.colors.dark};
+  color: ${p => p.theme.colors.palette.text.shade100};
   font-size: 12px;
   font-weight: 500;
 
   &:hover {
     cursor: pointer;
-    background: ${p => p.theme.colors.lightGrey};
+    background: ${p => p.theme.colors.palette.background.default};
   }
 `
 
@@ -98,7 +98,7 @@ class ContextMenuWrapper extends PureComponent<Props, State> {
     return (
       <ContextMenuItemContainer key={index} onClick={callback}>
         {Icon && (
-          <Box pr={2} color={colors.grey}>
+          <Box pr={2} color={colors.palette.text.shade60}>
             <Icon size={16} />
           </Box>
         )}

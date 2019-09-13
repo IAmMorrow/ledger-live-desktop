@@ -109,7 +109,7 @@ export type StepProps = {
 
 const CloseContainer = styled(Box).attrs({
   p: 4,
-  color: 'fog',
+  color: 'palette.divider',
 })`
   position: absolute;
   top: 0;
@@ -117,11 +117,11 @@ const CloseContainer = styled(Box).attrs({
   z-index: 1;
 
   &:hover {
-    color: ${p => p.theme.colors.grey};
+    color: ${p => p.theme.colors.palette.text.shade60};
   }
 
   &:active {
-    color: ${p => p.theme.colors.dark};
+    color: ${p => p.theme.colors.palette.text.shade100};
   }
 `
 
@@ -200,7 +200,7 @@ class Onboarding extends PureComponent<Props> {
 }
 
 const Container = styled(Box).attrs({
-  bg: 'white',
+  bg: 'palette.background.paper',
   p: 60,
   selectable: true,
 })`

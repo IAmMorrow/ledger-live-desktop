@@ -20,7 +20,7 @@ const MODAL_HEADER_STYLE = {
 }
 
 const ModalTitle = styled(Box).attrs({
-  color: 'dark',
+  color: 'palette.text.shade100',
   ff: 'Museo Sans|Regular',
   fontSize: 6,
   grow: true,
@@ -38,7 +38,7 @@ const ModalHeaderAction = styled(Box).attrs({
   align: 'center',
   fontSize: 3,
   p: 4,
-  color: 'grey',
+  color: 'palette.text.shade60',
 })`
   position: absolute;
   top: 0;
@@ -48,11 +48,11 @@ const ModalHeaderAction = styled(Box).attrs({
   cursor: pointer;
 
   &:hover {
-    color: ${p => p.theme.colors.graphite};
+    color: ${p => p.theme.colors.palette.text.shade80};
   }
 
   &:active {
-    color: ${p => p.theme.colors.dark};
+    color: ${p => p.theme.colors.palette.text.shade100};
   }
 
   span {
@@ -83,7 +83,7 @@ const ModalHeader = ({
     )}
     <ModalTitle>{children}</ModalTitle>
     {onClose && (
-      <ModalHeaderAction right color="fog" onClick={onClose}>
+      <ModalHeaderAction right color="palette.divider" onClick={onClose}>
         {iconCross}
       </ModalHeaderAction>
     )}

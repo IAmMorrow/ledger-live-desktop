@@ -28,7 +28,7 @@ const Progress = styled.div`
 class Bar extends PureComponent<Props> {
   static defaultProps = {
     height: 6,
-    backgroundColor: colors.lightFog,
+    backgroundColor: colors.palette.text.shade40,
   }
 
   render() {

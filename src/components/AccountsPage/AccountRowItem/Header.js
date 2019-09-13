@@ -35,7 +35,7 @@ class Header extends PureComponent<Props> {
       title = currency.name
     } else {
       currency = account.token
-      color = colors.grey
+      color = colors.palette.text.shade60
       title = 'token'
     }
     return (
@@ -53,11 +53,11 @@ class Header extends PureComponent<Props> {
         </Box>
         <Box grow>
           {!nested && account.type === 'Account' && (
-            <Box style={{ textTransform: 'uppercase' }} fontSize={9} color="grey">
+            <Box style={{ textTransform: 'uppercase' }} fontSize={9} color="palette.text.shade60">
               {title}
             </Box>
           )}
-          <Ellipsis fontSize={12} color="dark">
+          <Ellipsis fontSize={12} color="palette.text.shade100">
             {name}
           </Ellipsis>
         </Box>

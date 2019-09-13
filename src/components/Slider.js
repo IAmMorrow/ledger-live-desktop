@@ -9,13 +9,13 @@ const palette = {
     primary: themeColors.wallet,
     primaryHover: lighten(themeColors.wallet, 0.1),
     secondary: themeColors.sliderGrey,
-    buttonInner: themeColors.white,
+    buttonInner: themeColors.palette.background.paper,
   },
   error: {
     primary: themeColors.alertRed,
     primaryHover: lighten(themeColors.alertRed, 0.1),
     secondary: themeColors.sliderGrey,
-    buttonInner: themeColors.white,
+    buttonInner: themeColors.palette.background.paper,
   },
 }
 

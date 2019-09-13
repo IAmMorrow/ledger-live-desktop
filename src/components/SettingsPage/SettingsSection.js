@@ -14,7 +14,7 @@ export const SettingsSectionHeaderContainer = styled(Box).attrs({
   horizontal: true,
   align: 'center',
 })`
-  border-bottom: 1px solid ${p => p.theme.colors.lightFog};
+  border-bottom: 1px solid ${p => p.theme.colors.palette.divider};
   line-height: normal;
 `
 
@@ -32,7 +32,7 @@ const RoundIconContainer = styled(Box).attrs({
 export const SettingsSectionBody = styled(Box)`
   > * + * {
     &:after {
-      background: ${p => p.theme.colors.lightFog};
+      background: ${p => p.theme.colors.palette.text.shade40};
       content: '';
       display: block;
       height: 1px;
@@ -63,7 +63,7 @@ export function SettingsSectionHeader({
     <SettingsSectionHeaderContainer tabIndex={-1} onClick={onClick} style={style}>
       <RoundIconContainer mr={3}>{icon}</RoundIconContainer>
       <Box grow flex={1} mr={3}>
-        <Box ff="Museo Sans|Regular" color="dark" data-e2e="settingsGeneral_title">
+        <Box ff="Museo Sans|Regular" color="palette.text.shade100" data-e2e="settingsGeneral_title">
           {title}
         </Box>
         <Box ff="Open Sans" fontSize={3} mt={1}>
@@ -106,11 +106,11 @@ export function SettingsSectionRow({
     <SettingsSectionRowContainer onClick={onClick} tabIndex={-1}>
       <Box grow shrink style={{ marginRight: '10%' }}>
         {title && (
-          <Box ff="Open Sans|SemiBold" color="dark" fontSize={4}>
+          <Box ff="Open Sans|SemiBold" color="palette.text.shade100" fontSize={4}>
             {title}
           </Box>
         )}
-        <Box ff="Open Sans" fontSize={3} color="grey" mt={1} mr={1} style={{ maxWidth: 520 }}>
+        <Box ff="Open Sans" fontSize={3} color="palette.text.shade60" mt={1} mr={1} style={{ maxWidth: 520 }}>
           {desc}
         </Box>
       </Box>

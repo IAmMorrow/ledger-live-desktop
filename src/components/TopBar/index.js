@@ -49,7 +49,7 @@ const Bar = styled.div`
   margin-right: 5px;
   height: 15px;
   width: 1px;
-  background: ${p => p.theme.colors.fog};
+  background: ${p => p.theme.colors.palette.divider};
 `
 
 const mapStateToProps = state => ({
@@ -97,7 +97,7 @@ class TopBar extends PureComponent<Props> {
     const { hasPassword, hasAccounts, t } = this.props
 
     return (
-      <Container bg="lightGrey" color="graphite">
+      <Container bg="palette.background.default" color="palette.text.shade80">
         <Inner>
           <Box grow horizontal justifyContent="space-between">
             <Breadcrumb />
@@ -139,7 +139,7 @@ class TopBar extends PureComponent<Props> {
 
 export const SeparatorBar = styled.div`
   height: 1px;
-  border-bottom: 1px solid ${p => p.theme.colors.fog};
+  border-bottom: 1px solid ${p => p.theme.colors.palette.divider};
 `
 
 export default compose(

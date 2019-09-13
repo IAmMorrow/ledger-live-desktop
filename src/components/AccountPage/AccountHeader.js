@@ -68,7 +68,7 @@ const Wrapper = styled(Box)`
 `
 
 const AccountName = styled(Text).attrs({
-  color: 'dark',
+  color: 'palette.text.shade100',
   ff: 'Museo Sans',
   fontSize: 7,
 })`

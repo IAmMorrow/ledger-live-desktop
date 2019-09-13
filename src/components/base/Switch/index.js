@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import { Tabbable } from 'components/base/Box'
 
 const Base = styled(Tabbable).attrs({
-  bg: p => (p.isChecked ? 'wallet' : 'lightFog'),
+  bg: p => (p.isChecked ? 'wallet' : 'palette.text.shade40'),
   horizontal: true,
   align: 'center',
 })`
@@ -26,7 +26,7 @@ const Ball = styled.div`
   width: ${p => (p.small ? 9 : 20)}px;
   height: ${p => (p.small ? 9 : 20)}px;
   border-radius: 50%;
-  background: white;
+  background: ${p => p.theme.colors.palette.background.paper};
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   transition: 250ms ease-in-out transform;
   transform: translate3d(

@@ -25,7 +25,7 @@ const Container = styled(Box).attrs({
 
 const Pill = styled(Tabbable).attrs({
   ff: p => (p.bordered ? 'Open Sans|Bold' : p.isActive ? 'Open Sans|SemiBold' : 'Open Sans'),
-  color: p => (p.isActive ? 'wallet' : 'smoke'),
+  color: p => (p.isActive ? 'wallet' : 'palette.text.shade80'),
   bg: p => (p.isActive ? rgba(p.theme.colors.wallet, 0.1) : ''),
   px: p => (p.bordered ? 2 : 3),
   fontSize: 3,
@@ -34,7 +34,7 @@ const Pill = styled(Tabbable).attrs({
   justifyContent: 'center',
 })`
   border: ${p => (p.bordered ? '1px solid' : 'none')};
-  border-color: ${p => (p.isActive ? p.theme.colors.wallet : p.theme.colors.fog)};
+  border-color: ${p => (p.isActive ? p.theme.colors.wallet : p.theme.colors.palette.divider)};
   height: 28px;
   outline: none;
   cursor: ${p => (p.isActive ? 'default' : 'pointer')};
@@ -42,7 +42,7 @@ const Pill = styled(Tabbable).attrs({
 
   &:focus {
     color: ${p => p.theme.colors.wallet};
-    background-color: ${p => (p.isActive ? '' : rgba(p.theme.colors.black, 0.02))};
+    background-color: ${p => (p.isActive ? '' : rgba(p.theme.colors.palette.text.shade100, 0.02))};
   }
 `
 

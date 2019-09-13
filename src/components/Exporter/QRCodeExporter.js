@@ -22,7 +22,7 @@ const QRCodeContainer = styled.div`
   padding: 12px;
   border-radius: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.03);
-  border: solid 1px ${props => props.theme.colors.lightFog};
+  border: solid 1px ${props => props.theme.colors.palette.divider};
 `
 
 class QRCodeExporter extends PureComponent<

@@ -5,7 +5,7 @@ import moment from 'moment'
 import Text from 'components/base/Text'
 
 const Hour = styled(Text).attrs({
-  color: 'grey',
+  color: 'palette.text.shade60',
   fontSize: 3,
   ff: 'Open Sans',
 })`

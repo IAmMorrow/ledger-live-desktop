@@ -6,7 +6,7 @@ import fontFamily from 'styles/styled/fontFamily'
 export default styled.label.attrs({
   fontSize: p => p.fontSize || 3,
   ff: p => p.ff || 'Museo Sans|Regular',
-  color: p => p.color || 'grey',
+  color: p => p.color || 'palette.text.shade60',
   align: 'center',
   display: 'block',
 })`

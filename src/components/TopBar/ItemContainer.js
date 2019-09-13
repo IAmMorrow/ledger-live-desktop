@@ -19,11 +19,11 @@ export default styled(Tabbable).attrs({
   pointer-events: ${p => (p.disabled ? 'none' : 'unset')};
 
   &:hover {
-    color: ${p => (p.disabled ? '' : p.theme.colors.dark)};
-    background: ${p => (p.disabled ? '' : rgba(p.theme.colors.fog, 0.2))};
+    color: ${p => (p.disabled ? '' : p.theme.colors.palette.text.shade100)};
+    background: ${p => (p.disabled ? '' : rgba(p.theme.colors.palette.divider, 0.2))};
   }
 
   &:active {
-    background: ${p => (p.disabled ? '' : rgba(p.theme.colors.fog, 0.3))};
+    background: ${p => (p.disabled ? '' : rgba(p.theme.colors.palette.divider, 0.3))};
   }
 `

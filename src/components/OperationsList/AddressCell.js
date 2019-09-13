@@ -18,7 +18,7 @@ const Address = ({ value }: { value: string }) => {
   const right = value.slice(-quarter)
 
   return (
-    <Box horizontal color="smoke" ff="Open Sans" fontSize={3}>
+    <Box horizontal color="palette.text.shade80" ff="Open Sans" fontSize={3}>
       <Left>{left}</Left>
       <Middle>{middle}</Middle>
       <Right>{right}</Right>
@@ -28,12 +28,12 @@ const Address = ({ value }: { value: string }) => {
 
 const Left = styled.div`
   overflow: hidden;
-  white-space: nowrap;
+  palette.background.paper-space: nowrap;
 `
 
 const Right = styled.div`
   overflow: hidden;
-  white-space: nowrap;
+  palette.background.paper-space: nowrap;
   direction: rtl;
 `
 
@@ -43,7 +43,7 @@ const Middle = styled.div`
 
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  palette.background.paper-space: nowrap;
   min-width: 1em;
 `
 

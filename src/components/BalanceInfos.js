@@ -85,7 +85,7 @@ export function BalanceTotal(props: BalanceTotalProps) {
       ) : (
         <FormattedVal
           animateTicker
-          color="dark"
+          color="palette.text.shade100"
           unit={unit}
           fontSize={8}
           disableRounding

@@ -205,7 +205,7 @@ const Title = styled(Box).attrs({
   fontSize: 5,
   mt: 2,
   mb: 15,
-  color: 'dark',
+  color: 'palette.text.shade100',
 })`
   text-align: center;
 `

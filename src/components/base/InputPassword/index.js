@@ -17,17 +17,17 @@ import IconEye from 'icons/Eye'
 import IconEyeOff from 'icons/EyeOff'
 
 const InputRight = styled(Box).attrs({
-  color: 'grey',
+  color: 'palette.text.shade60',
   justifyContent: 'center',
   pr: 3,
 })`
   &:hover {
-    color: ${p => p.theme.colors.graphite};
+    color: ${p => p.theme.colors.palette.text.shade80};
   }
 `
 
 const Strength = styled(Box).attrs({
-  bg: p => (p.activated ? (p.warning ? 'alertRed' : 'positiveGreen') : 'fog'),
+  bg: p => (p.activated ? (p.warning ? 'alertRed' : 'positiveGreen') : 'palette.divider'),
   grow: true,
 })`
   border-radius: 13px;

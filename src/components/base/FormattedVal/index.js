@@ -26,10 +26,10 @@ import Ellipsis from '../Ellipsis'
 const T = styled(Box).attrs({
   ff: 'Rubik',
   horizontal: true,
-  color: p => (p.withIcon ? p.theme.colors.dark : p.color),
+  color: p => (p.withIcon ? p.theme.colors.palette.text.shade100 : p.color),
 })`
   line-height: 1.2;
-  white-space: pre;
+  palette.background.paper-space: pre;
   text-overflow: ellipsis;
   display: ${p => (p.inline ? 'inline-block' : 'block')};
   flex-shrink: 1;

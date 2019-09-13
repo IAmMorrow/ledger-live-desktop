@@ -117,15 +117,15 @@ class Default extends Component<Props> {
 
             <div id="sticky-back-to-top-root" />
 
-            <Box grow horizontal bg="white">
+            <Box grow horizontal bg="palette.background.paper">
               <SideBar />
 
               <Box
                 className={'main-container'}
                 shrink
                 grow
-                bg="lightGrey"
-                color="grey"
+                bg="palette.background.default"
+                color="palette.text.shade60"
                 overflow="visible"
                 relative
               >
