@@ -71,7 +71,7 @@ export default (theme: any, {
   }),
   menu: (styles: Object) => ({
     ...styles,
-    border: `1px solid ${theme.colors.palette.background.default}`,
+    border: `1px solid ${theme.colors.palette.divider}`,
     boxShadow: 'rgba(0, 0, 0, 0.05) 0 2px 2px',
     background: theme.colors.palette.background.paper,
 

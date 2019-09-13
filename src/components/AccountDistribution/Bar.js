@@ -1,20 +1,20 @@
 // @flow
 
 import React, { PureComponent } from 'react'
-import { colors } from 'styles/theme'
 import styled from 'styled-components'
 
 type Props = {
   height: number,
   progress: string,
   progressColor: string,
-  backgroundColor: string,
+  backgroundColor?: string,
+  theme: any,
 }
 
 const Wrapper = styled.div`
   height: ${p => p.height}px;
   flex-grow: 1;
-  background-color: ${p => p.backgroundColor};
+  background-color: ${p => p.backgroundColor || p.theme.colors.palette.text.shade40};
   border-radius: ${p => p.height}px;
 `
 
@@ -28,7 +28,6 @@ const Progress = styled.div`
 class Bar extends PureComponent<Props> {
   static defaultProps = {
     height: 6,
-    backgroundColor: colors.palette.text.shade40,
   }
 
   render() {

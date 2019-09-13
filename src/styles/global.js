@@ -95,16 +95,16 @@ injectGlobal`
   ${reset};
 
   .tippy-tooltip {
-    background-color: ${colors.palette.text.shade100};
+    background-color: ${p => p.theme.colors.palette.text.shade100};
     border-radius: ${radii[1]}px;
   }
 
   .tippy-popper .tippy-roundarrow {
-    fill: ${colors.palette.text.shade100};
+    fill: ${p => p.theme.colors.palette.text.shade100};
   }
 
   .select__control:hover, .select__control-is-focused {
-    border-color: ${colors.palette.divider};
+    border-color: ${p => p.theme.colors.palette.divider};
   }
 
   .select__single-value {
@@ -114,10 +114,10 @@ injectGlobal`
   }
 
   .select__placeholder {
-    color ${colors.palette.divider} !important;
+    color ${p => p.theme.colors.palette.divider} !important;
   }
 
   ::selection {
-    background: ${rgba(colors.wallet, 0.1)};
+    background: ${p => rgba(p.theme.colors.wallet, 0.1)};
   }
 `

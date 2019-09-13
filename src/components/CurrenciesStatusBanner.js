@@ -8,7 +8,6 @@ import { createStructuredSelector } from 'reselect'
 import styled from 'styled-components'
 import type { CryptoCurrency } from '@ledgerhq/live-common/lib/types'
 
-import { colors } from 'styles/theme'
 import { openURL } from 'helpers/linking'
 import { CHECK_CUR_STATUS_INTERVAL } from 'config/constants'
 import IconCross from 'icons/Cross'
@@ -123,7 +122,8 @@ class BannerItem extends PureComponent<{
       <Box
         relative
         key={item.id}
-        style={{ ...styles.banner, ...(item.warning ? styles.warning : null) }}
+        bg={item.warning ? 'orange' : 'alertRed'}
+        style={styles.banner}
       >
         <CloseIcon onClick={this.dismiss} />
         <Box horizontal flow={2}>
@@ -167,11 +167,7 @@ const styles = {
     left: 32,
     bottom: 32,
   },
-  warning: {
-    background: colors.orange,
-  },
   banner: {
-    background: colors.alertRed,
     overflow: 'hidden',
     borderRadius: 4,
     fontSize: 13,

@@ -20,7 +20,6 @@ import Ellipsis from 'components/base/Ellipsis'
 import Text from 'components/base/Text'
 import ExternalLink from 'icons/ExternalLink'
 import { openURL } from 'helpers/linking'
-import { colors } from 'styles/theme'
 import IconInfoCircle from 'icons/InfoCircle'
 import ParentCryptoCurrencyIcon from '../ParentCryptoCurrencyIcon'
 
@@ -39,7 +38,7 @@ const CurNameTokenIcon = styled(Text).attrs({
   ff: 'Open Sans|SemiBold',
   fontSize: 2,
 })`
-  color: ${colors.wallet};
+  color: ${p => p.theme.colors.wallet};
   display: none;
   margin-left: 5px;
   align-items: center;
@@ -55,8 +54,8 @@ const Wrapper = styled(Box)`
   }
 
   :hover ${CurNameTokenLink} {
-    color: ${colors.wallet};
-    background-color: ${colors.pillActiveBackground};
+    color: ${p => p.theme.colors.wallet};
+    background-color: ${p => p.theme.colors.pillActiveBackground};
   }
 `
 

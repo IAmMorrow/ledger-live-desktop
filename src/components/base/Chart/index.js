@@ -192,6 +192,7 @@ class Chart extends Component<Props> {
       if (isInteractive) {
         mouseHandler = handleMouseEvents({
           ctx,
+          theme,
           shouldTooltipUpdate: d => d !== lastDisplayedTooltip,
           onTooltipUpdate: d => (lastDisplayedTooltip = d),
           renderTooltip,

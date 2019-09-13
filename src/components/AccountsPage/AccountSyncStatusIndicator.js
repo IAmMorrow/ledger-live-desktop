@@ -32,7 +32,7 @@ class StatusQueued extends PureComponent<{ onClick: (*) => void }> {
     return (
       <Tooltip render={() => <Trans i18nKey="common.sync.outdated" />}>
         <Box onClick={onClick}>
-          <IconPending color={colors.palette.text.shade60} size={16} />
+          <IconPending color={colors.grey} size={16} />
         </Box>
       </Tooltip>
     )
@@ -46,7 +46,7 @@ class StatusSynchronizing extends PureComponent<{ onClick: (*) => void }> {
       <Tooltip render={() => <Trans i18nKey="common.sync.syncing" />}>
         <Box onClick={onClick}>
           <Rotating onClick={onClick} size={16}>
-            <IconLoader color={colors.palette.text.shade60} size={16} />
+            <IconLoader color={colors.grey} size={16} />
           </Rotating>
         </Box>
       </Tooltip>

@@ -1,6 +1,7 @@
 // @flow
 
 import { rgba } from './helpers'
+import palette from './palette'
 
 export const space = [0, 5, 10, 15, 20, 30, 40, 50, 70]
 export const fontSizes = [8, 9, 10, 12, 13, 16, 18, 22, 32]
@@ -64,41 +65,6 @@ export const fontFamilies = {
 // (?<!\.)\bgrey\b
 
 // \bgrey\b
-
-const palette = {
-  type: "dark",
-  primary: {
-    light: "",
-    main: "#6490f1",
-    dark: "",
-    contrastText: "#ffffff"
-  },
-  secondary: {
-    light: "",
-    main: "",
-    dark: "",
-    contrastText: ""
-  },
-  error: "",
-  text: {
-    shade100: "rgba(255, 255, 255, 1)",
-    shade80: "rgba(255, 255, 255, 0.8)",
-    shade60: "rgba(255, 255, 255, 0.6)",
-    shade40: "rgba(255, 255, 255, 0.4)"
-  },
-  divider: "rgba(255, 255, 255, 0.2)",
-  background: {
-    paper: "rgba(24, 37, 50, 1)",
-    default: "rgba(19, 30, 40, 1)",
-  },
-  action: {
-    active: "rgba(255, 255, 255, 0.2)",
-    hover: "",
-    hoverOpacity: "",
-    selected: "",
-    disabledBackground: ""
-  }
-}
 
 export const colors = {
   transparent: 'transparent',

@@ -50,7 +50,7 @@ const buttonStyles: { [_: string]: Style } = {
   danger: {
     default: p => `
       background: ${p.disabled ? `${p.theme.colors.palette.text.shade40} !important` : p.theme.colors.alertRed};
-      color: ${p.disabled ? p.theme.colors.palette.text.shade60 : p.theme.colors.palette.background.paper};
+      color: ${p.disabled ? p.theme.colors.palette.text.shade60 : p.theme.colors.palette.primary.contrastText};
       box-shadow: ${
         p.isFocused
           ? `

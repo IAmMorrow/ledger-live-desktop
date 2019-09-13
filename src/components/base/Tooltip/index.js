@@ -1,7 +1,7 @@
 // @flow
 
 import React, { PureComponent } from 'react'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 import tippy from 'tippy.js'
 
 import { space, colors } from 'styles/theme'
@@ -16,23 +16,25 @@ const Template = styled.div`
   display: none;
 `
 
-export const TooltipContainer = ({
+export const TooltipContainer = withTheme(({
   children,
   innerRef,
   style,
   tooltipBg,
+  theme,
 }: {
   children: React$Node,
   innerRef?: Function,
   style?: Object,
   tooltipBg?: string,
+  theme: any,
 }) => (
   <div
     ref={innerRef}
     style={{
-      background: colors[tooltipBg || 'palette.text.shade100'],
+      background: colors[tooltipBg || theme.colors.palette.text.shade100],
       borderRadius: 4,
-      color: 'palette.background.paper',
+      color: theme.colors.palette.background.paper,
       fontFamily: 'Open Sans',
       fontWeight: 600,
       fontSize: 10,
@@ -42,7 +44,7 @@ export const TooltipContainer = ({
   >
     {children}
   </div>
-)
+))
 
 TooltipContainer.defaultProps = {
   innerRef: undefined,
