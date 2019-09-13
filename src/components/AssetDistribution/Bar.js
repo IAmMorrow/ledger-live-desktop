@@ -13,7 +13,7 @@ type Props = {
 const Wrapper = styled.div`
   height: ${p => p.height}px;
   flex-grow: 1;
-  background-color: ${p => p.backgroundColor || p.theme.colors.palette.text.shade40};
+  background-color: ${p => p.backgroundColor || p.theme.colors.palette.divider};
   border-radius: ${p => p.height}px;
 `
 
