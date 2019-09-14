@@ -2,10 +2,7 @@
 
 const { NODE_ENV, STORYBOOK_ENV } = process.env
 
-const LocalStorage = require('node-localstorage').LocalStorage
-const localStorage = new LocalStorage('./theme')
-
-const selectedTheme = localStorage.getItem('theme') || 'light'
+const selectedTheme = 'light'
 
 global.__ENV__ = NODE_ENV === 'development' ? NODE_ENV : 'production'
 global.__DEV__ = global.__ENV__ === 'development'

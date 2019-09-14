@@ -26,7 +26,7 @@ function getRenderTickX(selectedTimeRange) {
   return t => moment(t).format(RENDER_TICK_X[selectedTimeRange] || RENDER_TICK_X.default)
 }
 
-export default function refreshDraw({ theme, ctx, props }: { theme: any, ctx: CTX, props: Props }) {
+export default function refreshDraw(theme: any, { ctx, props }: { ctx: CTX, props: Props }) {
   const { NODES, WIDTH, HEIGHT, MARGINS, COLORS, INVALIDATED, DATA, x, y } = ctx
   const { hideAxis, isInteractive, tickXScale, renderTickY, mapValue } = props
 

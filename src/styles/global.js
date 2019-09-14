@@ -2,7 +2,7 @@
 
 /* eslint-disable no-unused-expressions */
 
-import { injectGlobal, createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 import omitBy from 'lodash/omitBy'
 
 import { fontFace, rgba } from 'styles/helpers'
@@ -112,7 +112,7 @@ export const GlobalStyle = createGlobalStyle`
     right: 0;
     left: 15px;
   }
-
+  
   .select__placeholder {
     color ${p => p.theme.colors.palette.divider} !important;
   }
