@@ -8,7 +8,10 @@ import type { CTX } from './types'
 
 const debug = d('Chart')
 
-export default function refreshNodes(theme: any, { ctx, node, props }: { ctx: CTX, node: any, props: Props }) {
+export default function refreshNodes(
+  theme: any,
+  { ctx, node, props }: { ctx: CTX, node: any, props: Props },
+) {
   const { NODES, COLORS } = ctx
   const { hideAxis, isInteractive, id } = props
 

@@ -267,9 +267,7 @@ class AccountSettingRenderBody extends PureComponent<Props, State> {
             ) : null}
             <Spoiler textTransform title={t('account.settings.advancedLogs')}>
               <SyncAgo date={account.lastSyncDate} />
-              <AdvancedLogsContainer>
-                {JSON.stringify(usefulData, null, 2)}
-              </AdvancedLogsContainer>
+              <AdvancedLogsContainer>{JSON.stringify(usefulData, null, 2)}</AdvancedLogsContainer>
             </Spoiler>
             <ConfirmModal
               analyticsName="RemoveAccount"

@@ -4,7 +4,6 @@ import React, { PureComponent } from 'react'
 import { Trans } from 'react-i18next'
 import styled from 'styled-components'
 import Box from 'components/base/Box'
-import { colors } from 'styles/theme'
 
 // $FlowFixMe
 export const ContextMenuContext = React.createContext({})
@@ -98,7 +97,7 @@ class ContextMenuWrapper extends PureComponent<Props, State> {
     return (
       <ContextMenuItemContainer key={index} onClick={callback}>
         {Icon && (
-          <Box pr={2} color='palette.text.shade60'>
+          <Box pr={2} color="palette.text.shade60">
             <Icon size={16} />
           </Box>
         )}

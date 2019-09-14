@@ -56,7 +56,6 @@ module.exports = {
       shade80: 'rgba(255, 255, 255, 0.7)',
       shade60: 'rgba(255, 255, 255, 0.6)',
       shade40: 'rgba(255, 255, 255, 0.4)',
-      shade20: 'rgba(255, 255, 255, 0.2)',
     },
     divider: 'rgba(255, 255, 255, 0.1)',
     background: {

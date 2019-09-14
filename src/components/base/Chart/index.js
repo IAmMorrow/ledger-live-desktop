@@ -194,7 +194,7 @@ class Chart extends Component<Props> {
       refreshNodes(theme, { ctx, node, props })
 
       // Redraw
-      refreshDraw(theme, {ctx, props })
+      refreshDraw(theme, { ctx, props })
 
       // Mouse handler
       mouseHandler && mouseHandler.remove() // eslint-disable-line no-unused-expressions

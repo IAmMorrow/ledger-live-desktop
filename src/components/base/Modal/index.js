@@ -229,7 +229,9 @@ const BODY_WRAPPER_STYLE = {
   flexDirection: 'column',
 }
 
-export default withTheme(connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Modal))
+export default withTheme(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps,
+  )(Modal),
+)

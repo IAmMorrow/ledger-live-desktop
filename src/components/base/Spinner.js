@@ -18,7 +18,12 @@ const rotate = keyframes`
 export const Rotating = styled(Box)`
   width: ${p => p.size}px;
   height: ${p => p.size}px;
-  animation: ${p => (p.isRotating === false ? 'none' : css`${rotate} 1s linear infinite`)};
+  animation: ${p =>
+    p.isRotating === false
+      ? 'none'
+      : css`
+          ${rotate} 1s linear infinite
+        `};
   transition: 100ms linear transform;
 `
 

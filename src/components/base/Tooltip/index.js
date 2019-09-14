@@ -16,17 +16,21 @@ const Template = styled.div`
   display: none;
 `
 
-export const TooltipContainer = React.forwardRef(({
-    children,
-    style,
-    tooltipBg,
-    theme,
-  }: {
-    children: React$Node,
-    style?: Object,
-    tooltipBg?: string,
-    theme: any,
-  }, ref: any) => (
+export const TooltipContainer = React.forwardRef(
+  (
+    {
+      children,
+      style,
+      tooltipBg,
+      theme,
+    }: {
+      children: React$Node,
+      style?: Object,
+      tooltipBg?: string,
+      theme: any,
+    },
+    ref: any,
+  ) => (
     <div
       ref={ref}
       style={{
@@ -42,7 +46,8 @@ export const TooltipContainer = React.forwardRef(({
     >
       {children}
     </div>
-  ))
+  ),
+)
 
 TooltipContainer.defaultProps = {
   innerRef: undefined,

@@ -8,14 +8,14 @@ const getPalette = theme => ({
   default: {
     primary: theme.colors.palette.primary.main,
     primaryHover: lighten(theme.colors.palette.primary.main, 0.1),
-    secondary: theme.colors.palette.text.shade40,
-    buttonInner: theme.colors.palette.text.shade80,
+    secondary: theme.colors.palette.divider,
+    buttonInner: theme.colors.palette.primary.contrastText,
   },
   error: {
     primary: theme.colors.alertRed,
     primaryHover: lighten(theme.colors.alertRed, 0.1),
-    secondary: theme.colors.palette.text.shade40,
-    buttonInner: theme.colors.palette.text.shade80,
+    secondary: theme.colors.palette.divider,
+    buttonInner: theme.colors.palette.primary.contrastText,
   },
 })
 
