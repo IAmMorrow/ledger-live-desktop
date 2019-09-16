@@ -26,7 +26,7 @@ import Ellipsis from '../Ellipsis'
 const T = styled(Box).attrs({
   ff: 'Rubik',
   horizontal: true,
-  color: p => (p.withIcon ? p.theme.colors.palette.text.shade100 : p.color),
+  color: p => p.color,
 })`
   line-height: 1.2;
   white-space: pre;
