@@ -30,7 +30,7 @@ const ItemWrapper = styled.div`
   border-radius: 4px;
   border: 1px solid transparent;
   background: ${p =>
-    p.active ? p.theme.colors.palette.background.default : 'palette.background.paper'};
+    p.active ? p.theme.colors.palette.background.default : p.theme.colors.palette.background.paper};
   margin-bottom: 10px;
   &:hover ${AccountName},&:active ${AccountName} {
     color: ${p => p.theme.colors.palette.text.shade100};

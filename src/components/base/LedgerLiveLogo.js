@@ -20,7 +20,7 @@ const LiveLogoContainer = styled(Box).attrs({
   alignItems: 'center',
   justifyContent: 'center',
 })`
-  background-color: ${p => p.theme.colors.palette.background.paper};
+  background-color: ${p => p.theme.colors.palette.primary.contrastText};
   box-shadow: 0 2px 24px 0 #00000014;
   width: ${p => (p.width ? p.width : '80px')};
   height: ${p => (p.height ? p.height : '80px')};

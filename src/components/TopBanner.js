@@ -91,7 +91,7 @@ const Container = styled(Box).attrs({
   py: '8px',
   px: 3,
   bg: p => colors[p.status] || 'palette.primary.main',
-  color: 'palette.background.paper',
+  color: 'palette.primary.contrastText',
   mt: -32,
   mb: 20,
   fontSize: 4,
@@ -111,7 +111,7 @@ export const FakeLink = styled.span`
 `
 
 const CloseContainer = styled(Box).attrs({
-  color: 'palette.background.paper',
+  color: 'palette.primary.contrastText',
 })`
   z-index: 1;
   margin-left: 10px;

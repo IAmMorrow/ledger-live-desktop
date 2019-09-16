@@ -16,6 +16,7 @@ import IconCheck from 'icons/Check'
 import IconExternalLink from 'icons/ExternalLink'
 import IconChevronRight from 'icons/ChevronRight'
 import { i } from 'helpers/staticPath'
+import useTheme from 'hooks/useTheme'
 import { Title } from '../helperComponents'
 
 import type { StepProps } from '..'
@@ -105,14 +106,14 @@ export function OptionFlowCard({ card }: { card: CardType }) {
   const { icon, title, onClick } = card
   return (
     <InitCardContainer onClick={onClick}>
-      <Box justify="center" style={{ color: colors.wallet }}>
+      <Box justify="center" color={'palette.primary.main'}>
         <InitIconContainer justify="center">{icon}</InitIconContainer>
       </Box>
       <Box justify="center" grow>
         <CardTitle>{title}</CardTitle>
       </Box>
       <Box justify="center" mx={1} my={4}>
-        <IconChevronRight style={{ color: colors.palette.text.shade60 }} size={16} />
+        <IconChevronRight style={{ color: useTheme('colors.palette.text.shade60') }} size={16} />
       </Box>
     </InitCardContainer>
   )
