@@ -89,7 +89,6 @@ const buttonStyles: { [_: string]: Style } = {
         ? get(p.theme.colors, p.outlineColor) || p.outlineColor
         : p.theme.colors.palette.primary.main
 
-      console.log('TEST: ', c)
       return `
         background: transparent;
         border: 1px solid ${c};

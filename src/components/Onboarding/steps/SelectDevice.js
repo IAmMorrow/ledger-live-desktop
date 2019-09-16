@@ -113,7 +113,7 @@ const DeviceContainer = styled(Box).attrs({
   width: 218px;
   height: 204px;
   border: ${props =>
-    `1px solid ${props.theme.colors[props.isActive ? 'wallet' : 'palette.divider']}`};
+    `1px solid ${props.theme.colors[props.isActive ? 'palette.primary.main' : 'palette.divider']}`};
   &:hover {
     cursor: default; // this here needs reset because it inherits from cursor: text from parent
     background: ${p => rgba(p.theme.colors.wallet, 0.04)};
@@ -132,6 +132,7 @@ export const BlockTitle = styled(Box).attrs({
   fontSize: 4,
   textAlign: 'center',
   pt: 3,
+  color: 'palette.text.shade100'
 })``
 export function DeviceSelected() {
   return (
@@ -167,6 +168,7 @@ const USBOnly = styled(Box).attrs({
 })`
   position: absolute;
   bottom: 20px;
+  color: ${p => p.theme.colors.palette.primary.contrastText};
   background-color: ${p => p.theme.colors.palette.text.shade40};
   line-height: 16px;
   padding: 0 4px;

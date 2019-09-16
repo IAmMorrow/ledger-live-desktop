@@ -2,7 +2,7 @@
 
 import React, { PureComponent } from 'react'
 import { translate } from 'react-i18next'
-
+import styled from 'styled-components'
 import type { T } from 'types/common'
 
 import { i } from 'helpers/staticPath'
@@ -18,6 +18,10 @@ type Props = {
   onSuccess: void => void,
 }
 
+const InvertableImg = styled.img`
+  filter: invert(${p => p.theme.type === 'dark ? 0.75 : 0'});
+`
+
 class ManagerGenuineCheck extends PureComponent<Props> {
   render() {
     const { t, onSuccess } = this.props
@@ -25,7 +29,7 @@ class ManagerGenuineCheck extends PureComponent<Props> {
       <Box align="center" py={7} selectable>
         <TrackPage category="Manager" name="Genuine Check" />
         <Box align="center" style={{ maxWidth: 460 }}>
-          <img
+          <InvertableImg
             src={i('logos/connectDevice.png')}
             alt="connect your device"
             style={{ marginBottom: 30, maxWidth: 25, width: '100%' }}

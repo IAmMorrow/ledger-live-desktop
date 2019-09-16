@@ -53,17 +53,17 @@ class SelectPIN extends PureComponent<Props, *> {
     const disclaimerNotes = [
       {
         key: 'note1',
-        icon: <IconChevronRight size={12} style={{ color: colors.palette.text.shade80 }} />,
+        icon: <IconChevronRight size={12} />,
         desc: t('onboarding.selectPIN.disclaimer.note1'),
       },
       {
         key: 'note2',
-        icon: <IconChevronRight size={12} style={{ color: colors.palette.text.shade80 }} />,
+        icon: <IconChevronRight size={12} />,
         desc: t('onboarding.selectPIN.disclaimer.note2'),
       },
       {
         key: 'note3',
-        icon: <IconChevronRight size={12} style={{ color: colors.palette.text.shade80 }} />,
+        icon: <IconChevronRight size={12} />,
         desc: t('onboarding.selectPIN.disclaimer.note3'),
       },
     ]
@@ -82,7 +82,7 @@ class SelectPIN extends PureComponent<Props, *> {
             </Box>
           </Box>
         </Inner>
-        <DisclaimerBox mt={6} disclaimerNotes={disclaimerNotes} />
+        <DisclaimerBox mt={6} disclaimerNotes={disclaimerNotes} color={'palette.text.shade80'} />
       </Box>
     )
   }

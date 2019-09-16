@@ -84,7 +84,7 @@ const AppCheck = styled(Box).attrs({
 })`
   color: ${({ theme }) => theme.colors.positiveGreen};
   border-radius: 24px;
-  border: 4px solid palette.background.paper;
+  border: 4px solid ${p => p.theme.colors.palette.background.paper};
   position: absolute;
   top: -18px;
   right: -12px;
@@ -138,7 +138,7 @@ const canHandleInstall = app =>
 
 const LoadingApp = () => (
   <FakeManagerAppContainer noShadow align="center" justify="center" style={{ height: 90 }}>
-    <Spinner size={16} color="rgba(0, 0, 0, 0.3)" />
+    <Spinner size={16} color="palette.text.shade40" />
   </FakeManagerAppContainer>
 )
 
