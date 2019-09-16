@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   flex-shrink: 1;
   text-overflow: ellipsis;
   break-word: break-all;
-  palette.background.paper-space: nowrap;
+  white-space: nowrap;
   > * {
     font-family: 'Open Sans';
     font-weight: 600;

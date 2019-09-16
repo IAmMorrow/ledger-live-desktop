@@ -2,7 +2,6 @@
 
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-import { colors } from 'styles/theme'
 
 import styled from 'styled-components'
 import { flowType } from 'reducers/onboarding'

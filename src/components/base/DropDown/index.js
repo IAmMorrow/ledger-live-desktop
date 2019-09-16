@@ -37,7 +37,7 @@ export const DropDownItem = styled(Box).attrs({
   bg: p => (p.isActive ? 'palette.background.default' : ''),
 })`
   height: 40px;
-  palette.background.paper-space: nowrap;
+  white-space: nowrap;
 `
 
 export const Wrapper = styled(Box)`

@@ -61,7 +61,7 @@ const SideBarListTitle = styled(Box).attrs({
   opacity: ${p => (p.collapsed ? 0 : 1)};
   transition: opacity 0.15s;
   overflow: hidden;
-  palette.background.paper-space: nowrap;
+  white-space: nowrap;
 `
 
 export default SideBarList

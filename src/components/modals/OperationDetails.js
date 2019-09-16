@@ -112,8 +112,8 @@ const OpDetailsData = styled(Box).attrs({
   }
 
   &:hover ${Address} {
-    background: ${colors.pillActiveBackground};
-    color: ${colors.wallet};
+    background: ${p => p.theme.colors.pillActiveBackground};
+    color: ${p => p.theme.colors.palette.primary.main};
     font-weight: 400;
   }
 

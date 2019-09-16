@@ -28,12 +28,12 @@ const Address = ({ value }: { value: string }) => {
 
 const Left = styled.div`
   overflow: hidden;
-  palette.background.paper-space: nowrap;
+  white-space: nowrap;
 `
 
 const Right = styled.div`
   overflow: hidden;
-  palette.background.paper-space: nowrap;
+  white-space: nowrap;
   direction: rtl;
 `
 
@@ -43,7 +43,7 @@ const Middle = styled.div`
 
   overflow: hidden;
   text-overflow: ellipsis;
-  palette.background.paper-space: nowrap;
+  white-space: nowrap;
   min-width: 1em;
 `
 

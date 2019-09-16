@@ -35,7 +35,7 @@ const Separator = styled.div`
 const Item = styled(DropDownItem)`
   width: 230px;
   cursor: pointer;
-  palette.background.paper-space: pre-wrap;
+  white-space: pre-wrap;
   background-color: ${p =>
     !p.disableHover && p.isHighlighted && p.theme.colors.palette.background.default};
 `

@@ -29,7 +29,7 @@ const T = styled(Box).attrs({
   color: p => (p.withIcon ? p.theme.colors.palette.text.shade100 : p.color),
 })`
   line-height: 1.2;
-  palette.background.paper-space: pre;
+  white-space: pre;
   text-overflow: ellipsis;
   display: ${p => (p.inline ? 'inline-block' : 'block')};
   flex-shrink: 1;

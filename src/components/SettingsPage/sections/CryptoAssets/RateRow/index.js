@@ -60,7 +60,7 @@ const RateTypeBar = styled.div`
 `
 
 const NoDataContainer = styled(Box)`
-  palette.background.paper-space: nowrap;
+  white-space: nowrap;
 `
 
 const NoData = () => (

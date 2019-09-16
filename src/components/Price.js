@@ -45,7 +45,7 @@ const PriceWrapper = styled(Box).attrs({
   horizontal: true,
 })`
   line-height: 1.2;
-  palette.background.paper-space: pre;
+  white-space: pre;
   align-items: baseline;
 `
 

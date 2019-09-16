@@ -15,7 +15,7 @@ import Box from '../base/Box/Box'
 
 const AccountName = styled(Text)`
   text-overflow: ellipsis;
-  palette.background.paper-space: nowrap;
+  white-space: nowrap;
   overflow: hidden;
 `
 const ParentCryptoCurrencyIconWrapper = styled.div`

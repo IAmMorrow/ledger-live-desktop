@@ -42,7 +42,7 @@ const ErrorDisplay = styled(Box)`
   bottom: -20px;
   left: 0px;
   font-size: 12px;
-  palette.background.paper-space: nowrap;
+  white-space: nowrap;
   color: ${p => p.theme.colors.pearl};
 `
 

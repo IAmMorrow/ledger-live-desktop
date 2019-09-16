@@ -38,7 +38,7 @@ export const Notes = styled(Box).attrs({
 
     code {
       word-break: normal;
-      palette.background.paper-space: pre;
+      white-space: pre;
       background: transparent;
     }
   }

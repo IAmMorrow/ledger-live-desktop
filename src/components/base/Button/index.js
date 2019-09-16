@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { space, fontSize, fontWeight, color } from 'styled-system'
 import noop from 'lodash/noop'
 import { track } from 'analytics/segment'
+import get from 'lodash/get'
 
 import { isGlobalTabEnabled } from 'config/global-tab'
 import { darken, lighten, rgba } from 'styles/helpers'
@@ -85,8 +86,10 @@ const buttonStyles: { [_: string]: Style } = {
   outline: {
     default: p => {
       const c = p.outlineColor
-        ? p.theme.colors[p.outlineColor] || p.outlineColor
+        ? get(p.theme.colors, p.outlineColor) || p.outlineColor
         : p.theme.colors.palette.primary.main
+
+      console.log('TEST: ', c)
       return `
         background: transparent;
         border: 1px solid ${c};
@@ -101,7 +104,7 @@ const buttonStyles: { [_: string]: Style } = {
     },
     hover: p => {
       const c = p.outlineColor
-        ? p.theme.colors[p.outlineColor] || p.outlineColor
+        ? get(p.theme.colors, p.outlineColor) || p.outlineColor
         : p.theme.colors.palette.primary.main
       return `
         background: ${rgba(c, 0.1)};
@@ -109,19 +112,19 @@ const buttonStyles: { [_: string]: Style } = {
     },
     active: p => {
       const c = p.outlineColor
-        ? p.theme.colors[p.outlineColor] || p.outlineColor
+        ? get(p.theme.colors, p.outlineColor) || p.outlineColor
         : p.theme.colors.palette.primary.main
       return `
         background: ${rgba(c, 0.15)};
         color: ${darken(
           p.outlineColor
-            ? p.theme.colors[p.outlineColor] || p.outlineColor
+            ? get(p.theme.colors, p.outlineColor) || p.outlineColor
             : p.theme.colors.palette.primary.main,
           0.1,
         )};
         border-color: ${darken(
           p.outlineColor
-            ? p.theme.colors[p.outlineColor] || p.outlineColor
+            ? get(p.theme.colors, p.outlineColor) || p.outlineColor
             : p.theme.colors.palette.primary.main,
           0.1,
         )};
@@ -175,6 +178,7 @@ function getStyles(props, state) {
       output += defaultStyle(props) || ''
     }
   }
+
   return output
 }
 
@@ -183,7 +187,7 @@ export const Base = styled.button.attrs({
   fontSize: p => p.fontSize || (!p.small ? 4 : 3),
   px: p => (!p.small ? 4 : 3),
   py: p => (!p.small ? 2 : 0),
-  color: 'palette.text.shade60',
+  color: p => p.theme.colors.palette.text.shade60,
   bg: 'transparent',
 })`
   ${space};

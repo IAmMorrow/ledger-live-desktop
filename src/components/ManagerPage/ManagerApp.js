@@ -38,7 +38,7 @@ const AppName = styled(Box).attrs({
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
-  palette.background.paper-space: nowrap;
+  white-space: nowrap;
 `
 
 type Props = {
