@@ -8,7 +8,6 @@ import Box from './Box'
 
 const RawCard = styled(Box).attrs({
   bg: 'palette.background.paper',
-  p: 3,
   boxShadow: 0,
   borderRadius: 1,
 })``
