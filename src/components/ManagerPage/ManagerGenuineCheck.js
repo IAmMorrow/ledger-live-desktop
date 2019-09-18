@@ -19,7 +19,7 @@ type Props = {
 }
 
 const InvertableImg = styled.img`
-  filter: invert(${p => p.theme.type === 'dark ? 0.75 : 0'});
+  filter: invert(${p => p.theme.colors.palette.type === 'dark' ? '0.75' : '0'});
 `
 
 class ManagerGenuineCheck extends PureComponent<Props> {
