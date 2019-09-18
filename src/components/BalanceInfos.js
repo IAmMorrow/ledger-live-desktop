@@ -12,10 +12,10 @@ import FormattedVal from 'components/base/FormattedVal'
 import PillsDaysCount from 'components/PillsDaysCount'
 import { PlaceholderLine } from './Placeholder'
 
-const Sub = styled(Box).attrs({
+const Sub = styled(Box).attrs(() => ({
   ff: 'Open Sans',
   fontSize: 4,
-})`
+}))`
   text-transform: lowercase;
 `
 

@@ -5,13 +5,13 @@ import { BulletRow } from '../Onboarding/helperComponents'
 import Box from '../base/Box'
 import Text from '../base/Text'
 
-const BulletRowIcon = styled(Box).attrs({
+const BulletRowIcon = styled(Box).attrs(() => ({
   ff: 'Rubik|Regular',
   fontSize: 10,
   textAlign: 'center',
   color: 'wallet',
   pl: 2,
-})`
+}))`
   background-color: rgba(100, 144, 241, 0.2);
   border-radius: 12px;
   display: inline-flex;
@@ -21,13 +21,13 @@ const BulletRowIcon = styled(Box).attrs({
   padding-top: 2px;
 `
 
-const Plus = styled(Box).attrs({
+const Plus = styled(Box).attrs(() => ({
   ff: 'Open Sans|SemiBold',
   fontSize: 13,
   textAlign: 'center',
   color: 'wallet',
   pl: 2,
-})`
+}))`
   display: inline-flex;
   background-color: rgba(100, 144, 241, 0.2);
   border-radius: 4px;

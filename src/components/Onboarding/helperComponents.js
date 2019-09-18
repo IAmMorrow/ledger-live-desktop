@@ -8,46 +8,46 @@ import GrowScroll from 'components/base/GrowScroll'
 import IconSensitiveOperationShield from 'icons/SensitiveOperationShield'
 
 // GENERAL
-export const Title = styled(Box).attrs({
+export const Title = styled(Box).attrs(() => ({
   ff: 'Museo Sans|Regular',
   fontSize: 7,
   color: 'palette.text.shade100',
-})`
+}))`
   max-width: 550px;
   text-align: center;
 `
 
-export const StepContainerInner = styled(GrowScroll).attrs({ pb: 6, align: 'center' })``
+export const StepContainerInner = styled(GrowScroll).attrs(() => ({ pb: 6, align: 'center' }))``
 
-export const Description = styled(Box).attrs({
+export const Description = styled(Box).attrs(() => ({
   ff: 'Museo Sans|Regular',
   fontSize: 5,
   lineHeight: 1.5,
   textAlign: 'center',
   color: 'palette.text.shade60',
-})`
+}))`
   margin: 10px auto 25px;
   max-width: 640px;
 `
 
-export const Inner = styled(Box).attrs({
+export const Inner = styled(Box).attrs(() => ({
   horizontal: true,
   grow: true,
   flow: 4,
-})``
+}))``
 
-export const FixedTopContainer = styled(Box).attrs({
+export const FixedTopContainer = styled(Box).attrs(() => ({
   sticky: true,
   mt: 170,
   backgroundColor: 'red',
-})``
+}))``
 // FOOTER
 
-export const OnboardingFooterWrapper = styled(Box).attrs({
+export const OnboardingFooterWrapper = styled(Box).attrs(() => ({
   px: 5,
   py: 3,
   horizontal: true,
-})`
+}))`
   border-top: 2px solid ${p => p.theme.colors.palette.divider};
   border-bottom-left-radius: ${radii[1]}px;
   border-bottom-right-radius: ${radii[1]}px;
@@ -82,20 +82,20 @@ export function BulletRow({ step, ...p }: { step: StepType }) {
     </Box>
   )
 }
-export const OptionRowDesc = styled(Box).attrs({
+export const OptionRowDesc = styled(Box).attrs(() => ({
   ff: 'Open Sans|Regular',
   fontSize: 4,
   textAlign: 'left',
   color: 'palette.text.shade80',
   grow: true,
   pl: 2,
-})``
+}))``
 
-export const IconOptionRow = styled(Box).attrs({
+export const IconOptionRow = styled(Box).attrs(() => ({
   ff: 'Rubik|Regular',
   fontSize: 14,
   color: 'wallet',
-})``
+}))``
 
 export function DisclaimerBox({ disclaimerNotes, ...p }: { disclaimerNotes: any }) {
   return (
@@ -113,31 +113,31 @@ export function DisclaimerBox({ disclaimerNotes, ...p }: { disclaimerNotes: any 
 }
 
 // Not enough styled as a warning
-const DisclaimerBoxContainer = styled(Box).attrs({
+const DisclaimerBoxContainer = styled(Box).attrs(() => ({
   shrink: 1,
   grow: true,
   borderRadius: '4px',
-  bg: '#f9f9f980',
-})`
+  bg: 'palette.background.default',
+}))`
   min-width: 620px;
   border: 1px dashed ${p => p.theme.colors.palette.divider};
 `
-const DisclaimerBoxIconContainer = styled(Box).attrs({
-  color: p => p.theme.colors.alertRed,
-})`
+const DisclaimerBoxIconContainer = styled(Box).attrs(p => ({
+  color: p.theme.colors.alertRed,
+}))`
   position: absolute;
   top: 0;
   right: 0;
 `
 
 // GENUINE CHECK
-export const GenuineCheckCardWrapper = styled(Box).attrs({
+export const GenuineCheckCardWrapper = styled(Box).attrs(() => ({
   horizontal: true,
   alignItems: 'center',
   p: 5,
   borderRadius: '4px',
   justify: 'flex-start',
-})`
+}))`
   width: 580px;
   transition: all ease-in-out 0.2s;
   color: ${p =>

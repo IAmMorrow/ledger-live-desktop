@@ -18,7 +18,7 @@ type Props = {
   status: ?CurrencyStatus,
 }
 
-const CurrencyDownBox = styled(Box).attrs({
+const CurrencyDownBox = styled(Box).attrs(() => ({
   horizontal: true,
   align: 'center',
   color: 'palette.background.paper',
@@ -27,7 +27,7 @@ const CurrencyDownBox = styled(Box).attrs({
   px: 4,
   py: 2,
   mb: 4,
-})`
+}))`
   background-color: ${p => (p.warning ? p.theme.colors.orange : p.theme.colors.alertRed)};
 `
 

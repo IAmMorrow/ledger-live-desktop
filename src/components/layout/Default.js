@@ -44,9 +44,9 @@ import SyncContinuouslyPendingOperations from '../SyncContinouslyPendingOperatio
 import HSMStatusBanner from '../HSMStatusBanner'
 import type { State } from '../../reducers'
 
-const Main = styled(GrowScroll).attrs({
+const Main = styled(GrowScroll).attrs(() => ({
   px: 6,
-})`
+}))`
   outline: none;
   padding-top: ${p => p.theme.sizes.topBarHeight + p.theme.space[6]}px;
 `

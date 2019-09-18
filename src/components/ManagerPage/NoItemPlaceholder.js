@@ -12,17 +12,17 @@ import Box from 'components/base/Box'
 import Text from 'components/base/Text'
 import Button from 'components/base/Button'
 
-const Title = styled(Box).attrs({
+const Title = styled(Box).attrs(() => ({
   ff: 'Museo Sans|Regular',
   fontSize: 5,
-})`
+}))`
   color: ${p => p.theme.colors.palette.text.shade100};
 `
 
-const Wrapper = styled(Box).attrs({
+const Wrapper = styled(Box).attrs(() => ({
   alignItems: 'center',
   pt: 5,
-})``
+}))``
 
 type Props = {
   query: string,

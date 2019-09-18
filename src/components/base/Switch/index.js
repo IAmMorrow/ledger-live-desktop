@@ -6,11 +6,11 @@ import styled from 'styled-components'
 
 import { Tabbable } from 'components/base/Box'
 
-const Base = styled(Tabbable).attrs({
-  bg: p => (p.isChecked ? 'wallet' : 'palette.text.shade40'),
+const Base = styled(Tabbable).attrs(p => ({
+  bg: (p.isChecked ? 'wallet' : 'palette.text.shade40'),
   horizontal: true,
   align: 'center',
-})`
+}))`
   width: ${p => (p.small ? 25 : 50)}px;
   height: ${p => (p.small ? 13 : 26)}px;
   border-radius: 13px;

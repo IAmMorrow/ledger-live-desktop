@@ -85,18 +85,18 @@ const IconContainer = styled.div`
   align-items: center;
 `
 
-const Container = styled(Box).attrs({
+const Container = styled(Box).attrs(p => ({
   horizontal: true,
   align: 'center',
   py: '8px',
   px: 3,
-  bg: p => colors[p.status] || 'palette.primary.main',
+  bg: colors[p.status] || 'palette.primary.main',
   color: 'palette.primary.contrastText',
   mt: -32,
   mb: 20,
   fontSize: 4,
   ff: 'Open Sans|SemiBold',
-})`
+}))`
   border-radius: ${radii[1]}px;
 `
 
@@ -110,9 +110,9 @@ export const FakeLink = styled.span`
   cursor: pointer;
 `
 
-const CloseContainer = styled(Box).attrs({
+const CloseContainer = styled(Box).attrs(() => ({
   color: 'palette.primary.contrastText',
-})`
+}))`
   z-index: 1;
   margin-left: 10px;
   cursor: pointer;

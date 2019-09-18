@@ -54,32 +54,32 @@ const ImportError = ({ error }: { error: Error }) => (
   </Box>
 )
 
-const LoadingRow = styled(Box).attrs({
+const LoadingRow = styled(Box).attrs(() => ({
   horizontal: true,
   borderRadius: 1,
   px: 3,
   align: 'center',
   justify: 'center',
   mt: 1,
-})`
+}))`
   height: 48px;
   border: 1px dashed ${p => p.theme.colors.palette.text.shade60};
 `
-const Title = styled(Box).attrs({
+const Title = styled(Box).attrs(() => ({
   ff: 'Museo Sans',
   fontSize: 5,
   mt: 2,
   color: 'palette.text.shade100',
-})`
+}))`
   text-align: center;
 `
 
-const Desc = styled(Box).attrs({
+const Desc = styled(Box).attrs(() => ({
   ff: 'Open Sans',
   fontSize: 4,
   mt: 2,
   color: 'palette.text.shade80',
-})`
+}))`
   text-align: center;
 `
 

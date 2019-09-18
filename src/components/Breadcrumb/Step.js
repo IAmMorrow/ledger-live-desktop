@@ -12,10 +12,9 @@ import IconCross from 'icons/Cross'
 
 const RADIUS = 18
 
-const Wrapper = styled(Box).attrs({
+const Wrapper = styled(Box).attrs(p => ({
   alignItems: 'center',
-  color: p =>
-    ['active', 'valid'].includes(p.status)
+  color: ['active', 'valid'].includes(p.status)
       ? 'wallet'
       : p.status === 'error'
       ? 'alertRed'
@@ -23,28 +22,26 @@ const Wrapper = styled(Box).attrs({
   grow: true,
   justifyContent: 'center',
   relative: true,
-})`
+}))`
   width: ${RADIUS}px;
   flex-shrink: 0;
   text-align: center;
   font-size: 9px;
 `
 
-const StepNumber = styled(Box).attrs({
+const StepNumber = styled(Box).attrs(p => ({
   alignItems: 'center',
   justifyContent: 'center',
-  color: p =>
-    ['active', 'valid', 'error'].includes(p.status)
+  color: ['active', 'valid', 'error'].includes(p.status)
       ? 'palette.background.paper'
       : 'palette.divider',
-  bg: p =>
-    ['active', 'valid'].includes(p.status)
+  bg: ['active', 'valid'].includes(p.status)
       ? 'wallet'
       : p.status === 'error'
       ? 'alertRed'
       : 'palette.background.paper',
   ff: 'Rubik|Regular',
-})`
+}))`
   border-radius: 50%;
   border: 1px solid
     ${p =>
@@ -60,11 +57,11 @@ const StepNumber = styled(Box).attrs({
   width: ${RADIUS}px;
 `
 
-const Label = styled(Box).attrs({
+const Label = styled(Box).attrs(() => ({
   fontSize: 3,
   ff: 'Museo Sans|Bold',
   px: 2,
-})`
+}))`
   line-height: 1.2;
   position: absolute;
   top: 25px;

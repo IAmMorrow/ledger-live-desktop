@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 import { Tabbable } from 'components/base/Box'
 
-const Base = styled(Tabbable).attrs({ relative: true })`
+const Base = styled(Tabbable).attrs(() => ({ relative: true }))`
   outline: none;
   box-shadow: 0 0 0 1px
     ${p =>

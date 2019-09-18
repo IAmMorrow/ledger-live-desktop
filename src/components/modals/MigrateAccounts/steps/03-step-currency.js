@@ -43,21 +43,21 @@ const MigrationError = ({ error }: { error: Error }) => (
     </Desc>
   </Box>
 )
-const Title = styled(Box).attrs({
+const Title = styled(Box).attrs(() => ({
   ff: 'Museo Sans',
   fontSize: 5,
   mt: 2,
   color: 'palette.text.shade100',
-})`
+}))`
   text-align: center;
 `
 
-const Desc = styled(Box).attrs({
+const Desc = styled(Box).attrs(() => ({
   ff: 'Open Sans',
   fontSize: 4,
   mt: 2,
   color: 'palette.text.shade80',
-})`
+}))`
   text-align: center;
 `
 

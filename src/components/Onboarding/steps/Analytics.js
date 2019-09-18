@@ -207,30 +207,30 @@ export default connect(
   mapDispatchToProps,
 )(Analytics)
 
-const MandatoryText = styled(Box).attrs({
+const MandatoryText = styled(Box).attrs(() => ({
   ff: 'Open Sans|Regular',
   fontSize: 2,
   textAlign: 'left',
   color: 'palette.text.shade60',
   mt: 1,
-})``
-export const AnalyticsText = styled(Box).attrs({
+}))``
+export const AnalyticsText = styled(Box).attrs(() => ({
   ff: 'Open Sans|Regular',
   fontSize: 3,
   textAlign: 'left',
   color: 'palette.text.shade80',
-})`
+}))`
   max-width: 400px;
 `
-export const AnalyticsTitle = styled(Box).attrs({
+export const AnalyticsTitle = styled(Box).attrs(() => ({
   ff: 'Open Sans|SemiBold',
   fontSize: 4,
   textAlign: 'left',
-})``
-const Container = styled(Box).attrs({
+}))``
+const Container = styled(Box).attrs(() => ({
   horizontal: true,
   p: 3,
-})`
+}))`
   width: 550px;
   justify-content: space-between;
 `

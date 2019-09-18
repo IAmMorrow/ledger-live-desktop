@@ -49,11 +49,11 @@ const Wrapper = styled(Box)`
   flex-direction: row;
 `
 
-const SwapButton = styled(Tabbable).attrs({
+const SwapButton = styled(Tabbable).attrs(() => ({
   color: 'palette.text.shade100',
   ff: 'Museo Sans',
   fontSize: 7,
-})`
+}))`
   align-items: center;
   align-self: center;
   border-radius: 4px;

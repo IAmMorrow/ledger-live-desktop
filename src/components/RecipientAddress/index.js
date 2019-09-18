@@ -16,12 +16,12 @@ import { track } from 'analytics/segment'
 
 import IconQrCode from 'icons/QrCode'
 
-const Right = styled(Box).attrs({
+const Right = styled(Box).attrs(() => ({
   bg: 'palette.background.default',
   px: 3,
   align: 'center',
   justify: 'center',
-})`
+}))`
   border-top-right-radius: ${radii[1]}px;
   border-bottom-right-radius: ${radii[1]}px;
   border-left: 1px solid ${p => p.theme.colors.palette.divider};

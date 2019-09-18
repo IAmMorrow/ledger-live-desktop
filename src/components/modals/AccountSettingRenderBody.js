@@ -334,28 +334,28 @@ export function InputLeft({ currency }: { currency: CryptoCurrency }) {
   )
 }
 
-export const Container = styled(Box).attrs({
+export const Container = styled(Box).attrs(() => ({
   flow: 2,
   justify: 'space-between',
   horizontal: true,
   mb: 3,
   pb: 4,
-})`
+}))`
   border-bottom: 1px solid ${p => p.theme.colors.palette.divider};
 `
 
-export const OptionRowDesc = styled(Box).attrs({
+export const OptionRowDesc = styled(Box).attrs(() => ({
   ff: 'Open Sans|Regular',
   fontSize: 3,
   textAlign: 'left',
   lineHeight: 1.69,
   color: 'palette.text.shade60',
   shrink: 1,
-})``
-export const OptionRowTitle = styled(Box).attrs({
+}))``
+export const OptionRowTitle = styled(Box).attrs(() => ({
   ff: 'Open Sans|SemiBold',
   color: 'palette.text.shade100',
   fontSize: 4,
   textAlign: 'left',
   lineHeight: 1.69,
-})``
+}))``

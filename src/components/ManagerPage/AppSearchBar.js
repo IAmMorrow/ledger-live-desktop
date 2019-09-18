@@ -13,10 +13,10 @@ import Search from 'components/base/Search'
 import SearchIcon from 'icons/Search'
 import CrossIcon from 'icons/Cross'
 
-const CrossContainer = styled(Box).attrs({
+const CrossContainer = styled(Box).attrs(() => ({
   justify: 'center',
   px: 3,
-})`
+}))`
   &:hover {
     color: ${p => p.theme.colors.palette.text.shade100};
   }

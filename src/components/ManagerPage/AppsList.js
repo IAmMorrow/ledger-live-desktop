@@ -46,9 +46,9 @@ import ManagerApp, { Container as FakeManagerAppContainer } from './ManagerApp'
 import AppSearchBar from './AppSearchBar'
 import NoItemPlaceholder from './NoItemPlaceholder'
 
-const List = styled(Box).attrs({
+const List = styled(Box).attrs(() => ({
   horizontal: true,
-})`
+}))`
   flex-wrap: wrap;
 
   > * {
@@ -67,7 +67,7 @@ const List = styled(Box).attrs({
   }
 `
 
-const IconWrapper = styled(Box).attrs({})`
+const IconWrapper = styled(Box).attrs(() => ({}))`
   position: relative;
 `
 
@@ -78,10 +78,10 @@ const AppIcon = styled.img`
   pointer-events: none;
 `
 
-const AppCheck = styled(Box).attrs({
+const AppCheck = styled(Box).attrs(() => ({
   align: 'center',
   justify: 'center',
-})`
+}))`
   color: ${({ theme }) => theme.colors.positiveGreen};
   border-radius: 24px;
   border: 4px solid ${p => p.theme.colors.palette.background.paper};

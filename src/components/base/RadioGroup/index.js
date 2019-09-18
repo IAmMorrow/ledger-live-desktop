@@ -5,9 +5,9 @@ import styled from 'styled-components'
 
 import Box from 'components/base/Box'
 
-const Container = styled(Box).attrs({
+const Container = styled(Box).attrs(() => ({
   horizontal: true,
-})`
+}))`
   height: 34px;
 
   > * + * {
@@ -25,7 +25,7 @@ const Container = styled(Box).attrs({
   }
 `
 
-const Btn = styled(Box).attrs({
+const Btn = styled(Box).attrs(() => ({
   color: p => (p.isActive ? 'palette.background.paper' : 'palette.text.shade60'),
   bg: p => (p.isActive ? 'wallet' : 'palette.background.paper'),
   alignItems: 'center',
@@ -33,7 +33,7 @@ const Btn = styled(Box).attrs({
   fontSize: 3,
   ff: 'Open Sans|SemiBold',
   px: 3,
-})`
+}))`
   cursor: pointer;
   border: solid 1px ${p => (p.isActive ? p.theme.colors.wallet : p.theme.colors.palette.divider)};
   margin-left: ${p => (p.isActive ? -1 : 0)}px;

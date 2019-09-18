@@ -26,9 +26,9 @@ import ActivityIndicator from './ActivityIndicator'
 import ItemContainer from './ItemContainer'
 import Breadcrumb from './Breadcrumb'
 
-const Container = styled(Box).attrs({
+const Container = styled(Box).attrs(() => ({
   px: 6,
-})`
+}))`
   height: ${p => p.theme.sizes.topBarHeight}px;
   position: absolute;
   left: 0;
@@ -37,12 +37,12 @@ const Container = styled(Box).attrs({
   z-index: 20;
 `
 
-const Inner = styled(Box).attrs({
+const Inner = styled(Box).attrs(() => ({
   horizontal: true,
   grow: true,
   flow: 4,
   align: 'center',
-})``
+}))``
 
 const Bar = styled.div`
   margin-left: 5px;

@@ -6,12 +6,12 @@ import { shell } from 'electron'
 
 import Box from 'components/base/Box'
 
-export const Notes = styled(Box).attrs({
+export const Notes = styled(Box).attrs(() => ({
   ff: 'Open Sans',
   fontSize: 4,
   color: 'palette.text.shade80',
   flow: 4,
-})`
+}))`
   ul,
   ol {
     padding-left: 20px;

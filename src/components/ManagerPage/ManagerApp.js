@@ -12,14 +12,14 @@ import Box from 'components/base/Box'
 import Text from 'components/base/Text'
 import Button from 'components/base/Button'
 
-export const Container = styled(Box).attrs({
+export const Container = styled(Box).attrs(() => ({
   horizontal: true,
   p: 4,
   bg: 'palette.background.paper',
   boxShadow: p => (p.noShadow ? -1 : 0),
   borderRadius: 4,
   flow: 2,
-})`
+}))`
   line-height: normal;
 `
 
@@ -30,11 +30,11 @@ const AppIcon = styled.img`
   pointer-events: none;
 `
 
-const AppName = styled(Box).attrs({
+const AppName = styled(Box).attrs(() => ({
   ff: 'Museo Sans|Regular',
   fontSize: 4,
   color: 'palette.text.shade100',
-})`
+}))`
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;

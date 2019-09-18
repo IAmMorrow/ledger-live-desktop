@@ -16,22 +16,21 @@ import Interactions from 'icons/device/interactions'
 import type { Device } from 'types/common'
 import type { StepProps } from '../'
 
-const Container = styled(Box).attrs({
+const Container = styled(Box).attrs(() => ({
   alignItems: 'center',
   fontSize: 4,
   color: 'palette.text.shade100',
   px: 7,
-})``
+}))``
 
-const Title = styled(Box).attrs({
+const Title = styled(Box).attrs(() => ({
   ff: 'Museo Sans|Regular',
   fontSize: 5,
   mb: 3,
-})``
+}))``
 
-const Address = styled(Box).attrs({
-  bg: p =>
-    p.notValid
+const Address = styled(Box).attrs(p => ({
+  bg: p.notValid
       ? 'transparent'
       : p.withQRCode
       ? 'palette.background.paper'
@@ -41,9 +40,9 @@ const Address = styled(Box).attrs({
   ff: 'Open Sans|SemiBold',
   fontSize: 4,
   mt: 2,
-  px: p => (p.notValid ? 0 : 4),
-  py: p => (p.notValid ? 0 : 3),
-})`
+  px: (p.notValid ? 0 : 4),
+  py: (p.notValid ? 0 : 3),
+}))`
   border: ${p => (p.notValid ? 'none' : `1px dashed ${p.theme.colors.palette.divider}`)};
   cursor: text;
   user-select: text;

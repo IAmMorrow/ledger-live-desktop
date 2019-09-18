@@ -11,7 +11,7 @@ type Props = {
   warning?: boolean,
 }
 
-const ErrorBannerBox = styled(Box).attrs({
+const ErrorBannerBox = styled(Box).attrs(() => ({
   horizontal: true,
   align: 'flex-start',
   color: 'palette.background.paper',
@@ -20,7 +20,7 @@ const ErrorBannerBox = styled(Box).attrs({
   px: 4,
   py: 2,
   mb: 4,
-})`
+}))`
   background-color: ${p => (p.warning ? p.theme.colors.orange : p.theme.colors.alertRed)};
 `
 

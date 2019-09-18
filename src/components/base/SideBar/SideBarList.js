@@ -46,14 +46,14 @@ class SideBarList extends Component<Props> {
   }
 }
 
-const SideBarListTitle = styled(Box).attrs({
+const SideBarListTitle = styled(Box).attrs(() => ({
   horizontal: true,
   align: 'center',
   color: 'palette.text.shade100',
   ff: 'Museo Sans|ExtraBold',
   fontSize: 1,
   px: 4,
-})`
+}))`
   cursor: default;
   letter-spacing: 2px;
   text-transform: uppercase;

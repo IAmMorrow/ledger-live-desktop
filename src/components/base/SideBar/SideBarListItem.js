@@ -65,7 +65,7 @@ class SideBarListItem extends PureComponent<Props> {
   }
 }
 
-const Container = styled(Tabbable).attrs({
+const Container = styled(Tabbable).attrs(() => ({
   align: 'center',
   borderRadius: 1,
   ff: 'Open Sans|SemiBold',
@@ -73,7 +73,7 @@ const Container = styled(Tabbable).attrs({
   horizontal: true,
   px: 3,
   py: 2,
-})`
+}))`
   cursor: ${p => (p.disabled ? 'not-allowed' : 'default')};
   color: ${p =>
     p.isActive ? p.theme.colors.palette.text.shade100 : p.theme.colors.palette.text.shade80};

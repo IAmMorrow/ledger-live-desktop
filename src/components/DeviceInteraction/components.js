@@ -19,12 +19,12 @@ import IconCross from 'icons/Cross'
 import IconExclamationCircle from 'icons/ExclamationCircle'
 import IconSmoothBorders from 'icons/SmoothBorders'
 
-export const DeviceInteractionStepContainer = styled(Box).attrs({
+export const DeviceInteractionStepContainer = styled(Box).attrs(() => ({
   horizontal: true,
   ff: 'Open Sans',
   fontSize: 3,
   color: 'palette.text.shade80',
-})`
+}))`
   position: relative;
   z-index: ${p => (p.isActive ? 1 : '')};
   max-width: 500px;

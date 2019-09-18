@@ -7,23 +7,23 @@ import { rgba } from 'styles/helpers'
 
 import Box, { Card } from 'components/base/Box'
 
-export const SettingsSection = styled(Card).attrs({ p: 0 })``
+export const SettingsSection = styled(Card).attrs(() => ({ p: 0 }))``
 
-export const SettingsSectionHeaderContainer = styled(Box).attrs({
+export const SettingsSectionHeaderContainer = styled(Box).attrs(() => ({
   p: 4,
   horizontal: true,
   align: 'center',
-})`
+}))`
   border-bottom: 1px solid ${p => p.theme.colors.palette.divider};
   line-height: normal;
 `
 
-const RoundIconContainer = styled(Box).attrs({
+const RoundIconContainer = styled(Box).attrs(p => ({
   align: 'center',
   justify: 'center',
-  bg: p => rgba(p.theme.colors.wallet, 0.2),
+  bg: rgba(p.theme.colors.wallet, 0.2),
   color: 'wallet',
-})`
+}))`
   height: 34px;
   width: 34px;
   border-radius: 50%;
@@ -83,13 +83,13 @@ SettingsSectionHeader.defaultProps = {
   renderRight: undefined,
 }
 
-export const SettingsSectionRowContainer = styled(Box).attrs({
+export const SettingsSectionRowContainer = styled(Box).attrs(() => ({
   p: 4,
   horizontal: true,
   align: 'center',
   relative: true,
   justifyContent: 'space-between',
-})``
+}))``
 
 export function SettingsSectionRow({
   title,

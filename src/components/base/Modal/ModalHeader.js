@@ -19,13 +19,13 @@ const MODAL_HEADER_STYLE = {
   padding: 20,
 }
 
-const ModalTitle = styled(Box).attrs({
+const ModalTitle = styled(Box).attrs(() => ({
   color: 'palette.text.shade100',
   ff: 'Museo Sans|Regular',
   fontSize: 6,
   grow: true,
   shrink: true,
-})`
+}))`
   text-align: center;
   line-height: 1;
 `
@@ -33,13 +33,13 @@ const ModalTitle = styled(Box).attrs({
 const iconAngleLeft = <IconAngleLeft size={16} />
 const iconCross = <IconCross size={16} />
 
-const ModalHeaderAction = styled(Box).attrs({
+const ModalHeaderAction = styled(Box).attrs(() => ({
   horizontal: true,
   align: 'center',
   fontSize: 3,
   p: 4,
   color: 'palette.text.shade60',
-})`
+}))`
   position: absolute;
   top: 0;
   left: ${p => (p.right ? 'auto' : 0)};

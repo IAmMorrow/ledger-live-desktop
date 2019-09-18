@@ -50,26 +50,26 @@ import IconExternalLink from 'icons/ExternalLink'
 import CounterValue from 'components/CounterValue'
 import Link from '../base/Link'
 
-const OpDetailsSection = styled(Box).attrs({
+const OpDetailsSection = styled(Box).attrs(() => ({
   horizontal: true,
   alignItems: 'center',
   ff: 'Open Sans|SemiBold',
   fontSize: 4,
   color: 'palette.text.shade60',
-})``
+}))``
 
-const OpDetailsTitle = styled(Box).attrs({
+const OpDetailsTitle = styled(Box).attrs(() => ({
   ff: 'Museo Sans|ExtraBold',
   fontSize: 2,
   color: 'palette.text.shade100',
   textTransform: 'uppercase',
   mb: 1,
-})`
+}))`
   justify-content: center;
   height: 18px;
   letter-spacing: 2px;
 `
-export const Address = styled(Text).attrs({})`
+export const Address = styled(Text).attrs(() => ({}))`
   margin-left: -4px;
   border-radius: 4px;
   flex-wrap: wrap;
@@ -77,10 +77,10 @@ export const Address = styled(Text).attrs({})`
   width: fit-content;
 `
 
-export const GradientHover = styled(Box).attrs({
+export const GradientHover = styled(Box).attrs(() => ({
   align: 'center',
   color: 'wallet',
-})`
+}))`
   background: ${p => p.theme.colors.palette.background.paper};
   position: absolute;
   top: 0;
@@ -94,12 +94,12 @@ export const GradientHover = styled(Box).attrs({
   );
 `
 
-const OpDetailsData = styled(Box).attrs({
+const OpDetailsData = styled(Box).attrs(() => ({
   ff: 'Open Sans',
   color: 'palette.text.shade80',
   fontSize: 4,
   relative: true,
-})`
+}))`
   ${GradientHover} {
     display: none;
   }
@@ -127,10 +127,10 @@ const NoMarginWrapper = styled.div`
   margin-right: -20px;
 `
 
-const B = styled(Bar).attrs({
+const B = styled(Bar).attrs(() => ({
   color: 'palette.background.default',
   size: 1,
-})``
+}))``
 
 const mapDispatchToProps = {
   openModal,
@@ -531,12 +531,12 @@ const OperationDetailsWrapper = ({ t }: { t: T }) => (
 
 export default translate()(OperationDetailsWrapper)
 
-const More = styled(Text).attrs({
-  ff: p => (p.ff ? p.ff : 'Museo Sans|Bold'),
-  fontSize: p => (p.fontSize ? p.fontSize : 2),
-  color: p => (p.color ? p.color : 'palette.text.shade100'),
+const More = styled(Text).attrs(p => ({
+  ff: (p.ff ? p.ff : 'Museo Sans|Bold'),
+  fontSize: (p.fontSize ? p.fontSize : 2),
+  color: (p.color ? p.color : 'palette.text.shade100'),
   tabIndex: 0,
-})`
+}))`
   text-transform: ${p => (!p.textTransform ? 'auto' : 'uppercase')};
   outline: none;
 `

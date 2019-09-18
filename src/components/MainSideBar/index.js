@@ -143,10 +143,10 @@ const Tag = styled(Link)`
 const collapserSize = 24
 const collapsedWidth = 15 * 4 + 16 // 15 * 4 margins + 16 icon size
 
-const Collapser = styled(Box).attrs({
+const Collapser = styled(Box).attrs(() => ({
   alignItems: 'center',
   justifyContent: 'center',
-})`
+}))`
   position: absolute;
   top: ${58 - collapserSize / 2}px;
   left: ${p => (p.collapsed ? collapsedWidth : MAIN_SIDEBAR_WIDTH) - collapserSize / 2}px;
@@ -178,9 +178,9 @@ const Collapser = styled(Box).attrs({
   }
 `
 
-const Separator = styled(Box).attrs({
+const Separator = styled(Box).attrs(() => ({
   mx: 4,
-})`
+}))`
   height: 1px;
   background: ${p => p.theme.colors.palette.divider};
 `
@@ -203,9 +203,9 @@ const disableTransitions = () =>
 
 const sideBarTransitionSpeed = 500
 
-const SideBar = styled(Box).attrs({
+const SideBar = styled(Box).attrs(() => ({
   relative: true,
-})`
+}))`
   background-color: ${p => p.theme.colors.palette.background.paper};
   transition: width ${sideBarTransitionSpeed}ms;
   will-change: width;

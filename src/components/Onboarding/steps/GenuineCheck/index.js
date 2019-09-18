@@ -280,12 +280,12 @@ export default connect(
   mapDispatchToProps,
 )(GenuineCheck)
 
-export const CardTitle = styled(Box).attrs({
+export const CardTitle = styled(Box).attrs(() => ({
   ff: 'Open Sans|SemiBold',
   fontSize: 4,
   textAlign: 'left',
   pl: 2,
-})`
+}))`
   flex-shrink: 1;
 `
 export const Spacer = styled.div``

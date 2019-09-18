@@ -25,10 +25,10 @@ import Box, { Tabbable } from 'components/base/Box'
 import Button from 'components/base/Button'
 import Star from '../Stars/Star'
 
-const ButtonSettings = styled(Tabbable).attrs({
+const ButtonSettings = styled(Tabbable).attrs(() => ({
   align: 'center',
   justify: 'center',
-})`
+}))`
   width: 34px;
   height: 34px;
   border: 1px solid ${p => p.theme.colors.palette.text.shade60};

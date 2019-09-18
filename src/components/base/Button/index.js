@@ -181,14 +181,14 @@ function getStyles(props, state) {
   return output
 }
 
-export const Base = styled.button.attrs({
+export const Base = styled.button.attrs(p => ({
   ff: 'Museo Sans|Regular',
-  fontSize: p => p.fontSize || (!p.small ? 4 : 3),
-  px: p => (!p.small ? 4 : 3),
-  py: p => (!p.small ? 2 : 0),
-  color: p => p.theme.colors.palette.text.shade60,
+  fontSize: p.fontSize || (!p.small ? 4 : 3),
+  px: (!p.small ? 4 : 3),
+  py: (!p.small ? 2 : 0),
+  color: p.theme.colors.palette.text.shade60,
   bg: 'transparent',
-})`
+}))`
   ${space};
   ${color};
   ${fontSize};

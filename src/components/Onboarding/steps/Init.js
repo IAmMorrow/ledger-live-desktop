@@ -117,11 +117,11 @@ export function OptionFlowCard({ card }: { card: CardType }) {
   )
 }
 
-const InitCardContainer = styled(Box).attrs({
+const InitCardContainer = styled(Box).attrs(() => ({
   p: 3,
   horizontal: true,
   borderRadius: '4px',
-})`
+}))`
   border: 1px solid ${p => p.theme.colors.palette.divider};
   width: 530px;
   height: 70px;
@@ -131,15 +131,15 @@ const InitCardContainer = styled(Box).attrs({
   }
 `
 
-export const CardTitle = styled(Box).attrs({
+export const CardTitle = styled(Box).attrs(() => ({
   ff: 'Open Sans|SemiBold',
   fontSize: 4,
   textAlign: 'left',
-})``
+}))``
 
-const InitIconContainer = styled(Box).attrs({
+const InitIconContainer = styled(Box).attrs(() => ({
   ml: 3,
   mr: 4,
-})`
+}))`
   text-align: -webkit-center;
 `

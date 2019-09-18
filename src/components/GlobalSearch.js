@@ -9,12 +9,12 @@ import IconSearch from 'icons/Search'
 
 import Box from 'components/base/Box'
 
-const Container = styled(Box).attrs({
+const Container = styled(Box).attrs(() => ({
   grow: true,
   horizontal: true,
   ff: 'Open Sans|SemiBold',
   fontSize: 4,
-})``
+}))``
 
 const Input = styled.input`
   border: none;

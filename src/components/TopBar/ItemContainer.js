@@ -6,14 +6,14 @@ import { rgba } from 'styles/helpers'
 
 import { Tabbable } from 'components/base/Box'
 
-export default styled(Tabbable).attrs({
+export default styled(Tabbable).attrs(p => ({
   px: 3,
   ml: 0,
   alignItems: 'center',
-  cursor: p => (p.disabled ? 'not-allowed' : 'default'),
+  cursor: (p.disabled ? 'not-allowed' : 'default'),
   horizontal: true,
   borderRadius: 1,
-})`
+}))`
   -webkit-app-region: no-drag;
   height: 40px;
   pointer-events: ${p => (p.disabled ? 'none' : 'unset')};

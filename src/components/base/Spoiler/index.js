@@ -19,12 +19,12 @@ type State = {
   isOpened: boolean,
 }
 
-const Title = styled(Text).attrs({
-  ff: p => (p.ff ? p.ff : 'Museo Sans|Bold'),
-  fontSize: p => (p.fontSize ? p.fontSize : 2),
-  color: p => (p.color ? p.color : 'palette.text.shade100'),
+const Title = styled(Text).attrs(p => ({
+  ff: (p.ff ? p.ff : 'Museo Sans|Bold'),
+  fontSize: (p.fontSize ? p.fontSize : 2),
+  color: (p.color ? p.color : 'palette.text.shade100'),
   tabIndex: 0,
-})`
+}))`
   text-transform: ${p => (!p.textTransform ? 'auto' : 'uppercase')};
   letter-spacing: 1px;
   outline: none;

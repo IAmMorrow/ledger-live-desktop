@@ -104,12 +104,12 @@ export default connect(
   mapDispatchToProps,
 )(SelectDevice)
 
-const DeviceContainer = styled(Box).attrs({
+const DeviceContainer = styled(Box).attrs(() => ({
   alignItems: 'center',
   justifyContent: 'center',
   relative: true,
   borderRadius: '4px',
-})`
+}))`
   width: 218px;
   height: 204px;
   border: ${props =>
@@ -119,21 +119,21 @@ const DeviceContainer = styled(Box).attrs({
     background: ${p => rgba(p.theme.colors.wallet, 0.04)};
   }
 `
-const DeviceIcon = styled(Box).attrs({
+const DeviceIcon = styled(Box).attrs(() => ({
   alignItems: 'center',
   justifyContent: 'center',
-})`
+}))`
   width: 55px;
   height: 80px;
 `
 
-export const BlockTitle = styled(Box).attrs({
+export const BlockTitle = styled(Box).attrs(() => ({
   ff: 'Open Sans|SemiBold',
   fontSize: 4,
   textAlign: 'center',
   pt: 3,
   color: 'palette.text.shade100'
-})``
+}))``
 export function DeviceSelected() {
   return (
     <SelectDeviceIconWrapper
@@ -148,24 +148,24 @@ export function DeviceSelected() {
   )
 }
 
-const SelectDeviceIconWrapper = styled(Box).attrs({
+const SelectDeviceIconWrapper = styled(Box).attrs(() => ({
   alignItems: 'center',
   justifyContent: 'center',
   color: 'palette.background.paper',
   bg: 'wallet',
-})`
+}))`
   border-radius: 50%;
   width: 18px;
   height: 18px;
 `
 
-const USBOnly = styled(Box).attrs({
+const USBOnly = styled(Box).attrs(() => ({
   alignItems: 'center',
   justifyContent: 'center',
   ff: 'Open Sans|Bold',
   fontSize: 0,
   borderRadius: '2px',
-})`
+}))`
   position: absolute;
   bottom: 20px;
   color: ${p => p.theme.colors.palette.primary.contrastText};

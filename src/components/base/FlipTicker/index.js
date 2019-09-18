@@ -9,10 +9,10 @@ import { Spring, animated } from 'react-spring'
 
 import Box from 'components/base/Box'
 
-const Container = styled(Box).attrs({
+const Container = styled(Box).attrs(() => ({
   horizontal: true,
   relative: true,
-})`
+}))`
   overflow: hidden;
   white-space: pre;
 `

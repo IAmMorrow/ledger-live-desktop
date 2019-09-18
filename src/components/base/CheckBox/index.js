@@ -6,11 +6,11 @@ import styled from 'styled-components'
 import Check from 'icons/Check'
 import { Tabbable } from 'components/base/Box'
 
-const Base = styled(Tabbable).attrs({
+const Base = styled(Tabbable).attrs(() => ({
   relative: true,
   align: 'center',
   justifyContent: 'center',
-})`
+}))`
   outline: none;
   border-radius: 4px;
   background-color: ${p =>

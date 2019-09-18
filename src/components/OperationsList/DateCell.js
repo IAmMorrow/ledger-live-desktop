@@ -7,10 +7,10 @@ import type { T } from 'types/common'
 import Box from 'components/base/Box'
 import OperationDate from './OperationDate'
 
-const Cell = styled(Box).attrs({
+const Cell = styled(Box).attrs(() => ({
   px: 3,
   horizontal: false,
-})`
+}))`
   width: ${p => (p.compact ? 90 : 120)}px;
 `
 

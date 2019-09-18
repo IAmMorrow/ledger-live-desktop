@@ -52,14 +52,14 @@ const Dashboard = ({ device, deviceInfo, t, handleHelpRequest }: Props) => (
 
 export default translate()(Dashboard)
 
-const HelpLink = styled(FakeLink).attrs({
+const HelpLink = styled(FakeLink).attrs(() => ({
   align: 'center',
   ml: 'auto',
   horizontal: true,
   flow: 1,
   color: 'palette.text.shade60',
   fontSize: 4,
-})`
+}))`
   &:hover {
     color: ${p => p.theme.colors.wallet};
   }

@@ -52,9 +52,9 @@ const ContextMenuContainer = styled(Box)`
   padding: 10px;
 `
 
-const ContextMenuItemContainer = styled(Box).attrs({
+const ContextMenuItemContainer = styled(Box).attrs(() => ({
   ff: 'Museo Sans',
-})`
+}))`
   padding: 8px 16px;
   text-align: center;
   flex-direction: row;

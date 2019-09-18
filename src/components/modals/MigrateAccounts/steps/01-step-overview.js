@@ -40,12 +40,12 @@ const MobileIllu = styled.img`
   margin-left: 16px;
 `
 
-const Desc = styled(Box).attrs({
+const Desc = styled(Box).attrs(() => ({
   ff: 'Open Sans',
   fontSize: 4,
   mt: 2,
   color: 'palette.text.shade80',
-})`
+}))`
   text-align: center;
 `
 
@@ -61,12 +61,12 @@ const MobileTextWrapper = styled.div`
   flex: 1;
 `
 
-const MobileWrapper = styled(Box).attrs({
+const MobileWrapper = styled(Box).attrs(() => ({
   ff: 'Open Sans',
   fontSize: 4,
   mt: 2,
   color: 'palette.text.shade80',
-})`
+}))`
   border-radius: 4px;
   margin-top: 20px;
   margin-left: 16px;
@@ -103,10 +103,10 @@ const Footer = styled.div`
     margin-right: 14px;
   }
 `
-const HelpLink = styled.span.attrs({
+const HelpLink = styled.span.attrs(() => ({
   flow: 1,
   fontSize: 4,
-})`
+}))`
   display: inline-flex;
   align-items: center;
   flex-direction: row;
@@ -119,11 +119,11 @@ const HelpLink = styled.span.attrs({
     color: ${p => rgba(p.theme.colors.wallet, 0.9)};
   }
 `
-const FooterContent = styled(Box).attrs({
+const FooterContent = styled(Box).attrs(() => ({
   flow: 2,
   horizontal: true,
   align: 'center',
-})`
+}))`
   justify: flex-end;
 `
 

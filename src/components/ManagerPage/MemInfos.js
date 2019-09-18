@@ -7,20 +7,20 @@ import Box from 'components/base/Box'
 
 import type { MemoryInfos } from 'types/common'
 
-const Container = styled(Box).attrs({
+const Container = styled(Box).attrs(() => ({
   bg: 'palette.background.default',
   horizontal: true,
-})`
+}))`
   border-radius: ${p => p.theme.radii[1]}px;
   overflow: hidden;
   height: 24px;
 `
 
-const Step = styled(Box).attrs({
+const Step = styled(Box).attrs(() => ({
   bg: p => p.theme.colors[p.c || 'palette.text.shade60'],
   px: 1,
   color: 'palette.background.paper',
-})`
+}))`
   width: ${p => (p.last ? '' : `${p.percent}%`)};
   flex-grow: ${p => (p.last ? '1' : '')};
   text-align: ${p => (p.last ? 'right' : '')};

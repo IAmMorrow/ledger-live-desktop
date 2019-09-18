@@ -25,22 +25,20 @@ const border = p =>
         p.type === 'IN' ? p.marketColor : rgba(p.theme.colors.palette.text.shade60, 0.2)
       }`
 
-const Container = styled(Box).attrs({
-  bg: p =>
-    p.hasFailed
+const Container = styled(Box).attrs(p => ({
+  bg: p.hasFailed
       ? rgba(p.theme.colors.alertRed, 0.05)
       : p.isConfirmed
       ? rgba(p.type === 'IN' ? p.marketColor : p.theme.colors.palette.text.shade60, 0.2)
       : 'none',
-  color: p =>
-    p.hasFailed
+  color: p.hasFailed
       ? p.theme.colors.alertRed
       : p.type === 'IN'
       ? p.marketColor
       : p.theme.colors.palette.text.shade60,
   align: 'center',
   justify: 'center',
-})`
+}))`
   border: ${border};
   border-radius: 50%;
   position: relative;
@@ -48,10 +46,10 @@ const Container = styled(Box).attrs({
   width: 24px;
 `
 
-const WrapperClock = styled(Box).attrs({
+const WrapperClock = styled(Box).attrs(() => ({
   bg: 'palette.background.paper',
   color: 'palette.text.shade60',
-})`
+}))`
   border-radius: 50%;
   position: absolute;
   bottom: -4px;

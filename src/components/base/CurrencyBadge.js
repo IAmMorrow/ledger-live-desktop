@@ -11,12 +11,12 @@ import ParentCryptoCurrencyIcon from 'components/ParentCryptoCurrencyIcon'
 
 import Spinner from './Spinner'
 
-const CryptoIconWrapper = styled(Box).attrs({
+const CryptoIconWrapper = styled(Box).attrs(p => ({
   align: 'center',
   justify: 'center',
-  bg: p => rgba(p.cryptoColor, 0.1),
-  color: p => p.cryptoColor,
-})`
+  bg: rgba(p.cryptoColor, 0.1),
+  color: p.cryptoColor,
+}))`
   border-radius: ${p => p.borderRadius || '50%'};
   width: ${p => p.size || 40}px;
   height: ${p => p.size || 40}px;

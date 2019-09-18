@@ -21,40 +21,40 @@ import IconTriangleWarning from 'icons/TriangleWarning'
 
 import type { StepProps } from '../index'
 
-const Container = styled(Box).attrs({
+const Container = styled(Box).attrs(() => ({
   alignItems: 'center',
   grow: true,
   color: 'palette.text.shade100',
-})`
+}))`
   justify-content: ${p => (p.shouldSpace ? 'space-between' : 'center')};
   min-height: 220px;
 `
 
-const Title = styled(Box).attrs({
+const Title = styled(Box).attrs(() => ({
   ff: 'Museo Sans',
   fontSize: 5,
   mt: 2,
-})`
+}))`
   text-align: center;
   word-break: break-word;
 `
 
-const Text = styled(Box).attrs({
+const Text = styled(Box).attrs(() => ({
   ff: 'Open Sans',
   fontSize: 4,
   mt: 2,
-})`
+}))`
   text-align: center;
 `
 
-const Disclaimer = styled(Box).attrs({
+const Disclaimer = styled(Box).attrs(() => ({
   horizontal: true,
   align: 'center',
   color: 'palette.background.paper',
   borderRadius: 1,
   p: 3,
   mb: 5,
-})`
+}))`
   width: 100%;
   background-color: ${p => p.theme.colors.lightRed};
   color: ${p => p.theme.colors.alertRed};

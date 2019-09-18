@@ -131,13 +131,13 @@ export default class AccountRow extends PureComponent<Props> {
   }
 }
 
-const AccountRowContainer = styled(Tabbable).attrs({
+const AccountRowContainer = styled(Tabbable).attrs(() => ({
   horizontal: true,
   align: 'center',
   bg: 'palette.background.default',
   px: 3,
   flow: 3,
-})`
+}))`
   height: 48px;
   border-radius: 4px;
 

@@ -23,21 +23,20 @@ import IconRecheck from 'icons/Recover'
 import IconCopy from 'icons/Copy'
 import IconShield from 'icons/Shield'
 
-const Container = styled(Box).attrs({
+const Container = styled(Box).attrs(p => ({
   borderRadius: 1,
   alignItems: 'center',
-  bg: p =>
-    p.isAddressVerified === false
+  bg: p.isAddressVerified === false
       ? rgba(p.theme.colors.alertRed, 0.02)
       : 'palette.background.default',
   p: 6,
   pb: 4,
-})`
+}))`
   border: ${p =>
     p.isAddressVerified === false ? `1px dashed ${rgba(p.theme.colors.alertRed, 0.5)}` : 'none'};
 `
 
-const Address = styled(Box).attrs({
+const Address = styled(Box).attrs(() => ({
   bg: 'palette.background.paper',
   borderRadius: 1,
   color: 'palette.text.shade100',
@@ -47,7 +46,7 @@ const Address = styled(Box).attrs({
   px: 4,
   py: 3,
   relative: true,
-})`
+}))`
   border: ${p => `1px dashed ${p.theme.colors.palette.divider}`};
   cursor: text;
   user-select: text;
@@ -55,44 +54,44 @@ const Address = styled(Box).attrs({
   min-width: 320px;
 `
 
-const CopyFeedback = styled(Box).attrs({
+const CopyFeedback = styled(Box).attrs(() => ({
   sticky: true,
   bg: 'palette.background.paper',
   align: 'center',
   justify: 'center',
-})``
+}))``
 
-const Label = styled(Box).attrs({
+const Label = styled(Box).attrs(() => ({
   alignItems: 'center',
   color: 'palette.text.shade80',
   ff: 'Open Sans|SemiBold',
   fontSize: 4,
   flow: 1,
   horizontal: true,
-})`
+}))`
   strong {
     color: ${p => p.theme.colors.palette.text.shade100};
     font-weight: 600;
   }
 `
 
-const Footer = styled(Box).attrs({
+const Footer = styled(Box).attrs(() => ({
   justify: 'center',
   flow: 4,
   horizontal: true,
   mt: 4,
-})`
+}))`
   text-transform: uppercase;
   width: 100%;
 `
 
-const FooterButtonWrapper = styled(Box).attrs({
+const FooterButtonWrapper = styled(Box).attrs(() => ({
   color: 'palette.text.shade60',
   alignItems: 'center',
   justifyContent: 'center',
   borderRadius: 1,
   px: 2,
-})`
+}))`
   line-height: 1;
   height: 55px;
 

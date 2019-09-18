@@ -15,9 +15,9 @@ const Bullet = styled.span`
   color: #142533;
 `
 
-const Separator = styled(Box).attrs({
+const Separator = styled(Box).attrs(() => ({
   color: 'palette.divider',
-})`
+}))`
   height: 1px;
   width: 100%;
   background-color: currentColor;
@@ -63,7 +63,7 @@ const FlashMCUNanos = React.memo(({ deviceModelId }: Props) => (
   </>
 ))
 
-const Container = styled(Box).attrs({})`
+const Container = styled(Box).attrs(() => ({}))`
   max-width: 50%;
   display: flex;
   flex: 1;

@@ -20,11 +20,11 @@ import Modal from './index'
 import ModalBody from './ModalBody'
 import { track } from '../../../analytics/segment'
 
-const Container = styled(Box).attrs({
+const Container = styled(Box).attrs(() => ({
   alignItems: 'center',
   fontSize: 4,
   color: 'palette.text.shade100',
-})``
+}))``
 
 const ChoiceBox = styled.div`
   display: flex;

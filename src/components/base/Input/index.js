@@ -9,9 +9,9 @@ import Spinner from 'components/base/Spinner'
 import Box from 'components/base/Box'
 import TranslatedError from 'components/TranslatedError'
 
-const Container = styled(Box).attrs({
+const Container = styled(Box).attrs(() => ({
   horizontal: true,
-})`
+}))`
   background: ${p =>
     p.disabled
       ? p.theme.colors.palette.background.default
@@ -63,9 +63,9 @@ const WarningDisplay = styled(ErrorDisplay)`
   color: ${p => p.theme.colors.warning};
 `
 
-const Base = styled.input.attrs({
+const Base = styled.input.attrs(() => ({
   fontSize: 4,
-})`
+}))`
   font-family: 'Open Sans';
   font-weight: 600;
   ${fontFamily};
@@ -84,11 +84,11 @@ const Base = styled.input.attrs({
   }
 `
 
-export const Textarea = styled.textarea.attrs({
+export const Textarea = styled.textarea.attrs(p => ({
   p: 2,
   fontSize: 4,
-  ff: p => p.ff || 'Open Sans|SemiBold',
-})`
+  ff: p.ff || 'Open Sans|SemiBold',
+}))`
   ${space};
   ${fontFamily};
   ${fontSize};

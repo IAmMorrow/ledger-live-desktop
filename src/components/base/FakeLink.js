@@ -4,11 +4,11 @@ import get from 'lodash/get'
 
 import { darken, lighten } from 'styles/helpers'
 
-export default styled(Box).attrs({
+export default styled(Box).attrs(p => ({
   cursor: 'pointer',
-  color: p => p.color || 'wallet',
+  color: p.color || 'wallet',
   horizontal: true,
-})`
+}))`
   align-items: center;
   text-decoration: ${p => (p.underline ? 'underline' : 'none')};
   &:hover {

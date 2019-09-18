@@ -56,7 +56,7 @@ export default compose(
   translate(),
 )(ExportOperationsBtn)
 
-const LabelWrapper = styled(Label).attrs({})`
+const LabelWrapper = styled(Label).attrs(() => ({}))`
   &:hover {
     color: ${p => p.theme.colors.wallet};
     cursor: pointer;

@@ -8,12 +8,12 @@ import styled from 'styled-components'
 import Box from 'components/base/Box'
 import Step from './Step'
 
-const Wrapper = styled(Box).attrs({
+const Wrapper = styled(Box).attrs(() => ({
   horizontal: true,
   alignItems: 'center',
   justifyContent: 'center',
   relative: true,
-})`
+}))`
   margin-bottom: 25px;
   z-index: 2;
 `

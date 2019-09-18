@@ -9,10 +9,10 @@ import IconCirclePlus from 'icons/CirclePlus'
 
 import { rgba } from 'styles/helpers'
 
-const PlusWrapper = styled(Tabbable).attrs({
+const PlusWrapper = styled(Tabbable).attrs(() => ({
   p: 1,
   borderRadius: 1,
-})`
+}))`
   color: ${p => p.theme.colors.palette.text.shade80};
   &:hover {
     color: ${p => p.theme.colors.palette.text.shade100};

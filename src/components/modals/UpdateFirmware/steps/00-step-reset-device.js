@@ -15,30 +15,30 @@ import Button from 'components/base/Button'
 import { powerOff, powerOffDevice, bootOptions, recovery } from 'config/nontranslatables'
 import type { StepProps } from '../'
 
-const Container = styled(Box).attrs({
+const Container = styled(Box).attrs(() => ({
   alignItems: 'center',
   fontSize: 4,
   color: 'palette.text.shade100',
   px: 7,
-})``
+}))``
 
-const SubTitle = styled(Box).attrs({
+const SubTitle = styled(Box).attrs(() => ({
   ff: 'Museo Sans|Regular',
   fontSize: 4,
   mb: 3,
-})``
+}))``
 
-const Wrapper = styled(Box).attrs({
+const Wrapper = styled(Box).attrs(() => ({
   my: 2,
-})`
+}))`
   width: 100%;
 `
 
-const BulletText = styled(Text).attrs({
+const BulletText = styled(Text).attrs(() => ({
   ff: 'Open Sans|Regular',
   color: 'palette.text.shade80',
   fontSize: 2,
-})``
+}))``
 
 type Props = {
   deviceModelId: DeviceModelId,

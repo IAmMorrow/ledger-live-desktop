@@ -47,11 +47,11 @@ const Middle = styled.div`
   min-width: 1em;
 `
 
-const Cell = styled(Box).attrs({
+const Cell = styled(Box).attrs(() => ({
   px: 4,
   horizontal: true,
   alignItems: 'center',
-})`
+}))`
   width: 150px;
 `
 

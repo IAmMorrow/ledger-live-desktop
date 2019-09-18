@@ -13,17 +13,17 @@ import ExclamationCircleThin from 'icons/ExclamationCircleThin'
 
 import type { StepProps } from '../'
 
-const Container = styled(Box).attrs({
+const Container = styled(Box).attrs(() => ({
   alignItems: 'center',
   fontSize: 4,
   color: 'palette.text.shade100',
-})``
+}))``
 
-const Title = styled(Box).attrs({
+const Title = styled(Box).attrs(() => ({
   fontFamily: 'Museo Sans',
   fontSize: 6,
   color: 'palette.text.shade100',
-})`
+}))`
   font-weight: 500;
 `
 
