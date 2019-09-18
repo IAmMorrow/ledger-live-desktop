@@ -1,7 +1,6 @@
 // @flow
 import React, { PureComponent, Fragment } from 'react'
 import { translate, Trans } from 'react-i18next'
-import { colors } from 'styles/theme'
 import { i } from 'helpers/staticPath'
 
 import type { T } from 'types/common'
@@ -64,22 +63,22 @@ class WriteSeedNano extends PureComponent<Props, *> {
     const disclaimerNotes = [
       {
         key: 'note1',
-        icon: <IconChevronRight size={12} style={{ color: colors.palette.text.shade80 }} />,
+        icon: <IconChevronRight size={12} />,
         desc: t('onboarding.writeSeed.disclaimer.note1'),
       },
       {
         key: 'note2',
-        icon: <IconChevronRight size={12} style={{ color: colors.palette.text.shade80 }} />,
+        icon: <IconChevronRight size={12} />,
         desc: t('onboarding.writeSeed.disclaimer.note2'),
       },
       {
         key: 'note3',
-        icon: <IconChevronRight size={12} style={{ color: colors.palette.text.shade80 }} />,
+        icon: <IconChevronRight size={12} />,
         desc: t('onboarding.writeSeed.disclaimer.note3'),
       },
       {
         key: 'note4',
-        icon: <IconChevronRight size={12} style={{ color: colors.palette.text.shade80 }} />,
+        icon: <IconChevronRight size={12} />,
         desc: t('onboarding.writeSeed.disclaimer.note4'),
       },
     ]
@@ -102,7 +101,7 @@ class WriteSeedNano extends PureComponent<Props, *> {
               ))}
             </Box>
           </Inner>
-          <DisclaimerBox mt={6} disclaimerNotes={disclaimerNotes} />
+          <DisclaimerBox mt={6} disclaimerNotes={disclaimerNotes} color='palette.text.shade80' />
         </Box>
       </Fragment>
     )
