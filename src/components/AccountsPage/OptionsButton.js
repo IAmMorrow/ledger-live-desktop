@@ -36,6 +36,8 @@ const Item = styled(DropDownItem)`
   width: 230px;
   cursor: pointer;
   white-space: pre-wrap;
+  justify-content: flex-start;
+  align-items: center;
   background-color: ${p =>
     !p.disableHover && p.isHighlighted && p.theme.colors.palette.background.default};
 `
@@ -113,8 +115,6 @@ class OptionsButton extends PureComponent<Props, State> {
     return (
       <Item
         horizontal
-        alignItems="center"
-        justifyContent="flex-start"
         isHighlighted={isHighlighted}
         flow={2}
         onClick={item.onClick}
