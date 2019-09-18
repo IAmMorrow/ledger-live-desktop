@@ -3,6 +3,7 @@ import React  from 'react'
 import { translate, Trans } from 'react-i18next'
 import { i } from 'helpers/staticPath'
 
+import InvertableImg from 'components/InvertableImg'
 import Box from 'components/base/Box'
 import Text from 'components/base/Text'
 
@@ -68,7 +69,7 @@ const SelectPINrestoreBlue = ({ t }: Props ) => {
     <Box align="center">
       <Inner style={{ width: 550 }}>
         <Box style={{ width: 180, justifyContent: 'center', alignItems: 'center' }}>
-          <img alt="" src={i('select-pin-blue-onb.svg')} />
+          <InvertableImg alt="" src={i('select-pin-blue-onb.svg')} />
         </Box>
         <Box>
           <Box shrink grow flow={4}>

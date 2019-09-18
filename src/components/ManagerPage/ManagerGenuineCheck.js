@@ -2,11 +2,11 @@
 
 import React, { PureComponent } from 'react'
 import { translate } from 'react-i18next'
-import styled from 'styled-components'
 import type { T } from 'types/common'
 
 import { i } from 'helpers/staticPath'
 
+import InvertableImg from 'components/InvertableImg'
 import GenuineCheck from 'components/GenuineCheck'
 import Box from 'components/base/Box'
 import Space from 'components/base/Space'
@@ -17,10 +17,6 @@ type Props = {
   t: T,
   onSuccess: void => void,
 }
-
-const InvertableImg = styled.img`
-  filter: invert(${p => p.theme.colors.palette.type === 'dark' ? '0.75' : '0'});
-`
 
 class ManagerGenuineCheck extends PureComponent<Props> {
   render() {

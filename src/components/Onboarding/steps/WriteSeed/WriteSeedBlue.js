@@ -2,9 +2,9 @@
 import React, { PureComponent, Fragment } from 'react'
 import { translate, Trans } from 'react-i18next'
 import { i } from 'helpers/staticPath'
-
 import type { T } from 'types/common'
 
+import InvertableImg from 'components/InvertableImg'
 import Box from 'components/base/Box'
 import Text from 'components/base/Text'
 import IconChevronRight from 'icons/ChevronRight'
@@ -90,7 +90,7 @@ class WriteSeedBlue extends PureComponent<Props, *> {
         <Box align="center">
           <Inner style={{ width: 760 }}>
             <Box style={{ width: 260, justifyContent: 'center', alignItems: 'center' }}>
-              <img alt="" src={i('write-seed-onb.svg')} />
+              <InvertableImg alt="" src={i('write-seed-onb.svg')} />
             </Box>
             <Box shrink flow={2} m={0}>
               {steps.map(step => (

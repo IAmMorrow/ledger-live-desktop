@@ -20,10 +20,10 @@ export default styled(Tabbable).attrs(p => ({
 
   &:hover {
     color: ${p => (p.disabled ? '' : p.theme.colors.palette.text.shade100)};
-    background: ${p => (p.disabled ? '' : rgba(p.theme.colors.palette.divider, 0.2))};
+    background: ${p => (p.disabled ? '' : rgba(p.theme.colors.palette.action.active, 0.05))};
   }
 
   &:active {
-    background: ${p => (p.disabled ? '' : rgba(p.theme.colors.palette.divider, 0.3))};
+    background: ${p => (p.disabled ? '' : rgba(p.theme.colors.palette.action.active, 0.10))};
   }
 `

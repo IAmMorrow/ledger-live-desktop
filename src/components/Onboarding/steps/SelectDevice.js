@@ -13,6 +13,7 @@ import { rgba } from 'styles/helpers'
 
 import { deviceModelId } from 'reducers/onboarding'
 
+import InvertableImg from 'components/InvertableImg'
 import Box from 'components/base/Box'
 import TrackPage from 'analytics/TrackPage'
 
@@ -55,7 +56,7 @@ class SelectDevice extends PureComponent<StepProps, {}> {
               >
                 {onboarding.deviceModelId === 'nanoX' && <DeviceSelected />}
                 <DeviceIcon>
-                  <img alt="" src={i('ledger-nano-x-onb.svg')} />
+                  <InvertableImg alt="" src={i('ledger-nano-x-onb.svg')} />
                 </DeviceIcon>
                 <BlockTitle>{getDeviceModel('nanoX').productName}</BlockTitle>
                 <Tooltip render={() => <Trans i18nKey="onboarding.selectDevice.usbOnlyTooltip" />}>
@@ -70,7 +71,7 @@ class SelectDevice extends PureComponent<StepProps, {}> {
               >
                 {onboarding.deviceModelId === 'nanoS' && <DeviceSelected />}
                 <DeviceIcon>
-                  <img alt="" src={i('ledger-nano-s-onb.svg')} />
+                  <InvertableImg alt="" src={i('ledger-nano-s-onb.svg')} />
                 </DeviceIcon>
                 <BlockTitle>{getDeviceModel('nanoS').productName}</BlockTitle>
               </DeviceContainer>
@@ -80,7 +81,7 @@ class SelectDevice extends PureComponent<StepProps, {}> {
               >
                 {onboarding.deviceModelId === 'blue' && <DeviceSelected />}
                 <DeviceIcon>
-                  <img alt="" src={i('ledger-blue-onb.svg')} />
+                  <InvertableImg alt="" src={i('ledger-blue-onb.svg')} />
                 </DeviceIcon>
                 <BlockTitle>{getDeviceModel('blue').productName}</BlockTitle>
               </DeviceContainer>
@@ -112,8 +113,8 @@ const DeviceContainer = styled(Box).attrs(() => ({
 }))`
   width: 218px;
   height: 204px;
-  border: ${props =>
-    `1px solid ${props.theme.colors[props.isActive ? 'palette.primary.main' : 'palette.divider']}`};
+  border: ${p =>
+    `1px solid ${p.isActive ? p.theme.colors.palette.primary.main : p.theme.colors.palette.divider}`};
   &:hover {
     cursor: default; // this here needs reset because it inherits from cursor: text from parent
     background: ${p => rgba(p.theme.colors.wallet, 0.04)};

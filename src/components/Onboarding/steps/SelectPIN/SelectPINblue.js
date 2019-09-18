@@ -1,11 +1,11 @@
 // @flow
 import React, { PureComponent } from 'react'
 import { translate, Trans } from 'react-i18next'
-import { colors } from 'styles/theme'
 import { i } from 'helpers/staticPath'
 
 import Box from 'components/base/Box'
 import Text from 'components/base/Text'
+import InvertableImg from 'components/InvertableImg'
 
 import type { T } from 'types/common'
 
@@ -72,7 +72,7 @@ class SelectPIN extends PureComponent<Props, *> {
       <Box align="center">
         <Inner style={{ width: 550 }}>
           <Box style={{ width: 180, justifyContent: 'center', alignItems: 'center' }}>
-            <img alt="" src={i('select-pin-blue-onb.svg')} />
+            <InvertableImg alt="" src={i('select-pin-blue-onb.svg')} />
           </Box>
           <Box>
             <Box shrink grow flow={4}>

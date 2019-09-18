@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react'
 import { Trans, translate } from 'react-i18next'
 import { i } from 'helpers/staticPath'
 
+import InvertableImg from 'components/InvertableImg'
 import Box from 'components/base/Box'
 import Text from 'components/base/Text'
 
@@ -89,7 +90,7 @@ class SelectPINrestoreNanoX extends PureComponent<Props, *> {
     return (
       <Box align="center" mt={3}>
         <Inner style={{ width: 700 }}>
-          <img alt="" src={i('select-pin-nano-x-onb.svg')} />
+          <InvertableImg alt="" src={i('select-pin-nano-x-onb.svg')} />
           <Box shrink grow flow={4} style={{ marginLeft: 40 }}>
             {stepsLedgerNano.map(step => (
               <OptionRow key={step.key} step={step} />

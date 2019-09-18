@@ -5,6 +5,7 @@ import { i } from 'helpers/staticPath'
 
 import type { T } from 'types/common'
 
+import InvertableImg from 'components/InvertableImg'
 import Box from 'components/base/Box'
 import Text from 'components/base/Text'
 import IconChevronRight from 'icons/ChevronRight'
@@ -92,7 +93,7 @@ class WriteSeedNano extends PureComponent<Props, *> {
         <Box align="center" mt={3}>
           <Inner style={{ width: 700 }}>
             <Box style={{ width: 300 }} justifyContent="center" alignItems="center">
-              <img alt="" src={i('write-seed-onb.svg')} />
+              <InvertableImg alt="" src={i('write-seed-onb.svg')} />
             </Box>
 
             <Box shrink grow flow={4}>

@@ -77,11 +77,11 @@ const Container = styled(Tabbable).attrs(() => ({
   cursor: ${p => (p.disabled ? 'not-allowed' : 'default')};
   color: ${p =>
     p.isActive ? p.theme.colors.palette.text.shade100 : p.theme.colors.palette.text.shade80};
-  background: ${p => (p.isActive ? p.theme.colors.palette.background.default : '')};
+  background: ${p => (p.isActive ? p.theme.colors.palette.action.hover : '')};
   opacity: ${p => (p.disabled ? 0.5 : 1)};
 
   &:active {
-    background: ${p => !p.disabled && p.theme.colors.palette.background.default};
+    background: ${p => !p.disabled && p.theme.colors.palette.action.hover};
   }
 
   &:hover {

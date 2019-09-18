@@ -20,6 +20,7 @@ module.exports = {
       shade80: 'rgba(20,37,51, 0.8)',
       shade60: 'rgba(20,37,51, 0.6)',
       shade40: 'rgba(20,37,51, 0.4)',
+      shade20: 'rgba(20,37,51, 0.2)',
     },
     divider: 'rgba(20,37,51, 0.1)',
     background: {
@@ -28,10 +29,9 @@ module.exports = {
     },
     action: {
       active: 'rgba(20,37,51, 0.1)',
-      hover: '',
-      hoverOpacity: '',
+      hover: 'rgba(100,144,241, 0.1)',
       selected: '',
-      disabledBackground: '',
+      disabled: 'rgba(20,37,51, 0.1)',
     },
   },
 
@@ -53,21 +53,21 @@ module.exports = {
     error: '',
     text: {
       shade100: 'rgba(255, 255, 255, 1)',
-      shade80: 'rgba(255, 255, 255, 0.7)',
+      shade80: 'rgba(255, 255, 255, 0.8)',
       shade60: 'rgba(255, 255, 255, 0.6)',
       shade40: 'rgba(255, 255, 255, 0.4)',
+      shade20: 'rgba(255, 255, 255, 0.2)',
     },
     divider: 'rgba(255, 255, 255, 0.1)',
     background: {
-      paper: 'rgba(20, 20, 20, 1)',
-      default: 'rgba(0, 0, 0, 1)',
+      paper: '#1C1D1F',
+      default: '#131415',
     },
     action: {
       active: 'rgba(255, 255, 255, 0.1)',
-      hover: '',
-      hoverOpacity: '',
+      hover: 'rgba(255,255,255, 0.1)',
       selected: '',
-      disabledBackground: '',
+      disabled: 'rgba(255,255,255, 0.1)',
     },
   },
 
@@ -92,6 +92,7 @@ module.exports = {
       shade80: 'rgba(255, 255, 255, 0.8)',
       shade60: 'rgba(255, 255, 255, 0.6)',
       shade40: 'rgba(255, 255, 255, 0.4)',
+      shade20: 'rgba(255, 255, 255, 0.2)',
     },
     divider: 'rgba(255, 255, 255, 0.1)',
     background: {
@@ -100,10 +101,9 @@ module.exports = {
     },
     action: {
       active: 'rgba(255, 255, 255, 0.1)',
-      hover: '',
-      hoverOpacity: '',
+      hover: 'rgba(100,144,241, 0.1)',
       selected: '',
-      disabledBackground: '',
+      disabled: 'rgba(255,255,255, 0.1)',
     },
   },
 }
