@@ -45,6 +45,14 @@ const SearchInput = styled.input`
   }
 `
 
+const SearchIconContainer = styled(Box).attrs(p => ({
+  style: {
+    color: p.focused ? p.theme.colors.palette.text.shade100 : p.theme.colors.palette.text.shade40
+  }
+}))`
+  justify-content: center;
+`
+
 class Header extends PureComponent<Props, { focused: boolean }> {
   state = {
     focused: false,
@@ -61,9 +69,9 @@ class Header extends PureComponent<Props, { focused: boolean }> {
 
     return (
       <GenericBox horizontal p={0} alignItems="center">
-        <Box pr={3} justify="center" color={focused || search ? '#142533' : '#999999'}>
+        <SearchIconContainer pr={3} focused={focused || search}>
           <SearchIcon size={16} />
-        </Box>
+        </SearchIconContainer>
         <SearchInput
           autoFocus
           onFocus={this.onFocus}
