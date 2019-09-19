@@ -87,7 +87,7 @@ class AccountHeaderActions extends PureComponent<Props> {
           </Fragment>
         ) : null}
         <Tooltip render={() => t('stars.tooltip')}>
-          <Star accountId={account.id} account={account} yellow />
+          <Star accountId={account.id} accoaunt={account} yellow />
         </Tooltip>
         {account.type === 'Account' ? (
           <Tooltip render={() => t('account.settings.title')}>

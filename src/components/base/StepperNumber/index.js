@@ -24,8 +24,8 @@ const Container = styled(Box).attrs(() => ({
   padding: 0 3px;
 `
 
-const Btn = styled(Box).attrs(() => ({
-  bg: p => (p.disabled ? 'rgba(100, 144, 241, 0.5)' : 'wallet'),
+const Btn = styled(Box).attrs(p => ({
+  bg: (p.disabled ? 'rgba(100, 144, 241, 0.5)' : 'wallet'),
   color: 'palette.background.paper',
   alignItems: 'center',
   justifyContent: 'center',

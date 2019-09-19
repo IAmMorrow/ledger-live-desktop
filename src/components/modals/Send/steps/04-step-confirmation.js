@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Fragment } from 'react'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 import { Trans } from 'react-i18next'
 
 import { MODAL_OPERATION_DETAILS } from 'config/constants'
@@ -60,19 +60,20 @@ const Disclaimer = styled(Box).attrs(() => ({
   color: ${p => p.theme.colors.alertRed};
 `
 
-export default function StepConfirmation({
+function StepConfirmation({
   account,
   t,
   optimisticOperation,
   error,
   signed,
+  theme,
 }: StepProps<*>) {
   const Icon = optimisticOperation ? IconCheckCircle : error ? IconExclamationCircleThin : Spinner
   const iconColor = optimisticOperation
-    ? colors.positiveGreen
+    ? theme.colors.positiveGreen
     : error
-    ? colors.alertRed
-    : colors.palette.text.shade60
+    ? theme.colors.alertRed
+    : theme.colors.palette.text.shade60
 
   const broadcastError = error && signed
 
@@ -162,3 +163,5 @@ export function StepConfirmationFooter({
     </Fragment>
   )
 }
+
+export default withTheme(StepConfirmation)

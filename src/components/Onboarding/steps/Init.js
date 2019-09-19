@@ -103,7 +103,7 @@ type CardType = {
 export function OptionFlowCard({ card }: { card: CardType }) {
   const { icon, title, onClick } = card
   return (
-    <InitCardContainer onClick={onClick} color='palette.text.shade60'>
+    <InitCardContainer onClick={onClick} color='palette.text.shade100'>
       <Box justify="center" color={'palette.primary.main'}>
         <InitIconContainer justify="center">{icon}</InitIconContainer>
       </Box>

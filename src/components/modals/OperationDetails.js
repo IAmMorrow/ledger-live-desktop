@@ -94,9 +94,9 @@ export const GradientHover = styled(Box).attrs(() => ({
   );
 `
 
-const OpDetailsData = styled(Box).attrs(() => ({
+const OpDetailsData = styled(Box).attrs(p => ({
   ff: 'Open Sans',
-  color: 'palette.text.shade80',
+  color: p.color || 'palette.text.shade80',
   fontSize: 4,
   relative: true,
 }))`

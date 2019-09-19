@@ -75,6 +75,12 @@ const Label = styled(Box).attrs(() => ({
   }
 `
 
+const QRCodeContainer = styled(Box)`
+  background-color: ${p => p.theme.colors.white};
+  padding: 6px;
+  border-radius: 4px;
+`
+
 const Footer = styled(Box).attrs(() => ({
   justify: 'center',
   flow: 4,
@@ -182,14 +188,14 @@ class CurrentAddress extends PureComponent<Props, { copyFeedback: boolean }> {
 
     return (
       <Container isAddressVerified={isAddressVerified} {...props}>
-        <Box mb={4}>
+        <QRCodeContainer mb={4}>
           <QRCode
             size={120}
             data={encodeURIScheme({
               address,
             })}
           />
-        </Box>
+        </QRCodeContainer>
         <Label>
           <Box>
             {name ? (

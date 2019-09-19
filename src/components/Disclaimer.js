@@ -9,7 +9,7 @@ const DisclaimerBoxContainer = styled(Box).attrs(() => ({
   grow: true,
   p: 3,
   borderRadius: '4px',
-  bg: 'palette.divider',
+  bg: 'palette.background.default',
 }))`
   min-width: 620px;
   border: 1px dashed ${p => p.theme.colors.palette.divider};

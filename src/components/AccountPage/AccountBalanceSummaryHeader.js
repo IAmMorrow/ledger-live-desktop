@@ -51,8 +51,8 @@ const SwapButton = styled(Tabbable).attrs(() => ({
   align-items: center;
   align-self: center;
   border-radius: 4px;
-  border: 1px solid ${p => p.theme.colors.palette.divider};
-  color: ${p => p.theme.colors.palette.divider};
+  border: 1px solid ${p => p.theme.colors.palette.text.shade20};
+  color: ${p => p.theme.colors.palette.text.shade20};
   cursor: pointer;
   display: flex;
   height: 53px;
