@@ -66,9 +66,12 @@ class SectionGeneral extends PureComponent<Props> {
             </Row>
           )}
 
-          <Row title={t('settings.display.theme')} desc={t('settings.display.themeDesc')}>
-            <ThemeSelect />
-          </Row>
+          { __DEV__ ? (
+            <Row title={t('settings.display.theme')} desc={t('settings.display.themeDesc')}>
+              <ThemeSelect />
+            </Row>
+            ) : null
+          }
 
           {EXPERIMENTAL_MARKET_INDICATOR_SETTINGS ? (
             <Row title={t('settings.display.stock')} desc={t('settings.display.stockDesc')}>
