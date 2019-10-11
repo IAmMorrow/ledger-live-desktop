@@ -22,7 +22,7 @@ type Props = {
   resource: string,
   alt: string,
   themeTyped: boolean,
-  className: string,
+  className?: string,
 }
 
 const Img = styled.img`
