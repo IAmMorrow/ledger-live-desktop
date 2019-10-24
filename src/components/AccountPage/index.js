@@ -29,12 +29,14 @@ import Box from 'components/base/Box'
 import OperationsList from 'components/OperationsList'
 import StickyBackToTop from 'components/StickyBackToTop'
 import useTheme from 'hooks/useTheme'
+import { getLendingAccount, useCompoundApi } from "./compound"
 
 import BalanceSummary from './BalanceSummary'
 import AccountHeader from './AccountHeader'
 import AccountHeaderActions from './AccountHeaderActions'
 import EmptyStateAccount from './EmptyStateAccount'
 import TokenList from './TokensList'
+import CompoundLending from './CompoundLending'
 
 const mapStateToProps = (
   state,
@@ -86,6 +88,9 @@ const AccountPage = ({
   const mainAccount = account ? getMainAccount(account, parentAccount) : null
   const bgColor = useTheme('colors.palette.background.paper')
 
+  const lendingAccount = getLendingAccount(account, parentAccount)
+  const compoundData = useCompoundApi(lendingAccount, parentAccount)
+
   if (!account || !mainAccount) {
     return <Redirect to="/accounts" />
   }
@@ -121,6 +126,15 @@ const AccountPage = ({
               setCountervalueFirst={setCountervalueFirst}
             />
           </Box>
+          {
+            lendingAccount ? (
+              <CompoundLending
+                account={account}
+                lendingAccount={lendingAccount}
+                compoundData={compoundData}
+              />
+            ) : null
+          }
           <TokenList account={account} range={selectedTimeRange} />
           <OperationsList
             account={account}
