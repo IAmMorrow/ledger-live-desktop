@@ -3,22 +3,18 @@
 import React from 'react'
 import styled from 'styled-components'
 import type { Account, TokenAccount } from '@ledgerhq/live-common/lib/types/account'
-import type { Currency } from '@ledgerhq/live-common/lib/types/currencies'
 import Text from 'components/base/Text'
 import Box, { Card } from 'components/base/Box'
 import type { T } from 'types/common'
 import BigNumber from 'bignumber.js'
-import type { AccountPortfolio } from '@ledgerhq/live-common/lib/types/portfolio'
 import FormattedVal from '../base/FormattedVal'
 import { useProgressivePrice } from './compound'
 import ActualPrice from '../ActualPrice'
 
 type Props = {
-  counterValue: Currency,
   account: Account,
   lendingAccount: TokenAccount,
   compoundData: any,
-  balanceHistoryWithCountervalue: AccountPortfolio,
   t: T,
 }
 
@@ -49,7 +45,7 @@ const DataTitle = styled(Text).attrs(() => ({
   margin-bottom: 8px;
 `
 
-const calculateLentBalance = (lendingAccount: TokenAccount, actualRate) => lendingAccount.balance.times(actualRate)
+const calculateLentBalance = (lendingAccount: TokenAccount, actualRate) => lendingAccount.balance.times(10 ** (18 - 8)).times(actualRate)
 
 const calculateVirtualBalance = (account: TokenAccount, lendingAccount: TokenAccount, actualRate) => account.balance.plus(calculateLentBalance(lendingAccount, actualRate))
 
@@ -77,9 +73,9 @@ const CompoundLending = ({account, lendingAccount, compoundData, t }: Props) => 
               color="palette.text.shade100"
               unit={account.token.units[0]}
               fontSize={7}
-              disableRounding
               showCode
-              val={account.balance.plus(balance)}
+              disableRounding
+              val={account.balance.plus(balance).precision(12)}
               style={{
                 marginBottom: 2
               }}
@@ -101,7 +97,7 @@ const CompoundLending = ({account, lendingAccount, compoundData, t }: Props) => 
               unit={account.token.units[0]}
               fontSize={7}
               showCode
-              val={BigNumber((cAccount ? cAccount.lifetime_supply_interest_accrued.value : 0) * exchangeRate)}
+              val={BigNumber((cAccount ? cAccount.lifetime_supply_interest_accrued.value : 0) * exchangeRate).times(10 ** 18)}
               style={{
                 marginBottom: 2
               }}
@@ -109,7 +105,7 @@ const CompoundLending = ({account, lendingAccount, compoundData, t }: Props) => 
             <ActualPrice
               alwaysShowSign
               unit={account.token.units[0]}
-              value={BigNumber((cAccount ? cAccount.lifetime_supply_interest_accrued.value : 0) * exchangeRate)}
+              value={BigNumber((cAccount ? cAccount.lifetime_supply_interest_accrued.value : 0) * exchangeRate).times(10 ** 18)}
               from={account.token}
               color="palette.text.shade60"
               fontSize={12}

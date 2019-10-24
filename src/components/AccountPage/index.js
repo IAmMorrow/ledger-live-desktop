@@ -109,7 +109,7 @@ const AccountPage = ({
 
       <Box horizontal mb={5} flow={4}>
         <AccountHeader account={account} parentAccount={parentAccount} />
-        <AccountHeaderActions account={account} parentAccount={parentAccount} />
+        <AccountHeaderActions lendingAccount={lendingAccount} account={account} parentAccount={parentAccount} />
       </Box>
 
       {!isAccountEmpty(account) ? (

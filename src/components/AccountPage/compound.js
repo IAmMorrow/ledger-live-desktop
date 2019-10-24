@@ -10,6 +10,8 @@ export const supportedTokens = {
   "ethereum/erc20/dai_stablecoin_v1_0": "ethereum/erc20/compound_dai"
 }
 
+export const isLendingSupported = (tokenAccount: TokenAccount) => tokenAccount && tokenAccount.token && !!supportedTokens[tokenAccount.token.id]
+
 export const getLendingAccount = (tokenAccount: TokenAccount, parentAccount: Account) => {
   if (!parentAccount) {
     return null
@@ -38,7 +40,6 @@ const fetchCompoundData = async (account: TokenAccount, parentAccount: Account) 
   })
 
   const [cToken, cAccount] = await Promise.all([cTokenPromise, cAccountPromise])
-  console.log('FETCHED')
 
   return {
     cToken: get(cToken, 'data.cToken.0'),
@@ -52,13 +53,21 @@ export const useCompoundApi = (account: TokenAccount, parentAccount: Account) =>
     cAccount: null
   })
 
-  useEffect(async () => {
+  useEffect(() => {
+    if (!parentAccount) {
+      return
+    }
     fetchCompoundData(account, parentAccount).then(result => setState(result))
 
     const interval = setInterval(async () => {
       fetchCompoundData(account, parentAccount).then(result => setState(result))
     }, 15000)
-    return () => interval && clearInterval(interval)
+
+    return () => {
+      if (interval) {
+        clearInterval(interval)
+      }
+    }
   }, [])
 
   return state
@@ -66,24 +75,28 @@ export const useCompoundApi = (account: TokenAccount, parentAccount: Account) =>
 
 export const useProgressivePrice = (supplyRate, balance) => {
   const [state, setState] = useState({
-    previous: Date.now(),
     balance
   })
+  const value = balance.toString()
 
   useEffect(() => {
+    const previous = Date.now()
     const supplyRatePerMilliSecond = supplyRate / 365 / 24 / 60 / 60 / 1000
     const interval = setInterval(() => {
       const now = Date.now()
-      const delta = now - state.previous
+      const delta = now - previous
       const multiplier = 1 + supplyRatePerMilliSecond * delta
-
-      setState({
-        previous: now,
-        balance: balance * multiplier
-      })
+      setState(state => ({
+        ...state,
+        balance: balance.times(multiplier)
+      }))
     }, 1000)
-    return () => interval && clearInterval(interval)
-  }, [supplyRate])
+    return () => {
+      if (interval) {
+        clearInterval(interval)
+      }
+    }
+  }, [supplyRate, value])
 
   return state.balance
 }
