@@ -127,7 +127,7 @@ const AccountPage = ({
             />
           </Box>
           {
-            lendingAccount && !lendingAccount.isZero() ? (
+            lendingAccount && !lendingAccount.balance.isZero() ? (
               <CompoundLending
                 account={account}
                 lendingAccount={lendingAccount}
