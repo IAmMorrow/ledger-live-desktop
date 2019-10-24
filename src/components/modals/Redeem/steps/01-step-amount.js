@@ -50,6 +50,17 @@ const AccountFields = ({
   const mainAccount = getMainAccount(account, parentAccount)
   return (
     <Fragment key={account.id}>
+
+      <RecipientField
+        status={status}
+        autoFocus={openedFromAccount}
+        account={mainAccount}
+        transaction={transaction}
+        onChangeTransaction={onChangeTransaction}
+        bridgePending={bridgePending}
+        t={t}
+      />
+
       <AmountField
         status={status}
         account={account}

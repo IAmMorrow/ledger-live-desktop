@@ -68,7 +68,7 @@ export const useCompoundApi = (account: TokenAccount, parentAccount: Account) =>
         clearInterval(interval)
       }
     }
-  }, [])
+  }, [account, parentAccount])
 
   return state
 }
