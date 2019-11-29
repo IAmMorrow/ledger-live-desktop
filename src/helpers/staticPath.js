@@ -8,7 +8,7 @@ const isRunningInAsar =
 
 const staticPath =
   __DEV__ && !STORYBOOK_ENV && NODE_ENV !== 'test'
-    ? __static
+    ? pathModule.join(pathModule.dirname(__dirname), 'static')
     : isRunningInAsar
     ? pathModule.join(pathModule.dirname(__dirname), 'static')
     : !STORYBOOK_ENV

@@ -55,7 +55,8 @@ const killInternalProcessDebounce = debounce(() => {
   killInternalProcess()
 }, 500)
 
-const forkBundlePath = path.resolve(__dirname, `${__DEV__ ? '../../' : './'}dist/internals`)
+const forkBundlePath = path.resolve(__dirname, `dist/internals`)
+console.log(forkBundlePath)
 const handleExit = code => {
   logger.warn(`Internal process ended with code ${code}`)
   internalProcess = null

@@ -1,8 +1,11 @@
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
+const webpackRenderer = require('electron-webpack/webpack.renderer.config')
 
 const plugins = require('./plugins')
 const resolve = require('./resolve')
 const rules = require('./rules')
+
+webpackRenderer().then(c => console.log(JSON.stringify(c.plugins, undefined, 2)))
 
 const config = {
   mode: __ENV__,
