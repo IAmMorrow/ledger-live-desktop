@@ -1,4 +1,7 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const globals = require('./plugins/globals')
 
 const babelConfig = {
@@ -32,7 +35,16 @@ module.exports = {
     filename: 'renderer.bundle.js'
   },
   plugins: [
-    globals
+    globals,
+    new HtmlWebpackPlugin({
+      template: 'src/index.ejs',
+      filename: 'index.html',
+      title: 'Ledger Live',
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'style.css',
+      chunkFilename: '[id].styles.css'
+    })
   ],
   module: {
     rules: [
@@ -44,7 +56,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
     ],
   },
@@ -53,5 +65,10 @@ module.exports = {
       path.resolve(__dirname, 'src'),
       'node_modules'
     ]
+  },
+  devServer: {
+    publicPath: '/wp/dist/',
+    inline: true,
+    port: 8080
   }
 }

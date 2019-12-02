@@ -6,4 +6,4 @@ require('../env')
 require('../globals')
 require('./app')
 
-setImmediate(() => require('./bridge'))
+// setImmediate(() => require('./bridge'))

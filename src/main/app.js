@@ -67,7 +67,7 @@ const getWindowPosition = (height, width, display = screen.getPrimaryDisplay()) 
 }
 
 const getDefaultUrl = () =>
-  __DEV__ ? `http://localhost:${ELECTRON_WEBPACK_WDS_PORT || ''}` : `file://${__dirname}/index.html`
+  __DEV__ ? `http://localhost:${ELECTRON_WEBPACK_WDS_PORT || 8080}` : `file://${__dirname}/index.html`
 
 const saveWindowSettings = window => {
   const windowParamsHandler = () => {

@@ -10,7 +10,7 @@
     "prepublish": "bash ./scripts/sync-families-dispatch.sh",
     "postinstall": "bash ./scripts/postinstall.sh",
     "start": "bash ./scripts/start.sh",
-    "wp-dev": "cross-env NODE_ENV=development webpack-cli --watch --config webpack.config.js --display-error-details",
+    "wp-dev": "webpack-dev-server --config webpack.config.js --mode development --hot --inline --progress --colors",
     "release": "bash ./scripts/release.sh",
     "dist": "bash ./scripts/dist.sh",
     "dist:signed": "bash ./scripts/dist.sh --sign",

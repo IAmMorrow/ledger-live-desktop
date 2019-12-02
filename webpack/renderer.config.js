@@ -5,7 +5,7 @@ const plugins = require('./plugins')
 const resolve = require('./resolve')
 const rules = require('./rules')
 
-webpackRenderer().then(c => console.log(JSON.stringify(c.plugins, undefined, 2)))
+webpackRenderer().then(c => console.log(c.plugins))
 
 const config = {
   mode: __ENV__,
