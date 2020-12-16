@@ -1,6 +1,6 @@
 // @flow
 
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { compose } from "redux";
 import { useSelector, connect } from "react-redux";
 import { withTranslation, Trans } from "react-i18next";
@@ -35,6 +35,8 @@ import Text from "~/renderer/components/Text";
 import Graph from "~/renderer/icons/Graph";
 import IconAngleDown from "~/renderer/icons/AngleDown";
 import IconAngleUp from "~/renderer/icons/AngleUp";
+import { SideDrawer } from "~/renderer/components/Onboarding/SideDrawer";
+import { SecurityAudit } from "~/renderer/modals/SecurityAudit";
 
 const ButtonSettings: ThemedComponent<{ disabled?: boolean }> = styled(Tabbable).attrs(() => ({
   alignItems: "center",
@@ -210,8 +212,17 @@ const AccountHeaderActions = ({
     [],
   );
 
+  const [privacyOpen, setPrivacyOpen] = useState(false);
+
   return (
     <Box horizontal alignItems="center" justifyContent="flex-end" flow={2} mt={15}>
+      <SideDrawer
+        direction="left"
+        isOpen={privacyOpen}
+        onRequestClose={() => setPrivacyOpen(false)}
+      >
+        <SecurityAudit account={account} />
+      </SideDrawer>
       {!isAccountEmpty(account) ? (
         <>
           {PerFamily ? <PerFamily account={account} parentAccount={parentAccount} /> : null}
@@ -243,6 +254,15 @@ const AccountHeaderActions = ({
           yellow
         />
       </Tooltip>
+      {account.type === "Account" ? (
+        <Tooltip content={t("account.privacy.tooltip")}>
+          <ButtonSettings onClick={() => setPrivacyOpen(true)}>
+            <Box justifyContent="center">
+              <IconAccountSettings size={14} />
+            </Box>
+          </ButtonSettings>
+        </Tooltip>
+      ) : null}
       {account.type === "Account" ? (
         <Tooltip content={t("account.settings.title")}>
           <ButtonSettings

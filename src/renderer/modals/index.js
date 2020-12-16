@@ -24,6 +24,7 @@ import MODAL_SELL_CRYPTO_DEVICE from "./SellDeviceConfirm";
 import MODAL_HELP from "./Help";
 import MODAL_SWAP from "./Swap";
 import MODAL_SWAP_OPERATION_DETAILS from "./SwapOperationDetails";
+import MODAL_SECURITY_AUDIT from "./SecurityAudit";
 
 import MODAL_FULL_NODE from "./FullNode";
 
@@ -104,6 +105,7 @@ const modals: { [_: string]: React$ComponentType<any> } = {
   MODAL_SWAP,
   MODAL_SWAP_OPERATION_DETAILS,
   MODAL_FULL_NODE,
+  MODAL_SECURITY_AUDIT,
 };
 
 export default modals;

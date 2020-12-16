@@ -407,6 +407,10 @@
         "desc": "Choose the unit to be used"
       }
     },
+    "privacy": {
+      "title": "Privacy audit",
+      "tooltip": "Privacy audit"
+    },
     "availableBalance": "Available balance",
     "frozenAssets": "Frozen assets",
     "bandwidth": "Bandwidth",
