@@ -126,8 +126,8 @@ function Revealer() {
     cols.forEach((col, x) => {
       col.forEach((row, y) => {
         renderData(secretArea, x, y, row === "01" ? 1 : 0);
-      })
-    })
+      });
+    });
 
     context.putImageData(secretArea, 0, 0);
   }, []);
