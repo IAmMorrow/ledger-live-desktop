@@ -1,11 +1,18 @@
 // @flow
 import styled from "styled-components";
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 import Modal from "~/renderer/components/Modal";
 import Button from "~/renderer/components/Button";
 import ReactDOMServer from "react-dom/server";
 import { Sheet } from "~/renderer/modals/Revealer/Sheet";
 import { command } from "~/renderer/commands";
+import DeviceAction from "~/renderer/components/DeviceAction";
+import { createAction } from "@ledgerhq/live-common/lib/hw/actions/app";
+import { getEnv } from "@ledgerhq/live-common/lib/env";
+import { mockedEventEmitter } from "~/renderer/components/DebugMock";
+
+const connectAppExec = command("connectApp");
+const action = createAction(getEnv("MOCK") ? mockedEventEmitter : connectAppExec);
 
 const { BrowserWindow } = require("electron").remote;
 
@@ -90,7 +97,7 @@ const printOptions = {
   copies: 1,
 };
 
-function Revealer() {
+function Ready() {
   const revealer = useRef();
 
   const handlePrint = useCallback(() => {
@@ -142,6 +149,16 @@ function Revealer() {
       <Button onClick={handlePrint}>print</Button>
     </RevealerContainer>
   );
+}
+
+function Revealer({ onClose }: *) {
+  const [connected, setConnected] = useState(false);
+  if (!connected) {
+    return (
+      <DeviceAction action={action} request={{ appName: "Revealer" }} onResult={setConnected} />
+    );
+  }
+  return <Ready onClose={onClose} />;
 }
 
 const RevealerModal = () => (
