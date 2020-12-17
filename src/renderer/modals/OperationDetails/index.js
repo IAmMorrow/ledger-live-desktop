@@ -162,9 +162,7 @@ const OperationDetails: React$ComponentType<OwnProps> = connect(mapStateToProps)
   const uniqueSenders = uniq(senders);
 
   const OpDetailsExtra =
-    specific && specific.OperationDetailsExtra
-      ? specific.OperationDetailsExtra
-      : OperationDetailsExtra;
+    specific && specific.OperationDetailsExtra ? specific.OperationDetailsExtra : null;
 
   const { hasFailed } = operation;
   const subOperations = operation.subOperations || [];
@@ -515,7 +513,7 @@ const OperationDetails: React$ComponentType<OwnProps> = connect(mapStateToProps)
               </Box>
             </>
           ) : null}
-          <OpDetailsExtra extra={extra} type={type} account={account} />
+          {OpDetailsExtra ? <OpDetailsExtra extra={extra} type={type} account={account} /> : null}
         </Box>
       )}
       renderFooter={() => (

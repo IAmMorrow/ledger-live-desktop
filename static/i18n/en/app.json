@@ -408,8 +408,26 @@
       }
     },
     "privacy": {
-      "title": "Privacy audit",
-      "tooltip": "Privacy audit"
+      "title": "Privacy report",
+      "tooltip": "Privacy report",
+      "operations": "Involved operations:",
+      "heuristics": {
+        "round-value": {
+          "name": "Avoid rounded amounts",
+          "descBad": "Some of your transaction outputs have rounded amounts. Those can easily be considered as the recipient",
+          "descGood": "All your outputs use random looking amounts. This can't be used to tell which one is the recipient."
+        },
+        "receive-address-reuse": {
+          "name": "Avoid reusing receive address",
+          "descBad": "You have received funds multiple time on the same address.",
+          "descGood": "All your receive addresses are unique."
+        },
+        "output-value-1000x": {
+          "name": "Avoid having one of the outputs is 1000 times bigger than the other",
+          "descBad": "One of the two outputs is 1000 times bigger than the other meaning that it's potentially the change output.",
+          "descGood": "Output size difference doesn't allow to identify change output"
+        }
+      }
     },
     "availableBalance": "Available balance",
     "frozenAssets": "Frozen assets",
