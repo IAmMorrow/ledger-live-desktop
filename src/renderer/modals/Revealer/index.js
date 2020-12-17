@@ -13,6 +13,7 @@ import DeviceAction from "~/renderer/components/DeviceAction";
 import { createAction } from "@ledgerhq/live-common/lib/hw/actions/app";
 import { getEnv } from "@ledgerhq/live-common/lib/env";
 import { mockedEventEmitter } from "~/renderer/components/DebugMock";
+import { binary } from "./test";
 
 const connectAppExec = command("connectApp");
 const action = createAction(getEnv("MOCK") ? mockedEventEmitter : connectAppExec);
@@ -152,7 +153,7 @@ function Display({ data }: { data: string }) {
 
 function DeviceReady() {
   const [error, setError] = useState(null);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState(binary);
 
   useEffect(() => {
     if (data && !error) return;
@@ -169,20 +170,22 @@ function DeviceReady() {
   return <Display data={data} />;
 }
 
-function Revealer({ onClose }: *) {
+function Body() {
   const [connected, setConnected] = useState(false);
+  return connected ? (
+    <DeviceReady />
+  ) : (
+    <DeviceAction action={action} request={{ appName: "Revealer" }} onResult={setConnected} />
+  );
+}
+
+function Revealer({ onClose }: *) {
   return (
     <ModalBody
       onClose={onClose}
       title="Revealer"
       renderFooter={() => null}
-      render={() =>
-        connected ? (
-          <DeviceReady />
-        ) : (
-          <DeviceAction action={action} request={{ appName: "Revealer" }} onResult={setConnected} />
-        )
-      }
+      render={() => <Body />}
     />
   );
 }
