@@ -87,7 +87,7 @@ export function SecurityAudit({ account }: Props) {
 
   const { privacyReport } = account.bitcoinResources;
 
-  const formatGaugeValue = useCallback((value) => {
+  const formatGaugeValue = useCallback(value => {
     if (value <= 33) {
       return "Basic";
     } else if (value <= 66) {
