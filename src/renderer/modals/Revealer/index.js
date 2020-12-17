@@ -5,7 +5,8 @@ import Modal from "~/renderer/components/Modal";
 import Button from "~/renderer/components/Button";
 import ReactDOMServer from "react-dom/server";
 import { Sheet } from "~/renderer/modals/Revealer/Sheet";
-import { apdus } from "~/renderer/modals/Revealer/test";
+import { command } from "~/renderer/commands";
+
 const { BrowserWindow } = require("electron").remote;
 
 const REVEALER_X = 159;
@@ -115,21 +116,18 @@ function Revealer() {
   }, []);
 
   useEffect(() => {
-    const context = revealer.current.getContext("2d");
-    const secretArea = context.createImageData(REVEALER_X * 2, REVEALER_Y * 2);
-
-    const apduCommands = apdus.split(/\r?\n/);
-    const cols = apduCommands
-      .filter(unit => unit.startsWith("<="))
-      .map(unit => unit.replace("<= ", "").replace("9000", "").match(/.{1,2}/g));
-
-    cols.forEach((col, x) => {
-      col.forEach((row, y) => {
-        renderData(secretArea, x, y, row === "01" ? 1 : 0);
-      });
+    const sub = command("revealerGetImage")({ deviceId: "" }).subscribe(data => {
+      const context = revealer.current.getContext("2d");
+      const secretArea = context.createImageData(REVEALER_X * 2, REVEALER_Y * 2);
+      for (let i = 0; i < data.length; i += 2) {
+        const x = Math.floor(i / REVEALER_X);
+        const y = i - x;
+        const value = data.slice(i, 2);
+        renderData(secretArea, x, y, value === "01" ? 1 : 0);
+      }
+      context.putImageData(secretArea, 0, 0);
     });
-
-    context.putImageData(secretArea, 0, 0);
+    return () => sub.unsubscribe();
   }, []);
 
   return (

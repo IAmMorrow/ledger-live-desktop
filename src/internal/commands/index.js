@@ -23,6 +23,7 @@ import websocketBridge from "./websocketBridge";
 import checkSignatureAndPrepare from "./checkSignatureAndPrepare";
 import getTransactionId from "./getTransactionId";
 import scanDescriptors from "./scanDescriptors";
+import revealerGetImage from "./revealerGetImage";
 import { commands as bridgeProxyCommands } from "~/renderer/bridge/proxy-commands";
 
 export const commandsById = {
@@ -51,6 +52,7 @@ export const commandsById = {
   testInterval,
   websocketBridge,
   scanDescriptors,
+  revealerGetImage,
 };
 
 export type Commands = typeof commandsById;
