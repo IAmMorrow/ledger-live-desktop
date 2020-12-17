@@ -98,10 +98,8 @@ const printOptions = {
   copies: 1,
 };
 
-function Ready() {
+function Display({ data, onClose }: { data: string, onClose: * }) {
   const revealer = useRef();
-  const [error, setError] = useState(null);
-  const [loaded, setLoaded] = useState(null);
 
   const handlePrint = useCallback(() => {
     const dataUrl = revealer.current.toDataURL();
@@ -126,27 +124,16 @@ function Ready() {
   }, []);
 
   useEffect(() => {
-    if (loaded && !error) return;
-    const sub = command("revealerGetImage")({ deviceId: "" })
-      .pipe(delay(1000))
-      .subscribe(data => {
-        const context = revealer.current.getContext("2d");
-        const secretArea = context.createImageData(REVEALER_X * 2, REVEALER_Y * 2);
-        for (let i = 0; i < data.length; i += 2) {
-          const x = Math.floor(i / REVEALER_X);
-          const y = i - x;
-          const value = data.slice(i, 2);
-          renderData(secretArea, x, y, value === "01" ? 1 : 0);
-        }
-        context.putImageData(secretArea, 0, 0);
-        setLoaded(true);
-      }, setError);
-    return () => sub.unsubscribe();
-  }, [error, loaded]);
-
-  if (!loaded) {
-    return <h1>Please follow device instructions</h1>;
-  }
+    const context = revealer.current.getContext("2d");
+    const secretArea = context.createImageData(REVEALER_X * 2, REVEALER_Y * 2);
+    for (let i = 0; i < data.length; i += 2) {
+      const x = Math.floor(i / REVEALER_X);
+      const y = i - x;
+      const value = data.slice(i, 2);
+      renderData(secretArea, x, y, value === "01" ? 1 : 0);
+    }
+    context.putImageData(secretArea, 0, 0);
+  }, [data]);
 
   return (
     <RevealerContainer>
@@ -156,10 +143,28 @@ function Ready() {
           <RevealerCard width={REVEALER_X * 2} height={REVEALER_Y * 2} ref={revealer} />
         </RevealerCardContainer>
       </RevealerCardFrame>
-
       <Button onClick={handlePrint}>print</Button>
     </RevealerContainer>
   );
+}
+
+function DeviceReady({ onClose }) {
+  const [error, setError] = useState(null);
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    if (data && !error) return;
+    const sub = command("revealerGetImage")({ deviceId: "" })
+      .pipe(delay(1000)) // delay polling to not poll spam too much
+      .subscribe(d => setData(d.dataHex), setError);
+    return () => sub.unsubscribe();
+  }, [error, data]);
+
+  if (!data) {
+    return <h1>Please follow device instructions</h1>;
+  }
+
+  return <Display data={data} onClose={onClose} />;
 }
 
 function Revealer({ onClose }: *) {
@@ -169,7 +174,7 @@ function Revealer({ onClose }: *) {
       <DeviceAction action={action} request={{ appName: "Revealer" }} onResult={setConnected} />
     );
   }
-  return <Ready onClose={onClose} />;
+  return <DeviceReady onClose={onClose} />;
 }
 
 const RevealerModal = () => (
