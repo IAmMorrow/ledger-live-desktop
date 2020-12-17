@@ -429,7 +429,7 @@
         },
         "output-value-1000x": {
           "name": "Output value too big",
-          "descBad": "One of the two outputs is 1000 times bigger than the other meaning that it's potentially the change output.",
+          "descBad": "One of the two outputs is significantly bigger than the other, meaning that it's potentially the change output.",
           "descGood": "None of your transactions have an output that is significantly bigger in value than the other, making it harder to identify the change."
         },
         "simple-coinjoin": {
@@ -440,7 +440,7 @@
         "samourai-whirlpool": {
           "name": "Samourai Whirlpool",
           "descBad": "One or more transactions appear to be co-spending inputs using Samourai Whirlpool. While it enhances privacy, Whirlpool transactions may be deemed illegal by law enforcement.",
-          "descGood": "One or more transactions appear to be co-spending inputs using Samourai Whirlpool. While it enhances privacy, CoinJoin transactions may be deemed illegal by law enforcement."
+          "descGood": "None of your transactions appear to be co-spending inputs using Samourai Whirlpool. While it enhances privacy, Whirlpool transactions may be deemed illegal by law enforcement."
         },
         "script-types": {
           "name": "Script types",
