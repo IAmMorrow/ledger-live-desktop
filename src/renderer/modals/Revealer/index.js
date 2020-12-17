@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { delay } from "rxjs/operators";
 import React, { useState, useCallback, useEffect, useRef } from "react";
 import Modal from "~/renderer/components/Modal";
+import ModalBody from "~/renderer/components/Modal/ModalBody";
+import Box from "~/renderer/components/Box";
 import Button from "~/renderer/components/Button";
 import ReactDOMServer from "react-dom/server";
 import { Sheet } from "~/renderer/modals/Revealer/Sheet";
@@ -98,7 +100,7 @@ const printOptions = {
   copies: 1,
 };
 
-function Display({ data, onClose }: { data: string, onClose: * }) {
+function Display({ data }: { data: string }) {
   const revealer = useRef();
 
   const handlePrint = useCallback(() => {
@@ -148,7 +150,7 @@ function Display({ data, onClose }: { data: string, onClose: * }) {
   );
 }
 
-function DeviceReady({ onClose }) {
+function DeviceReady() {
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
 
@@ -164,17 +166,25 @@ function DeviceReady({ onClose }) {
     return <h1>Please follow device instructions</h1>;
   }
 
-  return <Display data={data} onClose={onClose} />;
+  return <Display data={data} />;
 }
 
 function Revealer({ onClose }: *) {
   const [connected, setConnected] = useState(false);
-  if (!connected) {
-    return (
-      <DeviceAction action={action} request={{ appName: "Revealer" }} onResult={setConnected} />
-    );
-  }
-  return <DeviceReady onClose={onClose} />;
+  return (
+    <ModalBody
+      onClose={onClose}
+      title="Revealer"
+      renderFooter={() => null}
+      render={() =>
+        connected ? (
+          <DeviceReady />
+        ) : (
+          <DeviceAction action={action} request={{ appName: "Revealer" }} onResult={setConnected} />
+        )
+      }
+    />
+  );
 }
 
 const RevealerModal = () => (
