@@ -4,7 +4,6 @@ import { delay } from "rxjs/operators";
 import React, { useState, useCallback, useEffect, useRef } from "react";
 import Modal from "~/renderer/components/Modal";
 import ModalBody from "~/renderer/components/Modal/ModalBody";
-import Box from "~/renderer/components/Box";
 import Button from "~/renderer/components/Button";
 import ReactDOMServer from "react-dom/server";
 import { Sheet } from "~/renderer/modals/Revealer/Sheet";
@@ -130,9 +129,10 @@ function Display({ data }: { data: string }) {
     const context = revealer.current.getContext("2d");
     const secretArea = context.createImageData(REVEALER_X * 2, REVEALER_Y * 2);
     for (let i = 0; i < data.length; i += 2) {
-      const x = Math.floor(i / REVEALER_X);
-      const y = i - x;
-      const value = data.slice(i, 2);
+      const index = i / 2;
+      const y = Math.floor(index / REVEALER_X);
+      const x = index - y;
+      const value = data.slice(i, i + 2);
       renderData(secretArea, x, y, value === "01" ? 1 : 0);
     }
     context.putImageData(secretArea, 0, 0);
@@ -153,7 +153,7 @@ function Display({ data }: { data: string }) {
 
 function DeviceReady() {
   const [error, setError] = useState(null);
-  const [data, setData] = useState(binary);
+  const [data, setData] = useState(getEnv("MOCK") ? binary : null);
 
   useEffect(() => {
     if (data && !error) return;
