@@ -1,5 +1,5 @@
 // @flow
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useMemo, useEffect } from "react";
 import styled from "styled-components";
 
 import Modal from "~/renderer/components/Modal";
@@ -97,6 +97,10 @@ export function SecurityAudit({ account }: Props) {
     }
   }, []);
 
+  const reports = useMemo(() => {
+    return privacyReport.reports.sort((reportA, reportB) => reportB.penalty - reportA.penalty);
+  }, [privacyReport]);
+
   return (
     <ScrollArea withHint>
       <SecurityAuditContainer>
@@ -111,7 +115,7 @@ export function SecurityAudit({ account }: Props) {
           formatTextValue={formatGaugeValue}
         />
         <ReportContainer>
-          {privacyReport.reports.map(report => (
+          {reports.map(report => (
             <HeuristicReport key={report.heuristicId} account={account} t={t} report={report} />
           ))}
         </ReportContainer>

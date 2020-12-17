@@ -19,6 +19,7 @@ import type { TFunction } from "react-i18next";
 import { rgba } from "~/renderer/styles/helpers";
 import { openModal } from "~/renderer/actions/modals";
 import IconAccountSettings from "~/renderer/icons/AccountSettings";
+import IconPrivacy from "~/renderer/icons/Activity";
 import perFamily from "~/renderer/generated/AccountHeaderActions";
 import Box, { Tabbable } from "~/renderer/components/Box";
 import Star from "~/renderer/components/Stars/Star";
@@ -254,11 +255,11 @@ const AccountHeaderActions = ({
           yellow
         />
       </Tooltip>
-      {account.type === "Account" ? (
+      {account.type === "Account" && account.bitcoinResources && account.bitcoinResources.privacyReport ? (
         <Tooltip content={t("account.privacy.tooltip")}>
           <ButtonSettings onClick={() => setPrivacyOpen(true)}>
             <Box justifyContent="center">
-              <IconAccountSettings size={14} />
+              <IconPrivacy size={14} />
             </Box>
           </ButtonSettings>
         </Tooltip>

@@ -450,7 +450,7 @@
         "round-fees": {
           "name": "Round fees",
           "descBad": "One or more transactions have a round fee amount. This is rare, and enables clusterization of your transactions.",
-          "decGood": "None of your transactions use a round fee amount. It could be otherwise used for clusterization of your wallet addresses.",
+          "descGood": "None of your transactions use a round fee amount. It could be otherwise used for clusterization of your wallet addresses."
         }
       }
     },
