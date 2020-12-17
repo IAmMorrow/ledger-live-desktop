@@ -1,5 +1,6 @@
 // @flow
 import styled from "styled-components";
+import { delay } from "rxjs/operators";
 import React, { useState, useCallback, useEffect, useRef } from "react";
 import Modal from "~/renderer/components/Modal";
 import Button from "~/renderer/components/Button";
@@ -99,6 +100,8 @@ const printOptions = {
 
 function Ready() {
   const revealer = useRef();
+  const [error, setError] = useState(null);
+  const [loaded, setLoaded] = useState(null);
 
   const handlePrint = useCallback(() => {
     const dataUrl = revealer.current.toDataURL();
@@ -123,19 +126,27 @@ function Ready() {
   }, []);
 
   useEffect(() => {
-    const sub = command("revealerGetImage")({ deviceId: "" }).subscribe(data => {
-      const context = revealer.current.getContext("2d");
-      const secretArea = context.createImageData(REVEALER_X * 2, REVEALER_Y * 2);
-      for (let i = 0; i < data.length; i += 2) {
-        const x = Math.floor(i / REVEALER_X);
-        const y = i - x;
-        const value = data.slice(i, 2);
-        renderData(secretArea, x, y, value === "01" ? 1 : 0);
-      }
-      context.putImageData(secretArea, 0, 0);
-    });
+    if (loaded && !error) return;
+    const sub = command("revealerGetImage")({ deviceId: "" })
+      .pipe(delay(1000))
+      .subscribe(data => {
+        const context = revealer.current.getContext("2d");
+        const secretArea = context.createImageData(REVEALER_X * 2, REVEALER_Y * 2);
+        for (let i = 0; i < data.length; i += 2) {
+          const x = Math.floor(i / REVEALER_X);
+          const y = i - x;
+          const value = data.slice(i, 2);
+          renderData(secretArea, x, y, value === "01" ? 1 : 0);
+        }
+        context.putImageData(secretArea, 0, 0);
+        setLoaded(true);
+      }, setError);
     return () => sub.unsubscribe();
-  }, []);
+  }, [error, loaded]);
+
+  if (!loaded) {
+    return <h1>Please follow device instructions</h1>;
+  }
 
   return (
     <RevealerContainer>
