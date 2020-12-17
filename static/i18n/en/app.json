@@ -413,19 +413,44 @@
       "operations": "Involved operations:",
       "heuristics": {
         "round-value": {
-          "name": "Avoid rounded amounts",
-          "descBad": "Some of your transaction outputs have rounded amounts. Those can easily be considered as the recipient",
-          "descGood": "All your outputs use random looking amounts. This can't be used to tell which one is the recipient."
+          "name": "Round value amounts",
+          "descBad": "Some of your transactions send rounded amounts (like exactly 1 BTC), which can be used to identify the recipient.",
+          "descGood": "All your transactions send seemingly random amounts, making it harder to indentify the recipients."
         },
         "receive-address-reuse": {
-          "name": "Avoid reusing receive address",
-          "descBad": "You have received funds multiple time on the same address.",
-          "descGood": "All your receive addresses are unique."
+          "name": "Receive address reuse",
+          "descBad": "One or more addresses were reused for receiving multiple transactions. It's not only bad for your privacy, but also for the participants of the transactions and future holders of their value.",
+          "descGood": "None of addresses were reused for receiving multiple transactions."
+        },
+        "send-address-reuse": {
+          "name": "Send address reuse",
+          "descBad": "One or more addresses were reused for sending multiple transactions. It's not only bad for your privacy, but also for the participants of the transactions and future holders of their value.",
+          "descGood": "None of addresses were reused for sending multiple transactions."
         },
         "output-value-1000x": {
-          "name": "Avoid having one of the outputs is 1000 times bigger than the other",
+          "name": "Output value too big",
           "descBad": "One of the two outputs is 1000 times bigger than the other meaning that it's potentially the change output.",
-          "descGood": "Output size difference doesn't allow to identify change output"
+          "descGood": "None of your transactions have an output that is significantly bigger in value than the other, making it harder to identify the change."
+        },
+        "simple-coinjoin": {
+          "name": "Simple CoinJoin",
+          "descBad": "One or more transactions appear to be co-spending inputs using CoinJoin. While it enhances privacy, CoinJoin transactions may be deemed illegal by law enforcement.",
+          "descGood": "None of your transactions are co-spending inputs using CoinJoin. While it enhances privacy, CoinJoin transactions may be deemed illegal by law enforcement."
+        },
+        "samourai-whirlpool": {
+          "name": "Samourai Whirlpool",
+          "descBad": "One or more transactions appear to be co-spending inputs using Samourai Whirlpool. While it enhances privacy, Whirlpool transactions may be deemed illegal by law enforcement.",
+          "descGood": "One or more transactions appear to be co-spending inputs using Samourai Whirlpool. While it enhances privacy, CoinJoin transactions may be deemed illegal by law enforcement."
+        },
+        "script-types": {
+          "name": "Script types",
+          "descBad": "One or more transactions have inputs of the same type, and exactly one of output that is different — this output can be considered as the recipient.",
+          "descGood": "None of your transactions have inputs of the same type, and exactly one of output that is different. It could be otherwise used for identifying the receive address."
+        },
+        "round-fees": {
+          "name": "Round fees",
+          "descBad": "One or more transactions have a round fee amount. This is rare, and enables clusterization of your transactions.",
+          "decGood": "None of your transactions use a round fee amount. It could be otherwise used for clusterization of your wallet addresses.",
         }
       }
     },
