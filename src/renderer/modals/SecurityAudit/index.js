@@ -85,6 +85,8 @@ const ReportContainer = styled.div`
 export function SecurityAudit({ account }: Props) {
   const { t } = useTranslation();
 
+  console.log(account)
+
   const { privacyReport } = account.bitcoinResources;
 
   const formatGaugeValue = useCallback(value => {
@@ -110,7 +112,7 @@ export function SecurityAudit({ account }: Props) {
         <GaugeChart
           id="gauge-chart1"
           animate
-          percent={0.8}
+          percent={1 - privacyReport.score}
           colors={["#FF0D0D", "#FAB733", "#69B34C"]}
           formatTextValue={formatGaugeValue}
         />

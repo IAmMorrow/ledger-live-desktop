@@ -451,6 +451,11 @@
           "name": "Round fees",
           "descBad": "One or more transactions have a round fee amount. This is rare, and enables clusterization of your transactions.",
           "descGood": "None of your transactions use a round fee amount. It could be otherwise used for clusterization of your wallet addresses."
+        },
+        "known-coinbase": {
+          "name": "Known coinbase message",
+          "descBad": "None of your transaction has a known coinbase.",
+          "descGood": "One or more of your transactions have a known coinbase input. This is not bad for privacy, it makes your transaction stand out."
         }
       }
     },
