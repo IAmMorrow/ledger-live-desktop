@@ -124,7 +124,7 @@
     "winston": "^3.2.1",
     "winston-transport": "^4.3.0",
     "write-file-atomic": "^3.0.3",
-    "ws": "^7.4.6",
+    "ws": "^7.5.0",
     "xstate": "^4.19.2",
     "zxcvbn": "^4.4.2"
   },

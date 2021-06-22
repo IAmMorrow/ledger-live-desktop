@@ -43,6 +43,7 @@ import useDeeplink from "~/renderer/hooks/useDeeplinking";
 import ModalsLayer from "./ModalsLayer";
 import { ToastOverlay } from "~/renderer/components/ToastOverlay";
 import Drawer from "~/renderer/drawers/Drawer";
+import { WebsocketPlatformAPI } from "./components/WebsocketPlatformAPI";
 
 export default function Default() {
   const location = useLocation();
@@ -67,6 +68,7 @@ export default function Default() {
 
       <IsUnlocked>
         <BridgeSyncProvider>
+          <WebsocketPlatformAPI />
           <ContextMenuWrapper>
             <ModalsLayer />
             {process.env.SPECTRON_RUN ? (

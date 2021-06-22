@@ -13,6 +13,7 @@ import resolveUserDataDirectory from "~/helpers/resolveUserDataDirectory";
 import db from "./db";
 import debounce from "lodash/debounce";
 import logger from "~/logger";
+import { initPlatformAPI } from "./platformAPI";
 
 app.allowRendererProcessReuse = false;
 
@@ -128,6 +129,7 @@ app.on("ready", async () => {
   const settings = await db.getKey("app", "settings");
 
   const window = await createMainWindow(windowParams, settings);
+  initPlatformAPI(window);
 
   window.on(
     "resize",
