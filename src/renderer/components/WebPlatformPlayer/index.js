@@ -1,6 +1,7 @@
 // @flow
 import { remote, WebviewTag, shell } from "electron";
 import React, { useState, useCallback, useEffect, useRef, useMemo } from "react";
+import Text from "~/renderer/components/Text";
 import styled from "styled-components";
 import { JSONRPCRequest } from "json-rpc-2.0";
 import { useSelector, useDispatch } from "react-redux";
@@ -80,6 +81,26 @@ type Props = {
   onClose?: Function,
 };
 
+type WebviewState = {
+  loaded: boolean,
+  error?: any,
+};
+
+const initialWebviewState: WebviewState = {
+  loaded: false,
+  error: undefined,
+};
+
+function Error({ error }: { error: string }) {
+  const { t } = useTranslation();
+
+  if (error === "ERR_INTERNET_DISCONNECTED") {
+    return <Text>{t("platform.errors.ERR_INTERNET_DISCONNECTED")}</Text>;
+  }
+
+  return <Text>{t("platform.errors.default", { error })}</Text>;
+}
+
 const WebPlatformPlayer = ({ manifest, onClose }: Props) => {
   const theme = useTheme("colors.palette");
 
@@ -90,7 +111,7 @@ const WebPlatformPlayer = ({ manifest, onClose }: Props) => {
   const { pushToast } = useToasts();
   const { t } = useTranslation();
 
-  const [widgetLoaded, setWidgetLoaded] = useState(false);
+  const [webviewState, setWebviewState] = useState(initialWebviewState);
 
   const url = useMemo(() => {
     const urlObj = new URL(manifest.url.toString());
@@ -315,16 +336,32 @@ const WebPlatformPlayer = ({ manifest, onClose }: Props) => {
   }, [manifest, handleMessage]);
 
   const handleLoad = useCallback(() => {
-    tracking.platformLoadSuccess(manifest);
-    setWidgetLoaded(true);
+    setWebviewState(state => ({
+      ...state,
+      loaded: true,
+    }));
   }, [manifest]);
+
+  const handleFail = useCallback(
+    e => {
+      tracking.platformLoadFail(manifest);
+      setWebviewState({
+        loaded: false,
+        error: e.errorDescription,
+      });
+    },
+    [manifest],
+  );
 
   const handleReload = useCallback(() => {
     const webview = targetRef.current;
     if (webview) {
       tracking.platformReload(manifest);
-      setWidgetLoaded(false);
-      webview.reloadIgnoringCache();
+      setWebviewState({
+        loaded: false,
+        error: undefined,
+      });
+      webview.reload();
     }
   }, [manifest]);
 
@@ -341,12 +378,14 @@ const WebPlatformPlayer = ({ manifest, onClose }: Props) => {
     if (webview) {
       webview.addEventListener("new-window", handleNewWindow);
       webview.addEventListener("did-finish-load", handleLoad);
+      webview.addEventListener("did-fail-load", handleFail);
     }
 
     return () => {
       if (webview) {
         webview.removeEventListener("new-window", handleNewWindow);
         webview.removeEventListener("did-finish-load", handleLoad);
+        webview.removeEventListener("did-fail-load", handleFail);
       }
     };
   }, [handleLoad]);
@@ -358,12 +397,12 @@ const WebPlatformPlayer = ({ manifest, onClose }: Props) => {
         <CustomWebview
           src={url.toString()}
           ref={targetRef}
-          style={{ opacity: widgetLoaded ? 1 : 0 }}
+          style={{ opacity: webviewState.loaded ? 1 : 0 }}
           preload={`file://${remote.app.dirname}/webviewPreloader.bundle.js`}
         />
-        {!widgetLoaded ? (
+        {!webviewState.loaded || webviewState.error ? (
           <Loader>
-            <BigSpinner size={50} />
+            {webviewState.error ? <Error error={webviewState.error} /> : <BigSpinner size={50} />}
           </Loader>
         ) : null}
       </Wrapper>

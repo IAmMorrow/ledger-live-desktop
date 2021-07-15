@@ -9,7 +9,7 @@ import type { AppManifest } from "@ledgerhq/live-common/lib/platform/types";
  * @returns Object - event data
  */
 function getEventData(manifest: AppManifest) {
-  return { platform: manifest.name };
+  return { platformApp: manifest.id };
 }
 
 // Failed to load the iframe
@@ -24,7 +24,6 @@ export function platformReload(manifest: AppManifest) {
 
 // Failed to load the iframe
 export function platformLoadFail(manifest: AppManifest) {
-  // TODO: handle iframe failed
   track("Platform Load Fail", getEventData(manifest));
 }
 

@@ -42,6 +42,10 @@
         "description": "All the information you need to integrate your applications on Ledger Live.",
         "button": "Go to portal"
       }
+    },
+    "errors": {
+      "ERR_INTERNET_DISCONNECTED": "No internet connection",
+      "default": "Unexpected error {{error}}"
     }
   },
   "common": {
